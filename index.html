@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIT837 哈工大837网络与信息安全基础三科答题手册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .upload-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .upload-section h2 {
+            margin-bottom: 20px;
+            color: #495057;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .file-input-wrapper:hover {
+            background: #5a6fd8;
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .documents-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .documents-section h2 {
+            margin-bottom: 20px;
+            color: #495057;
+        }
+
+        .document-list {
+            list-style: none;
+        }
+
+        .document-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            transition: box-shadow 0.3s;
+        }
+
+        .document-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .document-info {
+            flex: 1;
+        }
+
+        .document-name {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+
+        .document-meta {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        .view-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .view-btn:hover {
+            background: #218838;
+        }
+
+        .viewer-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .viewer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .close-viewer {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .close-viewer:hover {
+            background: #c82333;
+        }
+
+        .document-content {
+            min-height: 400px;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 20px;
+            background: #fdfdfd;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .document-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .view-btn {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📜 HIT837 答题手册</h1>
+            <p>哈工大837网络与信息安全基础三科在线文档查看器</p>
+        </div>
+
+        <div class="upload-section">
+            <h2>📤 上传文档</h2>
+            <div class="file-input-wrapper">
+                <input type="file" id="docFile" accept=".doc,.docx" multiple>
+                选择 DOC/DOCX 文件
+            </div>
+            <p style="margin-top: 10px; color: #6c757d; font-size: 0.9em;">
+                支持 .doc 和 .docx 格式文件，可多选上传
+            </p>
+        </div>
+
+        <div class="documents-section">
+            <h2>📋 预置学习资料</h2>
+            <ul class="document-list" id="preUploadedDocs">
+                <li style="text-align: center; color: #6c757d; padding: 20px;">
+                    正在加载预置文档...
+                </li>
+            </ul>
+        </div>
+
+        <div class="documents-section">
+            <h2>📚 上传的文档</h2>
+            <ul class="document-list" id="documentList">
+                <li style="text-align: center; color: #6c757d; padding: 40px;">
+                    暂无文档，请上传文档文件
+                </li>
+            </ul>
+        </div>
+
+        <div class="viewer-section" id="viewerSection">
+            <div class="viewer-header">
+                <h3 id="currentDocName">文档查看器</h3>
+                <button class="close-viewer" onclick="closeViewer()">关闭</button>
+            </div>
+            <div class="document-content" id="documentContent">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/mammoth@1.6.0/mammoth.browser.min.js"></script>
+    <script src="docs-handler.js"></script>
+    <script>
+        let documents = JSON.parse(localStorage.getItem('hit837-documents') || '[]');
+
+        function updateDocumentList() {
+            const list = document.getElementById('documentList');
+            
+            if (documents.length === 0) {
+                list.innerHTML = '<li style="text-align: center; color: #6c757d; padding: 40px;">暂无文档，请上传文档文件</li>';
+                return;
+            }
+
+            list.innerHTML = documents.map((doc, index) => `
+                <li class="document-item">
+                    <div class="document-info">
+                        <div class="document-name">${doc.name}</div>
+                        <div class="document-meta">
+                            大小: ${formatFileSize(doc.size)} | 
+                            上传时间: ${new Date(doc.uploadTime).toLocaleString('zh-CN')}
+                        </div>
+                    </div>
+                    <button class="view-btn" onclick="viewDocument(${index})">查看</button>
+                </li>
+            `).join('');
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function saveDocuments() {
+            localStorage.setItem('hit837-documents', JSON.stringify(documents));
+        }
+
+        document.getElementById('docFile').addEventListener('change', async function(e) {
+            const files = Array.from(e.target.files);
+            
+            for (const file of files) {
+                if (file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || 
+                    file.type === 'application/msword' ||
+                    file.name.toLowerCase().endsWith('.doc') ||
+                    file.name.toLowerCase().endsWith('.docx')) {
+                    
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const arrayBuffer = e.target.result;
+                        
+                        const document = {
+                            name: file.name,
+                            size: file.size,
+                            uploadTime: Date.now(),
+                            data: arrayBuffer
+                        };
+                        
+                        documents.push(document);
+                        saveDocuments();
+                        updateDocumentList();
+                    };
+                    reader.readAsArrayBuffer(file);
+                } else {
+                    alert(`文件 "${file.name}" 不是支持的格式。请上传 .doc 或 .docx 文件。`);
+                }
+            }
+            
+            // 清空文件选择器
+            e.target.value = '';
+        });
+
+        async function viewDocument(index) {
+            const doc = documents[index];
+            const viewerSection = document.getElementById('viewerSection');
+            const currentDocName = document.getElementById('currentDocName');
+            const documentContent = document.getElementById('documentContent');
+
+            currentDocName.textContent = doc.name;
+            documentContent.innerHTML = '<div class="loading">正在加载文档...</div>';
+            viewerSection.style.display = 'block';
+
+            // 滚动到查看器
+            viewerSection.scrollIntoView({ behavior: 'smooth' });
+
+            try {
+                const result = await mammoth.convertToHtml({
+                    arrayBuffer: doc.data
+                });
+
+                if (result.messages.length > 0) {
+                    console.log('转换警告:', result.messages);
+                }
+
+                documentContent.innerHTML = result.value;
+            } catch (error) {
+                console.error('文档转换错误:', error);
+                documentContent.innerHTML = `
+                    <div class="error">
+                        <strong>文档加载失败</strong><br>
+                        错误信息: ${error.message}<br>
+                        请确保文件格式正确且未损坏。
+                    </div>
+                `;
+            }
+        }
+
+        function closeViewer() {
+            document.getElementById('viewerSection').style.display = 'none';
+        }
+
+        // 初始化文档列表
+        updateDocumentList();
+        loadPreUploadedDocs();
+
+        // 添加拖放支持
+        const uploadSection = document.querySelector('.upload-section');
+        
+        uploadSection.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            uploadSection.style.background = '#f8f9fa';
+        });
+
+        uploadSection.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            uploadSection.style.background = 'white';
+        });
+
+        uploadSection.addEventListener('drop', function(e) {
+            e.preventDefault();
+            uploadSection.style.background = 'white';
+            
+            const files = Array.from(e.dataTransfer.files);
+            const docFiles = files.filter(file => 
+                file.name.toLowerCase().endsWith('.doc') || 
+                file.name.toLowerCase().endsWith('.docx')
+            );
+            
+            if (docFiles.length > 0) {
+                // 模拟文件选择器事件
+                const fileInput = document.getElementById('docFile');
+                const event = new Event('change', { bubbles: true });
+                
+                // 创建新的文件列表
+                const dt = new DataTransfer();
+                docFiles.forEach(file => dt.items.add(file));
+                fileInput.files = dt.files;
+                
+                fileInput.dispatchEvent(event);
+            } else {
+                alert('请拖放 .doc 或 .docx 文件');
+            }
+        });
+    </script>
+</body>
+</html>
