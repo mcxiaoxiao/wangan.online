@@ -13,7 +13,7 @@
 - `HIT837三科答题手册.pdf` pdf版
 - 算法 
   - `KMP.py` KMP算法python实现 实现含例子可以当例题
-  - `BM.py` KMP算法python实现 含例子可以当例题
+  - `BM.py` BM算法python实现 含例子可以当例题
 
 ## 🛠 更新动态
 - 2025/12/21 考试
