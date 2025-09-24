@@ -54,11 +54,16 @@ def boyer_moore_search(text, pattern):
 
 # PPT示例
 text = "GCATCGCAGAGAGTATACAGTACG"
-pattern = "CAGAGAG"
-# 考试时可能要注意Bad Character表包括T=8
+pattern = "GCAGAGAG"
+# 考试时要注意Bad Character和Good Suffix表字符或者前后缀找不到了就是填m
+print(text)
+print(pattern)
+index = boyer_moore_search(text, pattern)
+print(f"Pattern found at index: {index}")
 
-# text = "HERE IS A SIMPLE EXAMPLE"
-# pattern = "EXAMPLE"
-
+text = "HERE IS A SIMPLE EXAMPLE"
+pattern = "EXAMPLE"
+print(text)
+print(pattern)
 index = boyer_moore_search(text, pattern)
 print(f"Pattern found at index: {index}")

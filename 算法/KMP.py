@@ -21,12 +21,32 @@ def pre_kmp(x: str, kmpNext: list[int]) -> None:
 
 # 测试代码
 if __name__ == '__main__':
-    # pattern = "GCAGAGAG"
-    # pattern = "GCAGCAG"
-    pattern = "GCAGCTA"
- 
-
+    pattern = "GCAGCTA "
     m = len(pattern)
-    kmpNext_table = [-1] * (m + 1)  # 初始化 next 数组，多一位以匹配 C 语言的数组下标
+    kmpNext_table = [-1] * (m + 1)  # 初始化 next 数组，多一位以匹配数组下标
+    pre_kmp(pattern, kmpNext_table)
+    print( pattern, "KMP Next 表:", kmpNext_table[:-1])  # 去掉最后一位冗余
+
+    pattern = "GCAGCAG "
+    m = len(pattern)
+    kmpNext_table = [-1] * (m + 1)  # 初始化 next 数组，多一位以匹配数组下标
+    pre_kmp(pattern, kmpNext_table)
+    print( pattern, "KMP Next 表:", kmpNext_table[:-1])  # 去掉最后一位冗余
+
+    pattern = "GCAGAGAG "
+    m = len(pattern)
+    kmpNext_table = [-1] * (m + 1)  # 初始化 next 数组，多一位以匹配数组下标
+    pre_kmp(pattern, kmpNext_table)
+    print( pattern, "KMP Next 表:", kmpNext_table[:-1])  # 去掉最后一位冗余
+
+    pattern = "abaabc "
+    m = len(pattern)
+    kmpNext_table = [-1] * (m + 1)  # 初始化 next 数组，多一位以匹配数组下标
+    pre_kmp(pattern, kmpNext_table)
+    print( pattern, "KMP Next 表:", kmpNext_table[:-1])  # 去掉最后一位冗余
+
+    pattern = "GCAGCAG "
+    m = len(pattern)
+    kmpNext_table = [-1] * (m + 1)  # 初始化 next 数组，多一位以匹配数组下标
     pre_kmp(pattern, kmpNext_table)
     print( pattern, "KMP Next 表:", kmpNext_table[:-1])  # 去掉最后一位冗余
