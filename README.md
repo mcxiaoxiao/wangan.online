@@ -27,4 +27,12 @@
 - 2025/8/25 开始整理 为让后辈不再为整理资料苦恼 为消灭信息差而奋斗 【笨小狗也要创造奇迹！】
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE4WWSR48"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-PXE4WWSR48');
+</script>
