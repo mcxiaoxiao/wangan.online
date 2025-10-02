@@ -2,6 +2,8 @@
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/10e51ed0-59d2-4b5c-8f69-76ebd5dd70a9" />
   
 # HIT837 三科答题手册
+我至今认为做笔记和听课是低效行为，所以本手册有可能是我学生时代第一个也是最后一个自愿做的笔记本。希望这能帮大家免于重复整理，并以这种传承开源精神的形式结束我的8年大型应试工程
+
 </div>
 
 ## 📚 文档结构
