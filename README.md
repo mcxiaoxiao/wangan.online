@@ -18,7 +18,7 @@
 - 算法 
   - `KMP.py` KMP算法python实现 含例子可以当例题
   - `BM.py` BM算法python实现 含例子可以当例题
-  - `PPT` WM NATIVE-BAYES SVM分类算法\KMP BM匹配算法
+  - `PPT` kmeans NATIVE-BAYES 决策树分类算法\KMP BM AC WM匹配算法
 - 真题
 - 招生信息
   - 复试名单
