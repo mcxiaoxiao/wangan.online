@@ -1,7 +1,15 @@
 <div align=center>
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/10e51ed0-59d2-4b5c-8f69-76ebd5dd70a9" />
   
-# HIT837 三科答题手册
+# HIT837 三科答题手册 
+
+
+我至今认为做笔记和听课是低效行为，所以本手册有可能是我学生时代第一个也是最后一个自愿做的笔记本。希望这能帮大家免于重复整理，并以这种传承开源精神的美好形式结束持续8年的大型应试工程 
+
+[<kbd>WORD版</kbd>](https://lxhom.github.io/GitHubCopy/demo?0) [<kbd>PDF版</kbd>](https://lxhom.github.io/GitHubCopy/demo?0)  [<kbd>在线知识库</kbd>](https://lxhom.github.io/GitHubCopy/demo?0)
+
+
+
 </div>
 
 ## 📚 文档结构
@@ -27,4 +35,12 @@
 - 2025/8/25 开始整理 为让后辈不再为整理资料苦恼 为消灭信息差而奋斗 【笨小狗也要创造奇迹！】
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE4WWSR48"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-PXE4WWSR48');
+</script>
