@@ -4,7 +4,9 @@
 # HIT837 三科答题手册 
 
 
-我至今认为做笔记和听课是低效行为，所以本手册有可能是我学生时代第一个也是最后一个自愿做的笔记本。希望这能帮大家免于重复整理，并以这种传承开源精神的美好形式结束持续8年的大型应试工程 [<kbd>WORD</kbd>](https://lxhom.github.io/GitHubCopy/demo?0)  [<kbd>在线知识库</kbd>](https://lxhom.github.io/GitHubCopy/demo?0)
+我至今认为做笔记和听课是低效行为，所以本手册有可能是我学生时代第一个也是最后一个自愿做的笔记本。希望这能帮大家免于重复整理，并以这种传承开源精神的美好形式结束持续8年的大型应试工程 
+
+[<kbd>WORD版</kbd>](https://lxhom.github.io/GitHubCopy/demo?0) [<kbd>PDF版</kbd>](https://lxhom.github.io/GitHubCopy/demo?0)  [<kbd>在线知识库</kbd>](https://lxhom.github.io/GitHubCopy/demo?0)
 
 
 
