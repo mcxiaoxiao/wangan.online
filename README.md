@@ -1,46 +1,13 @@
 <div align=center>
-<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/10e51ed0-59d2-4b5c-8f69-76ebd5dd70a9" />
-  
-# HIT837 三科答题手册 
+<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/c8851925-7d64-4098-8bc5-128c86786c0d" />
 
 
-我至今认为做笔记和听课是低效行为，所以本手册有可能是我学生时代第一个也是最后一个自愿做的笔记本。希望这能帮大家免于重复整理，并以这种传承开源精神的美好形式结束持续8年的大型应试工程 
+# HIT837 三科答题手册 在线知识库
 
-[<kbd>WORD版</kbd>](https://lxhom.github.io/GitHubCopy/demo?0) [<kbd>PDF版</kbd>](https://lxhom.github.io/GitHubCopy/demo?0)  [<kbd>在线知识库</kbd>](https://lxhom.github.io/GitHubCopy/demo?0)
+信安网安自命题考研知识库，可以提交哈工大网安837考纲外内容
 
-
-
-</div>
-
-## 📚 文档结构
-- `HIT837三科答题手册.docx` docx源文件
-- `HIT837三科答题手册.pdf` pdf版
-- 算法 
-  - `KMP.py` KMP算法python实现 含例子可以当例题
-  - `BM.py` BM算法python实现 含例子可以当例题
-  - `PPT` kmeans NATIVE-BAYES 决策树分类算法\KMP BM AC WM匹配算法
-- 真题
-- 招生信息
-  - 复试名单
-  - 复试成绩单
-  - 拟录取名单
-
-更多资料详见[guoJohnny/-837-](https://github.com/guoJohnny/-837-)
+[提交PR或帮助维护](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)
 
 ## 🛠 更新动态
-- 2025/12/21 考试
-- 2025/9/30 考纲、算法ppt更新（26考纲pdf+考点csv+决策树）
-- 2025/8/30 算法更新 BM和KMP的python实现
-- 2025/8/25 真题更新（更新25真题 感谢[试卷一书](https://blog.csdn.net/m0_65416885?type=blog)）
-- 2025/8/25 开始整理 为让后辈不再为整理资料苦恼 为消灭信息差而奋斗 【笨小狗也要创造奇迹！】
+- 2025/10/4 README
 
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE4WWSR48"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PXE4WWSR48');
-</script>
