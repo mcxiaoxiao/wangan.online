@@ -1,5 +1,5 @@
 <div align=center>
-<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/c8851925-7d64-4098-8bc5-128c86786c0d" />
+<img width="100%" height="300" alt="image" src="https://github.com/user-attachments/assets/c8851925-7d64-4098-8bc5-128c86786c0d" />
   
 # HIT837 三科答题手册 在线知识库
 
