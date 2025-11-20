@@ -11,6 +11,6 @@
 </div>
 
 ## 🛠 更新动态
-- 2025/10/5 安装jieba库和分词器优化搜索插件（mkdoc默认不安装jieba）
+- 2025/10/5 jieba库和分词器优化搜索、SEO优化 pip install jieba pip install mkdocs-meta-descriptions-plugin
 - 2025/10/4 README
 
