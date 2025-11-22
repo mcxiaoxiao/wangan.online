@@ -14,3 +14,4 @@
 - 2025/10/5 jieba库和分词器优化搜索、SEO优化 pip install jieba pip install mkdocs-meta-descriptions-plugin
 - 2025/10/4 README
 
+<img width="131" height="42" alt="Written-By-Human-Not-By-AI-Badge-black" src="https://github.com/user-attachments/assets/363da45c-a068-49d4-9848-337f12005d3d" />
