@@ -1,0 +1,106 @@
+site_name: 网安在线考研知识库
+site_url: https://mcxiaoxiao.github.io/HIT837-Book-of-Answer
+nav:
+  - 首页: 
+    - HIT837三科答题手册: index.md
+
+  - 信息安全: 
+    - 信息安全前言: 信安基础/0.md
+    - 信息安全的基本概念:
+      - OSI: 信安基础/1.md
+    - 密码学基础:
+      - OSI: 信安基础/1.md
+    - 身份认证与访问控制:
+      - OSI: 信安基础/1.md
+    - 计算机病毒与网络入侵:
+      - OSI: 信安基础/1.md
+    - 防火墙入侵检测安全传输协议:
+      - OSI: 信安基础/1.md
+    - 安全风险管理与法律法规:
+      - OSI: 信安基础/1.md
+  - 网络安全: 
+    - 网络安全前言: 网安基础/0.md
+  - 计算机网络: 
+    - 计算机网前言: 计算机网络/0.md
+  - 开放论坛: https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions
+
+
+theme:
+  name: material
+  logo: logo.png
+  favicon: logo.png
+  language: zh
+  features:
+    - navigation.tabs
+    - search.suggestions
+    - search.highlight
+    - navigation.top
+    - content.tooltips
+    - content.footnote.tooltips
+    - navigation.footer
+
+  icon:
+    admonition:
+      warning: material/plus-circle-multiple-outline
+
+  palette:
+    - primary: white
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+
+repo_url: https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/tree/page
+repo_name: 编辑
+copyright: Copyright &copy; <a href="https://github.com/mcxiaoxiao/HIT837-Book-of-Answer" target="_blank">HIT837-Book-of-Answer</a> 网安在线考研知识库 🎓 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 本页至今已助力 <span id="busuanzi_value_page_pv"></span> 次有意义的探索，距离实现消灭一切网安备考信息差的愿景更进一步！ <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE4WWSR48"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-PXE4WWSR48'); </script>   </br>  <img width="131" height="42" alt="image" src="https://github.com/user-attachments/assets/241fb14e-f968-4a31-a256-06037ba057ec" />
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mcxiaoxiao/HIT837-Book-of-Answer
+    - icon: fontawesome/brands/google-scholar
+      link: https://scholar.google.com/citations?user=a4cUnzEAAAAJ
+
+plugins:
+  - search:
+      lang: zh
+      jieba_dict: dict.txt.big
+  - tags
+  - meta-descriptions:
+      enable_checks: true
+      min_length: 20      # Minimum character count
+      max_length: 500     # Maximum (SEO recommended)
+      trim: true          # Auto-trim if exceeded
+
+markdown_extensions: 
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+
+extra:
+  generator: false
