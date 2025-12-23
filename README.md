@@ -4,4 +4,4 @@
 # 资料库目录
 - [HIT837-Book-of-Answer](https://github.com/mcxiaoxiao/wangan.online/tree/HIT837-Book-of-Answer) 哈尔滨工业大学网络与信息安全基础（837）
  
-欢迎创建更多网安考研相关资料
+欢迎创建更多网安考研相关资料库
