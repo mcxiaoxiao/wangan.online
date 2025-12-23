@@ -1,4 +1,4 @@
-HIT837-Book-of-Answer 社区行为准则引用自 [The Ruby Community Conduct Guideline](https://www.ruby-lang.org/en/conduct/) 。
+wangan.online 社区行为准则引用自 [The Ruby Community Conduct Guideline](https://www.ruby-lang.org/en/conduct/) 。
 
 - 参与者应宽容对待反对意见。
 
