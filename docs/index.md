@@ -143,7 +143,7 @@ transform: translateY(0);
 
     ---
 
-    在 :octicons-git-branch-16:page分支 提交PR，帮助优化或扩充这个公益且开源的在线知识库的内容。
+    在 :octicons-git-branch-16:page 分支 提交PR，帮助优化或扩充这个公益且开源的在线知识库的内容。
     
     [:octicons-arrow-right-24: 提交 Pull Request](#)
 
@@ -155,7 +155,7 @@ transform: translateY(0);
 -   :material-file-document-plus:{ .lg .middle } __以物易物__
 
     ---
-    在 :octicons-git-branch-16:main分支 提交PR，上传您认为质量不错的备考资料。
+    在 :octicons-git-branch-16:HIT837-Book-of-Answer 分支 提交PR，上传您认为质量不错的备考资料。
 
     [:octicons-arrow-right-24: 提交 Pull Request](#)
 
