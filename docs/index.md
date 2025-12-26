@@ -35,7 +35,7 @@ transform: translateY(0);
 }
 </style>
 <h1><b> HIT837三科答题手册 · 网安在线考研知识库</b></h1>
-<img width="100%" alt="image" src="hit837.png" />
+<img width="100%" alt="image" src="img/hit837.png" />
 </div>
 
 ## 资源索引
@@ -143,7 +143,7 @@ transform: translateY(0);
 
     ---
 
-    在 :octicons-git-branch-16:page 分支 提交PR，帮助优化或扩充这个公益且开源的在线知识库的内容。
+    在 :octicons-git-branch-16:page分支 提交PR，帮助优化或扩充这个公益且开源的在线知识库的内容。
     
     [:octicons-arrow-right-24: 提交 Pull Request](#)
 
@@ -155,7 +155,7 @@ transform: translateY(0);
 -   :material-file-document-plus:{ .lg .middle } __以物易物__
 
     ---
-    在 :octicons-git-branch-16:HIT837-Book-of-Answer 分支 提交PR，上传您认为质量不错的备考资料。
+    在 :octicons-git-branch-16:main分支 提交PR，上传您认为质量不错的备考资料。
 
     [:octicons-arrow-right-24: 提交 Pull Request](#)
 
@@ -167,7 +167,7 @@ transform: translateY(0);
 
 </div>
 
-## 编辑和支持  <img width="75" height="25" alt="Written-By-Human-Not-By-AI-Badge-black" src="Written-By-Human-Not-By-AI-Badge-black.png" />
+## 编辑和支持  <img width="75" height="25" alt="Written-By-Human-Not-By-AI-Badge-black" src="img/Written-By-Human-Not-By-AI-Badge-black.png" />
 
 在408一统计算机考研的当下维护一个网安自命题主题的小众考研知识库还需诸君支持 ~ 如果您喜欢本项目或愿意拯救世界的话，欢迎 [提交 Pull Request](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2) 或 [成为collaborator](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)。您的PR可以 创建/删除/修改 仓库内的任何 文件/文件夹/代码。网站可以提交哈工大837考纲外内容（比如别的学校的），但是请以和现有手册相同的文档结构组织页面。
 

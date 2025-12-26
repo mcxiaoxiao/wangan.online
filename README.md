@@ -1,8 +1,17 @@
-<img width="1279" height="411" alt="logob" src="https://github.com/user-attachments/assets/e5550f41-ab6a-4f34-9ed0-ed79bf4a2e2c" />
+<div align=center>
+<!-- <img width="100%" height="300" alt="image" src="https://github.com/user-attachments/assets/c8851925-7d64-4098-8bc5-128c86786c0d" /> -->
 
-# wangan.online是一个 共建、精准、共享 的网络安全自命题考研应试仓库
 
-## 资料库目录
-- [HIT837-Book-of-Answer](https://github.com/mcxiaoxiao/wangan.online/tree/HIT837-Book-of-Answer) ：哈尔滨工业大学网络与信息安全基础（837）
- 
-欢迎创建更多网安考研相关资料库
+# 网络与信息安全基础在线知识库
+
+
+可以提交哈工大网安837考纲外内容 [提交PR或帮助维护](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)
+
+<img width="131" height="42" alt="Written-By-Human-Not-By-AI-Badge-black" src="https://github.com/user-attachments/assets/363da45c-a068-49d4-9848-337f12005d3d" />
+</div>
+
+## 🛠 更新动态
+- 2025/10/5 jieba库和分词器优化搜索、SEO优化 pip install jieba pip install mkdocs-meta-descriptions-plugin
+- 2025/10/4 README
+
+
