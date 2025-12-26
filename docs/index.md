@@ -117,10 +117,10 @@ transform: translateY(0);
 离线word文档包括在线知识库中所有有关837的内容，覆盖网安信安全部章节(1)；0基础/非科班友好，120+辅助理解的标注(2)和表格(3)；内容详略得当，约6万字，重点特别标记(4)。可以存在自己的设备里或打印出来，方便直接标注笔记和考前翻看。
 { .annotate }
 
-1.  ![Image title](hit1.png){ loading=lazy }
-2.  ![Image title](hit2.png){ loading=lazy }
-3.  ![Image title](hit3.png){ loading=lazy }
-4.  ![Image title](hit4.png){ loading=lazy }
+1.  ![Image title](img/hit1.png){ loading=lazy }
+2.  ![Image title](img/hit2.png){ loading=lazy }
+3.  ![Image title](img/hit3.png){ loading=lazy }
+4.  ![Image title](img/hit4.png){ loading=lazy }
 
 
 此处提供三种获取方式[^4]：**付费（132￥） / 参与修订（免费） / 以物易物（免费）** 
