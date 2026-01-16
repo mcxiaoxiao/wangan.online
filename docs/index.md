@@ -155,7 +155,7 @@ transform: translateY(0);
 -   :material-file-document-plus:{ .lg .middle } __以物易物__
 
     ---
-    在 :octicons-git-branch-16:main分支 提交PR，上传您认为质量不错的备考资料。
+    在 :octicons-git-branch-16:HIT837-Book-of-Answer分支 提交PR，上传您认为质量不错的备考资料。
 
     [:octicons-arrow-right-24: 提交 Pull Request](#)
 
