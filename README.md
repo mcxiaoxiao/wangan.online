@@ -5,7 +5,7 @@
 # 网络与信息安全基础在线知识库
 
 
-可以提交哈工大网安837考纲外内容 [提交PR或帮助维护](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)
+欢迎提交任何网安考研相关内容 [提交PR或帮助维护](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)
 
 <img width="131" height="42" alt="Written-By-Human-Not-By-AI-Badge-black" src="https://github.com/user-attachments/assets/363da45c-a068-49d4-9848-337f12005d3d" />
 </div>
