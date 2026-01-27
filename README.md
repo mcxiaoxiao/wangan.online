@@ -7,7 +7,10 @@
 
 欢迎提交任何网安考研相关内容 [提交PR或帮助维护](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)
 
-![GitHub repo size](https://img.shields.io/github/repo-size/mcxiaoxiao/wangan.online.svg?style=flat-square)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/mcxiaoxiao/wangan.online.svg)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/mcxiaoxiao/wangan.online.svg)
+![GitHub contributors](https://img.shields.io/github/contributors/mcxiaoxiao/wangan.online.svg)
 
 
 
