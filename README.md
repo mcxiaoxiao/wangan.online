@@ -7,9 +7,9 @@
 
 # HIT837 Book of Answer
 
-![GitHub repo size](https://img.shields.io/github/repo-size/mcxiaoxiao/HIT837-Book-of-Answer.svg)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/mcxiaoxiao/HIT837-Book-of-Answer.svg)
-![GitHub contributors](https://img.shields.io/github/contributors/mcxiaoxiao/HIT837-Book-of-Answer)
+![GitHub repo size](https://img.shields.io/github/repo-size/mcxiaoxiao/wangan.online.svg)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/mcxiaoxiao/wangan.online.svg)
+![GitHub contributors](https://img.shields.io/github/contributors/mcxiaoxiao/wangan.online.svg)
 
 相关资源索引：[在线三科答题手册](https://mcxiaoxiao.github.io/HIT837-Book-of-Answer) | [备考交流](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions) | [guoJohnny学长的资料库](https://github.com/guoJohnny/-837-) | [计算学部](https://computing.hit.edu.cn/11474/list.htm) | [哈工大SSE](https://sse.hit.edu.cn/t/#/main/home) | [Annas-Archive](https://annas-archive.li/) | [Z-Library](https://zh.z-library.sk/)
 
