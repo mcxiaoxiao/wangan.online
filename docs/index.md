@@ -58,7 +58,7 @@ transform: translateY(0);
 
 </div>
 
-仓库资源
+其它资源
 
 <div class="grid" markdown>
 
@@ -78,6 +78,9 @@ transform: translateY(0);
 { .card }
 
 [:simple-github: guoJohnny 资料库](https://github.com/guoJohnny/-837- "跳转到 GitHub repo")
+{ .card }
+
+[:material-book-open-outline: 复试资料](/HIT837-Book-of-Answer/复试/0/ "哈工大计算学部复试相关资料")
 { .card }
 </div>
 
@@ -133,9 +136,9 @@ transform: translateY(0);
 
     扫描收款二维码支付 CNY 132 元，复制微信支付编号。
     
-    [:material-qrcode-scan: 微信扫码支付](# "点击后会打开二维码图片，扫码付款后微信搜索微信支付可以找到订单信息")
+    [:material-qrcode-scan: 微信扫码支付](/HIT837-Book-of-Answer/img/132.jpg "点击后会打开二维码图片，扫码付款后微信搜索微信支付可以找到订单信息")
     
-    发送邮件到orlosziming@163.com 标题为：`付费999999999999`（微信支付编号，没有空格）1分钟内自动核验并发送文件，留意收件箱。
+    发送邮件到orlosziming@163.com 标题为：`付费999999999999`（支付编号）1分钟内自动核验并发送文件，留意收件箱。
 
     [:octicons-arrow-right-24: 发送邮件](#)
 

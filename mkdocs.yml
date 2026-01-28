@@ -3,7 +3,6 @@ site_url: https://mcxiaoxiao.github.io/HIT837-Book-of-Answer
 nav:
   - 首页: 
     - HIT837三科答题手册: index.md
-
   - 信息安全: 
     - 信息安全前言: 信安基础/0.md
     - 信息安全的基本概念:
@@ -18,11 +17,14 @@ nav:
       - OSI: 信安基础/1.md
     - 安全风险管理与法律法规:
       - OSI: 信安基础/1.md
-  - 网络安全: 
+  - 网络安全:
     - 网络安全前言: 网安基础/0.md
   - 计算机网络: 
     - 计算机网前言: 计算机网络/0.md
+  - 复试资料: 
+    - 哈工大计算学部: 复试/0.md
   - 开放论坛: https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions
+
 
 
 theme:
