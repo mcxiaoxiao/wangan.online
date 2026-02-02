@@ -5,17 +5,19 @@
 # 网络与信息安全基础在线知识库
 
 
+<p align="center">
+  <a href="https://github.com/mcxiaoxiao/wangan.online/tree/HIT837-Book-of-Answer">
+    <img src="https://img.shields.io/badge/哈工大-网安837专业课资料-blue?style=for-the-badge" alt="网安837专业课资料" height="80">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/mcxiaoxiao/wangan.online/tree/HIT-CS-Reexam">
+    <img src="https://img.shields.io/badge/哈工大-计算学部复试资料-blue?style=for-the-badge" alt="计算学部复试资料" height="80">
+  </a>
+</p>
+
+
 欢迎提交任何网安考研相关内容 [提交PR或帮助维护](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)
 
-
-![GitHub repo size](https://img.shields.io/github/repo-size/mcxiaoxiao/wangan.online.svg)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/mcxiaoxiao/wangan.online.svg)
-![GitHub contributors](https://img.shields.io/github/contributors/mcxiaoxiao/wangan.online.svg)
-
-
-
-## 🛠 更新动态
-- 2025/10/5 jieba库和分词器优化搜索、SEO优化 pip install jieba pip install mkdocs-meta-descriptions-plugin
-- 2025/10/4 README
 
 
