@@ -174,6 +174,11 @@ transform: translateY(0);
 
 在408一统计算机考研的当下维护一个网安自命题主题的小众考研知识库还需诸君支持 ~ 如果您喜欢本项目或愿意拯救世界的话，欢迎 [提交 Pull Request](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2) 或 [成为collaborator](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)。您的PR可以 创建/删除/修改 仓库内的任何 文件/文件夹/代码。网站可以提交哈工大837考纲外内容（比如别的学校的），但是请以和现有手册相同的文档结构组织页面。
 
+!!! Warning "Tips"
+    - 欢迎修改和再分发。
+    - 欢迎推广和传播。
+    - 所有来自guoJohnny资料库的内容 及 HIT837三科答题手册 不可用于任何商业用途。
+    - 不可改成闭源再分发。
 
 ## 贡献者列表
 
