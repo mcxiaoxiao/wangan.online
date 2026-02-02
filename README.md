@@ -37,7 +37,7 @@
 
 
 ## 文档结构
-- `HIT837三科答题手册.docx` docx源文件
+
 - 算法 
   - `KMP.py` KMP算法python实现 含例子可以当例题
   - `BM.py` BM算法python实现 含例子可以当例题
