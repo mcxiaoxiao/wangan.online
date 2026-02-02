@@ -15,6 +15,9 @@
     <img src="https://img.shields.io/badge/哈工大-计算学部复试资料-blue?style=for-the-badge" alt="计算学部复试资料" height="80">
   </a>
 </p>
+<p align="center">
+  🎯 消灭一切网安考研信息差
+</p>
 
 
 欢迎提交任何网安考研相关内容 [提交PR或帮助维护](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)
