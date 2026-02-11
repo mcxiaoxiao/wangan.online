@@ -8,8 +8,6 @@
 <img src="./image/dbs.png" width="700">
 
 
-
-
 课程习题地址：
 
 - [哈工大战德臣数据库系统（上）MOOC课程+习题](https://www.icourse163.org/course/HIT-1001516002?tid=1470930448)
