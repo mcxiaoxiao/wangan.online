@@ -22,6 +22,8 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 
 - 网安考研开放论坛
 
+- 真实且经过实践检验（尽可能避免AI生成）的靠谱资料
+
 致力于为网安考生提供足够全面且精准的备考资料，消灭网安考研信息差。
 
 
@@ -63,6 +65,12 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 - 提供知识点总结和答题技巧，而非完整的教材内容
 
 - 建议结合官方教材进行系统复习
+
+
+## 项目架构
+
+[wangan.online](https://mcxiaoxiao.github.io/wangan.online/) 是一个基于 GitHub Pages 的静态网站，所有内容均存储在 GitHub 仓库中，使用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 构建，CDN 由 Cloudflare 提供，暂无中国大陆镜像。但有美国及中国大陆周边（香港、台湾、日本、新加坡、韩国等）加速节点。
+
 
 
 ## 参与贡献
