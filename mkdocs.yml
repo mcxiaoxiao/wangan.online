@@ -2,8 +2,9 @@ site_name: 网安在线考研知识库
 site_url: https://mcxiaoxiao.github.io/HIT837-Book-of-Answer
 nav:
   - 首页: 
-    - 哈工大-HIT837三科答题手册: index.md
-  - 哈工大:
+    - Getting Started: index.md
+    - 哈尔滨工业大学: hit837.md
+  - 哈工大837:
     - 信息安全: 
       - 信息安全前言: 信安基础/0.md
       - 信息安全的基本概念:
