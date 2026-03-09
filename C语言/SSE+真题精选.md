@@ -1,7 +1,7 @@
 > Tips：以下题目精选自哈工大SSE课后题、SSE其它中难题、往年真题，基本可以反映哈工大计算学部复试编程题的实际难度，可以作为复试编程的练习材料，答案仅供参考。**复试编程题判分时若运行失败会基于语义给分，只写了hello world也会给分；代码不允许粘贴但是可以复制到codeblock运行&调试。**
 
 # 0. 经典的链表
-考试不会让大家写，改错题也一般不会在这里刁难大家，只是先复习/熟悉一下：
+编程题一般不会让大家写，改错题也不会在这里太刁难大家，但是有必要先熟悉一下：
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,19 +18,15 @@ typedef struct Node {
 // 2. 创建新节点（链表操作的基础工具函数）
 ListNode* createNode(int data) {
     ListNode *node = (ListNode*)malloc(sizeof(ListNode));
-    if (node == NULL) { // 内存分配失败判断（工业级代码必备）
-        printf("内存分配失败！\n");
-        exit(1);
-    }
     node->data = data;
     node->next = NULL;
-    return node;
+    return node; // 返回值类型为 ListNode*，是一个指向新节点的指针
 }
 
 // 3. 初始化链表（创建头节点，空链表）
 LinkedList initList() {
-    // 头节点：不存储有效数据，仅用于简化操作（经典设计）
-    ListNode *head = createNode(-1); 
+    // 头节点：不存储有效数据，仅用于简化操作（经典设计），即有next而没有data
+    ListNode *head = createNode(-1); //*head是头节点指针，head->next是第一个有效节点指针
     return head;
 }
 
@@ -114,7 +110,7 @@ void destroyList(LinkedList head) {
     while (cur != NULL) {
         ListNode *temp = cur;
         cur = cur->next;
-        free(temp);
+        free(temp); // free掉的是一个节点指针，不是节点本身
     }
     printf("链表已销毁！\n");
 }
@@ -638,6 +634,55 @@ int main() {
     return 0;
 }
 ```
+# 12. 交换最大最小数
+输入一个数n，然后输入n个数值各不相同，调换数组中最大和最小的两个数，然后输出。
+输入描述：
+测试数据有多组，输入n(1<=n<=20)，接着输入n个数。
+输出描述：
+对于每组输入,输出交换后的结果。
+示例1
+输入：
+2
+1 3
+输出：
+3 1
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a;
+    scanf("%d",&a);
+    int arr[a];
+    for (int i=0; i<a; i++) {
+        scanf("%d",&arr[i]);
+        arr[i];
+    }
+
+    int max=0,min=100000,maxidx=0,minidx=0;
+
+    for (int i=0; i<a; i++) {
+        if (arr[i]>max) {
+            max=arr[i];
+            maxidx=i;
+        }
+        if (arr[i]<min) {
+            min=arr[i];
+            minidx=i;
+        }
+    }
+
+    arr[maxidx] = min;
+    arr[minidx] = max;
+
+    for (int i=0; i<a; i++) {
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
+```
+
 
 # A 两数相加
 哈工大计算学部复试机试2024改错题，来自[Leetcode 2](https://leetcode.cn/problems/add-two-numbers)，以下代码是正确的：
@@ -662,7 +707,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
 
         // 初始化结果链表（第一次进入循环时）
         if (!head) {
-            head = tail = malloc(sizeof(struct ListNode)); // 分配头节点内存
+            head = tail = malloc(sizeof(struct ListNode)); // 分配头、尾节点内存
             tail->val = sum % 10; // 取余数作为当前位结果（如19%10=9）
             tail->next = NULL;    // 尾节点next置空
         } else {
@@ -673,7 +718,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
             tail->next = NULL;                            // 新尾节点next置空
         }
 
-        carry = sum / 10; // 更新进位（如19/10=1，09/10=0）
+        carry = (int) (sum / 10); // 更新进位（如19/10=1，09/10=0）
         // 链表指针后移（已遍历完的链表不再移动）
         if (l1) {
             l1 = l1->next;
