@@ -230,7 +230,7 @@
 
 - 在HIT837-Book-of-Answer仓库里加入来自lizhihang1995/HIT-CS-Reexam的哈工大计算机复试笔记和来自hakulamtta/HIT-C-language-review的c语言文件
 
-- 结合网上资源总结的复试流程和资料完善README
+- 结合网上资源总结的复试流程和资料完善README.md
 
 【2023.7.22 更新】 lizhihang
 
