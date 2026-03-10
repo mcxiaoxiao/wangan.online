@@ -1,4 +1,20 @@
-> Tips：以下题目精选自哈工大SSE课后题、SSE其它中难题、往年真题，基本可以反映哈工大计算学部复试编程题的实际难度，可以作为复试编程的练习材料，答案仅供参考。**复试编程题判分时若运行失败会基于语义给分，只写了hello world也会给分；代码不允许粘贴但是可以复制到codeblock运行&调试。**
+# 序言
+
+> Rule 3: Fancy algorithms are slow when n is small, and n is usually small. Fancy algorithms have big constants. Until you know that n is frequently going to be big, don't get fancy. (Even if n does get big, use Rule 2 first.)
+> Rule 4: Fancy algorithms are buggier than simple ones, and they're much harder to implement. Use simple algorithms as well as simple data structures.
+
+**来源**：Rob Pike，Unix 先驱、Go 语言创始人，出自 *Notes on Programming in C*（1989）与 *Rob Pike's 5 Rules of Programming*。
+
+---
+
+请原谅我在考研资料中有时融入一些主观表达，但在讨论算法学习与工程实践时，仅靠客观罗列知识，往往难以触及真正重要的问题。
+
+我在中学阶段便主动选择放弃算法竞赛，这不仅是因为我对和人竞争抱有抵触，更是出于对现实与未来的理性考量。在我看来，算法竞赛与小学奥数颇为相似：它擅长在封闭、理想化的题目里，用精巧的技巧追求理论上的最优解，却常常与真实工程场景严重脱节。长期沉浸其中，很容易让人沉迷于花哨的算法、极致的复杂度优化，反而忘掉了工程里最朴素的真理：现实场景中数据规模通常有限，简单、稳定、易维护、不易出错的方案，远比看上去高深的算法更有价值。过度崇拜竞赛思维，本质上是把工程能力窄化为解题技巧，也让编程远离了“解决真实问题”这一初心。
+
+当然，参与竞赛本身无可厚非，只是我更希望表达这样一种观点：**比堆砌复杂度更重要的，是理解问题、权衡取舍、做出真正适合场景的设计**。令我欣慰的是，哈工大的复试并没有把C语言题目设置得过分不切实际、刻意追求复杂，而是更看重基础、逻辑与工程素养。在广阔的计算机世界里，比“更复杂、更巧妙”更有意义的事情，还有太多太多太多。
+
+
+> Tips：以下题目精选自哈工大SSE课后题、SSE其它中/难题、往年真题，基本可以反映哈工大计算学部复试编程题的实际难度，可以作为复试编程的练习材料，答案仅供参考。**复试编程题判分时若运行失败会基于语义给分，只写了hello world也会给分；代码不允许粘贴但是可以复制到codeblock运行&调试。**
 
 # 0. 经典的链表
 编程题一般不会让大家写，改错题也不会在这里太刁难大家，但是有必要先熟悉一下：
@@ -694,6 +710,131 @@ int main() {
 6
 输出：
 6
+
+```c
+#include <stdio.h>
+
+int isw(int in){
+    int ans = 0;
+    for (int i=1; i<in; i++) {
+        if (in%i==0) {
+            ans+=i;
+        }
+    }
+    if (ans == in) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+int main() {
+    int sum;
+    scanf("%d",&sum);
+    for (int i=6; i<=sum; i++) {
+        if (isw(i)) {
+            printf("%d ",i);
+        }
+    }
+    return 0;
+}
+```
+
+14. 字符串去特定字符
+描述
+输入字符串s和字符c，要求去掉s中所有的c字符，并输出结果。
+输入描述：
+测试数据有多组，每组输入字符串s和字符c。
+输出描述：
+对于每组输入,输出去除c字符后的结果。
+示例1
+输入：
+heallo
+a
+输出：
+hello
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[1000];
+    char c;
+
+    while (scanf("%s %c", s, &c) == 2) {
+        int len = strlen(s);
+        int idx = 0;
+
+        for (int i = 0; i < len; i++) {
+            if (s[i] != c) {
+                s[idx++] = s[i];
+            }
+        }
+
+        s[idx] = '\0';
+
+        printf("%s\n", s);
+    }
+
+    return 0;
+}
+
+```
+
+15. 判断三角形类型
+给定三角形的三条边，a,b,c。判断该三角形类型。
+输入描述：
+测试数据有多组，每组输入三角形的三条边。
+输出描述：
+对于每组输入,输出直角三角形、锐角三角形、或是钝角三角形。
+示例1
+输入：
+3 4 5
+输出：
+直角三角形
+```c
+/* @note 核心逻辑：根据勾股定理判断三边关系，再根据三角形内角和判断类型 */
+#include <stdio.h>
+
+// 交换两个数的函数
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    
+    int a, b, c;
+
+    // 循环读取多组输入，直到文件结束
+    while (scanf("%d %d %d", &a, &b, &c) == 3) {
+        // 第一步：对三边从小到大排序
+        // 确保 a <= b <= c
+        if (a > b) swap(&a, &b);
+        if (a > c) swap(&a, &c);
+        if (b > c) swap(&b, &c);
+        
+        // 计算平方，避免溢出用 long 类型
+        long x2 = (long)a * a;
+        long y2 = (long)b * b;
+        long z2 = (long)c * c;
+        
+        // 判断三角形类型
+        if (x2 + y2 == z2) {
+            printf("直角三角形\n");
+        } else if (x2 + y2 > z2) {
+            printf("锐角三角形\n");
+        } else {
+            printf("钝角三角形\n");
+        }
+    }
+    return 0;
+}
+```
+
 
 
 # A 两数相加
