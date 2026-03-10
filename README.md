@@ -10,12 +10,12 @@
 **↓ 资料入口 ↓**
 <p align="center">
   <a href="https://github.com/mcxiaoxiao/wangan.online/tree/HIT837-Book-of-Answer">
-    <img src="https://img.shields.io/badge/哈工大-网安837专业课资料-blue?style=for-the-badge" alt="网安837专业课资料" height="80">
+    <img src="https://img.shields.io/badge/哈工大-网安837专业课资料-blue?style=for-the-badge" alt="HIT837-Book-of-Answer网安837专业课资料" height="80">
   </a>
 </p>
 <p align="center">
   <a href="https://github.com/mcxiaoxiao/wangan.online/tree/HIT-CS-Reexam">
-    <img src="https://img.shields.io/badge/哈工大-计算学部复试资料-blue?style=for-the-badge" alt="计算学部复试资料" height="80">
+    <img src="https://img.shields.io/badge/哈工大-计算学部复试资料-blue?style=for-the-badge" alt="HIT-CS-Reexam计算学部复试资料" height="80">
   </a>
 </p>
 
