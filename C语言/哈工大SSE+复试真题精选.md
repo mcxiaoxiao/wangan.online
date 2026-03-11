@@ -14,7 +14,7 @@
 当然，参与竞赛本身无可厚非，只是我更希望表达这样一种观点：**比堆砌复杂度更重要的，是理解问题、权衡取舍、做出真正适合场景的设计**。令我欣慰的是，哈工大的复试并没有把C语言题目设置得过分不切实际、刻意追求复杂，而是更看重基础、逻辑与工程素养。在广阔的计算机世界里，比“更复杂、更巧妙”更有意义的事情，还有太多太多太多。
 
 
-> Tips：以下题目精选自哈工大SSE课后题、SSE其它中/难题、往年真题，基本可以反映哈工大计算学部复试编程题的实际难度，可以作为复试编程的练习材料，答案仅供参考。**复试编程题判分时若运行失败会基于语义给分，只写了hello world也会给分；代码不允许粘贴但是可以复制到codeblock运行&调试。**
+> Tips：以下题目精选自哈工大SSE课后题、SSE其它中/难题、往年真题，基本可以反映哈工大计算学部复试编程题的实际难度，可以作为复试编程的练习材料，答案仅供参考。**复试编程题判分时若运行失败会基于语义给分，只写了hello world也会给分；代码不允许粘贴但是可以复制到codeblock运行&调试。** 扩展材料：[SSE-C](https://www.nowcoder.com/discuss/353150336095428608) [SSE-改错-1](https://www.nowcoder.com/discuss/353150338465210368) [SSE-改错-2](https://www.nowcoder.com/discuss/353150338620399616) [SSE-改错-3](https://www.nowcoder.com/discuss/353150338934972416)
 
 # 0. 经典的链表
 编程题一般不会让大家写，改错题也不会在这里太刁难大家，但是有必要先熟悉一下：
@@ -891,3 +891,172 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     return head; // 返回结果链表头指针
 }
 ```
+# B GCD辗转相除求最大公约数
+```c
+#include<stdio.h>
+int Gdc(int a,int b);
+
+int main()
+{
+    int a,b,x;
+    scanf("%d,%d",a,b);
+    x=Gdc(a,b);
+    if(x<0)
+        printf("Input Error!\n");
+    printf("%d\n",x);
+    return 0;
+}
+
+int Gdc(int a,int b)
+{
+    if(a<=0||b<=0)
+        return -1;
+    while(a!=b);
+    {
+        if(a>b)
+            return a-b;
+        else if(b>a)
+            return b-a;
+        else
+            return a;
+    }
+}
+```
+修正：
+```c
+#include<stdio.h>
+int Gdc(int a,int b);
+
+int main()
+{
+    int a,b,x;
+    scanf("%d,%d", &a, &b);  // 修正1：添加取地址符
+    x=Gdc(a,b);
+    if(x<0)
+        printf("Input Error!\n");
+    else
+        printf("%d\n",x);  // 修正4：仅输入合法时输出结果
+    return 0;
+}
+
+int Gdc(int a,int b)
+{
+    if(a<=0||b<=0)
+        return -1;
+    while(a!=b)  // 修正2：删除 while 后的分号
+    {
+        if(a>b)
+            a = a - b;  // 修正3：更新变量而非直接返回
+        else
+            b = b - a;
+    }
+    return a;  // 循环结束时 a==b，即为最大公约数
+}
+```
+
+
+# C 数组最大最小数换位
+```c
+#include<stdio.h>
+#define ARR_SIZE 10
+void MaxMinExchange(int a[],n)
+{
+    int maxValue,minValue,maxPos,minPos;
+    int i,temp;
+    maxValue=a[0];
+    minValue=a[0];
+    for(i=0;i<n;i++)
+    {
+        if(a[i]>maxValue)
+        {
+            maxValue=a[i];
+            maxPos=i;
+        }
+        if(a[i]<minValue)
+        {
+            minValue=a[i];
+            minPos=i;
+        }
+    }
+    temp=a[maxPos];
+    a[maxPos]=a[minPos];
+    a[minPos]=temp;
+}
+int main()
+{
+    int a[ARR_SIZE],i,n;
+    printf("Input n(n<=10):");
+    scanf("%d",&n);
+    printf("Input %d Numbers:\n",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    MaxMinExchange(a[],n);
+    printf("After MaxMinExchange:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+修正：
+```c
+#include<stdio.h>
+#define ARR_SIZE 10
+
+// 修正1：补充参数n的类型
+void MaxMinExchange(int a[], int n)
+{
+    int maxValue, minValue, maxPos, minPos;
+    int i, temp;
+    maxValue = a[0];
+    minValue = a[0];
+    maxPos = 0;  // 修正2：初始化位置变量
+    minPos = 0;  // 修正2：初始化位置变量
+
+    for (i = 0; i < n; i++)
+    {
+        if (a[i] > maxValue)
+        {
+            maxValue = a[i];
+            maxPos = i;
+        }
+        if (a[i] < minValue)
+        {
+            minValue = a[i];
+            minPos = i;
+        }
+    }
+
+    // 交换最大值和最小值的位置
+    temp = a[maxPos];
+    a[maxPos] = a[minPos];
+    a[minPos] = temp;
+}
+
+int main()
+{
+    int a[ARR_SIZE], i, n;
+    printf("Input n(n<=10):");
+    scanf("%d", &n);
+    printf("Input %d Numbers:\n", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    MaxMinExchange(a, n);  // 修正3：函数调用时数组名直接传参，去掉 []
+
+    printf("After MaxMinExchange:\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+
