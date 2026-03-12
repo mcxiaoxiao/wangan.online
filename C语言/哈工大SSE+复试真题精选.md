@@ -835,32 +835,189 @@ int main() {
 }
 ```
 
-# 16
-
+# 16.  求最大值
+描述
+输入10个整数，要求输出其中的最大值。
+输入描述：
+测试数据有多组，每组10个整数。
+输出描述：
+对于每组输入,请输出其最大值（有回车）。
+示例1
+输入：
+10 22 23 152 65 79 85 96 32 1
+输出：
+max=152
 
 ```c
+#include <stdio.h>
+
+int main() {
+    int max=-100000,tmp;
+    for (int i=0; i<10; i++) {
+        scanf("%d",&tmp);
+        if(tmp>max) max = tmp;
+    }
+    
+    printf("max=%d",max);
+    
+    return 0;
+}
+```
+
+# 17. 百鸡问题
+   用小于等于n元去买100只鸡，大鸡5元/只，小鸡3元/只,还有1/3元每只的mini鸡，分别记为x只,y只,z只。编程求解x,y,z所有可能解。
+
+输入描述：
+    测试数据有多组，输入n。
+输出描述：
+    对于每组输入,请输出x,y,z所有可行解，按照x，y，z依次增大的顺序输出。
+示例1
+输入：
+40
+输出：
+x=0,y=0,z=100
+x=0,y=1,z=99
+x=0,y=2,z=98
+x=1,y=0,z=99
+
+```c
+#include <stdio.h>
+int main() {
+    //这道题有点意思的地方就是解决mini鸡1/3元每只的问题：
+    int n;
+    while (scanf("%d", &n) != EOF) {
+        for (int x = 0; x <= 3 * n / 15; x++)
+            for (int y = 0; y <= (3 * n - 15 * x) / 9; y++) {
+                int z = 100 - x - y;
+                if (z >= 0 && (x * 15 + y * 9 + z) <= 3 * n)
+                    printf("x=%d,y=%d,z=%d\n", x, y, z);
+            }
+    }
+    return 0;
+}
+```
+
+# 18. 众数
+描述
+输入20个数，每个数都在1-10之间，求1-10中的众数（众数就是出现次数最多的数，如果存在一样多次数的众数，则输出权值较小的那一个）。
+输入描述：
+测试数据有多组，每组输入20个1-10之间的数。
+输出描述：
+对于每组输入,请输出1-10中的众数。
+示例1
+输入：
+5 1 5 10 3 5 3 4 8 6 8 3 6 5 10 7 10 2 6 2 
+输出：
+5
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[21]={0}, tmp, maxidx=0;
+    for (int i=0; i<20; i++) {
+       scanf("%d",&tmp);
+       arr[tmp]++;
+    }
+    for (int i=0; i<20; i++) {
+        if (arr[i]>arr[maxidx]) {
+            maxidx = i;
+        }
+    }
+
+    printf("%d",maxidx);
+    return 0;
+}
 
 ```
 
-# 17
-
-
-```c
-
-```
-
-# 18
-
-
-```c
-
-```
-
-# 19
-
+# 19.  数字阶梯求和
+描述
+给定a和n，计算a+aa+aaa+a...a(n个a)的和。
+输入描述：
+测试数据有多组，输入a，n（1<=a<=9,1<=n<=100）。
+输出描述：
+对于每组输入,请输出结果。
+示例1
+输入：
+1 10
+输出：
+1234567900
 
 ```c
+#include <stdio.h>
+#include <string.h>
 
+// 功能：两个字符串形式的大数相加，结果存到 res 里
+// a：第一个大数  b：第二个大数  res：存储相加结果
+void add_str(char *a, char *b, char *res)
+{
+    int lenA = strlen(a);        // 取a的长度
+    int lenB = strlen(b);        // 取b的长度
+    int maxLen = lenA > lenB ? lenA : lenB; // 取较长的那个长度
+    int jinwei = 0;              // 进位，初始为0
+    int i;
+
+    // 从低位（最后一位）开始逐位相加
+    for (i = 0; i < maxLen; i++)
+    {
+        // 取a当前位数字，没有则补0
+        int digitA = (i < lenA) ? (a[lenA - 1 - i] - '0') : 0;
+        // 取b当前位数字，没有则补0
+        int digitB = (i < lenB) ? (b[lenB - 1 - i] - '0') : 0;
+
+        // 当前位总和 = a位 + b位 + 进位
+        int sum = digitA + digitB + jinwei;
+
+        res[i] = sum % 10 + '0'; // 当前位结果
+        jinwei = sum / 10;       // 新的进位
+    }
+
+    // 如果最后还有进位，直接加到结果里，jinwei是int需要加char的‘0’
+    if (jinwei > 0)
+        res[i++] = jinwei + '0';
+
+    res[i] = '\0'; // 字符串结束符
+
+    // 反转字符串，得到正确顺序
+    int left = 0, right = i - 1;
+    while (left < right)
+    {
+        char t = res[left];
+        res[left] = res[right];
+        res[right] = t;
+        left++;
+        right--;
+    }
+}
+
+int main()
+{
+    int a, n;
+    // 循环输入多组 a 和 n
+    while (scanf("%d %d", &a, &n) != EOF)
+    {
+        char ans[10000] = "0";   // 最终结果，初始为0
+        char temp[10000];        // 存放每一项：a, aa, aaa...
+        char next[10000];        // 临时存放加法结果
+
+        // 循环累加：a + aa + aaa + ... + n个a
+        for (int i = 1; i <= n; i++)
+        {
+            // 生成 i 个 a 组成的字符串，例如 i=3,a=2 → "222"
+            for (int j = 0; j < i; j++)
+                temp[j] = a + '0';
+            temp[i] = '\0'; // 字符串结束
+
+            // 累加：ans = ans + temp
+            add_str(ans, temp, next);
+            strcpy(ans, next); // 把结果复制回 ans，** strcpy 是字符串复制函数，返回值为目标字符串的指针所以不可以 ans = strcpy(ans, next);**
+        }
+
+        printf("%s\n", ans); // 输出最终答案
+    }
+    return 0;
+}
 ```
 
 
