@@ -25,11 +25,25 @@
 
 // 1. 定义经典的单向链表节点结构体
 typedef struct Node {
-    // 数据域：存储整型数据（可替换为char/结构体等）
-    int data;
-    // 指针域：指向下一个节点
-    struct Node *next;
-} ListNode, *LinkedList;
+    // ======================
+    // 数据域：存放节点的有效数据
+    // ======================
+    int data;               // 存储当前节点的数据（可以是int、char、结构体等）
+
+    // ======================
+    // 指针域：指向 下一个节点
+    // ======================
+    struct Node *next;      // 指针变量，存放下一个节点的地址
+                            // 作用：把多个节点串成一条链表
+}
+// ======================
+// 给结构体起两个别名（超级重要！）
+// ======================
+ListNode,                    // 别名1：ListNode = struct Node
+                             // 表示：一个链表节点（实体）
+
+*LinkedList;                 // 别名2：LinkedList = struct Node*
+                             // 表示：指向链表节点的指针（头指针）
 
 // 2. 创建新节点（链表操作的基础工具函数）
 ListNode* createNode(int data) {
@@ -44,6 +58,7 @@ LinkedList initList() {
     // 头节点：不存储有效数据，仅用于简化操作（经典设计），即有next而没有data
     ListNode *head = createNode(-1); //*head是头节点指针，head->next是第一个有效节点指针
     return head;
+    //由于linkedlist是指向链表节点的指针，所以返回头节点指针head
 }
 
 // 4. 尾插法添加节点（最常用的链表构建方式）
@@ -1140,6 +1155,40 @@ int mystrcmp(char s1[], char s2[]) {
 
 # 21. 采购三种肥料
 
+### 一、题目复述📝
+已知有红、黄、紫三种肥料，价格分别为**80元/袋、50元/袋、35元/袋**。
+输入经费 \(n\)（\(1000 < n < 2000\)），输出满足以下**任一条件**的所有购买方案：
+1.  紫色肥料袋数是黄色肥料袋数的 \(1/3\)（即 \(purple = yellow/3\)，且 \(yellow\) 必须是3的倍数）
+2.  黄色肥料袋数是红色肥料袋数的 \(2\) 倍（即 \(yellow = 2 \times red\)）
+
+要求：按**红、黄、紫**的顺序输出每种方案的袋数，且总花费不超过输入经费 \(n\)。
+
+
+```c
+#include <stdio.h>
+
+int main() {
+    int red, yellow, purple, budget;
+    // 正确读取经费
+    scanf("%d", &budget);
+
+    // 遍历所有可能的购买数量
+    for (red = 0; red <= budget / 80; red++) {
+        for (yellow = 0; yellow <= budget / 50; yellow++) {
+            for (purple = 0; purple <= budget / 35; purple++) {
+                // 总花费不超过预算 + 满足任一条件
+                int total = 80 * red + 50 * yellow + 35 * purple;
+                if (total <= budget && 
+                    ((purple * 3 == yellow) || (yellow == 2 * red))) {
+                    printf("%d %d %d\n", red, yellow, purple);
+                }
+            }
+        }
+    }
+    return 0;
+}
+```
+
 
 
 # A 两数相加
@@ -1364,4 +1413,252 @@ int main()
     return 0;
 }
 ```
+
+# D 发贺卡
+
+
+- 有 `n` 个同学排成一排，每人有一个分数 `rate[i]`。
+- 需满足两个条件：
+  1. 每个同学至少 1 张贺卡；
+  2. 相邻同学中，**分数更高的人** 获得的贺卡数至少比分数更低的人多 1 张。
+- 目标：计算总共需要的**最少贺卡总数**。
+
+
+原代码错误片段：
+```c
+for (i = 0; i < n; i++)
+{
+    if(i > 0 && rate[i] > rate[i - 1])
+        rate[i] = rate[i - 1] + 1;
+    else if(i==0)
+        rate[i] = 1;
+}
+```
+
+**主要问题**：
+1.  **变量名冲突**：用存储分数的 `rate` 数组直接存储贺卡数，会覆盖原始分数数据，导致后续比较错误。
+2.  **遍历方向单一**：只从左到右遍历，无法处理「右侧分数更高」的情况（例如序列 `[1, 2, 1]`，左到右会得到 `[1, 2, 1]`，但实际应满足 `[1, 2, 1]` 是对的，但如果是 `[3, 2, 1]`，左到右会得到 `[1, 1, 1]`，违反了「分数高的贺卡更多」的规则）。
+3.  **逻辑不完整**：`else if(i==0)` 只处理了第一个元素，其余元素在不满足 `rate[i] > rate[i-1]` 时没有被赋值为 1，会导致未初始化的脏数据。
+4.  **未计算总和**：代码只给每个位置赋值，没有累加得到最终的贺卡总数。
+
+
+**修正后代码（C语言）**：
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int *rate = (int*)malloc(n * sizeof(int));
+    int *cards = (int*)malloc(n * sizeof(int)); // 单独用数组存贺卡数
+
+    // 输入分数
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &rate[i]);
+        cards[i] = 1; // 每个同学至少1张贺卡
+    }
+
+    // 左到右遍历
+    for (int i = 1; i < n; i++) {
+        if (rate[i] > rate[i-1]) {
+            cards[i] = cards[i-1] + 1;
+        }
+    }
+
+    // 右到左遍历
+    for (int i = n-2; i >= 0; i--) {
+        if (rate[i] > rate[i+1] && cards[i] <= cards[i+1]) {
+            cards[i] = cards[i+1] + 1;
+        }
+    }
+
+    // 计算总和
+    int total = 0;
+    for (int i = 0; i < n; i++) {
+        total += cards[i];
+    }
+
+    printf("%d\n", total);
+
+    free(rate);
+    free(cards);
+    return 0;
+}
+```
+
+# E 链表排序
+
+
+实现一个简单的学生管理系统，学生信息包含学号（`id`）和成绩（`score`），用单链表存储。要求对链表按成绩**升序**排序（使用简单选择排序），以下代码存在指针操作相关的错误，请找出并改正。
+
+**学生链表结构定义**：
+```c
+typedef struct Student {
+    int id;
+    int score;
+    struct Student *next;
+} Stu;
+```
+
+**错误代码（待修改）**：
+```c
+// 按score升序排序链表（选择排序）
+void sortStu(Stu *head) {
+    Stu *p, *q, *min;
+    p = head->next;
+    while (p != NULL) {
+        min = p;
+        q = p->next;
+        while (q != NULL) {
+            if (q->score < min->score) {
+                min = q; // 找到分数更小的节点
+            }
+            q = q->next;
+        }
+        // 交换p和min节点的数据（错误写法）
+        int temp_score = p->score;
+        p->score = min->score;
+        min->score = temp_score;
+        
+        int temp_id = p->id;
+        p->id = min->id;
+        min->id = temp_id;
+        
+        p = p->next;
+    }
+}
+```
+
+1.  **违背链表操作设计思想**：直接交换节点数据域（`score`、`id`），而非调整指针指向来交换节点位置。这在实际链表操作中是不规范的，且当节点数据域复杂时会导致效率极低、代码冗余。
+2.  **指针边界处理缺失**：若链表为空或仅有一个节点时，代码仍会执行排序逻辑，虽结果正确但无意义，且未做边界判断。
+3.  **未考虑前驱节点指针**：若要交换链表中两个节点的位置，必须修改其前驱节点的`next`指针，当前代码完全未处理这一关键指针操作，导致无法真正调整节点在链表中的顺序。
+
+```c
+// 按score升序排序链表（选择排序，指针交换版）
+void sortStu(Stu *head) {
+    if (head == NULL || head->next == NULL) {
+        return; // 空链表或仅一个节点，无需排序
+    }
+
+    Stu *p, *q, *min, *p_prev, *min_prev, *temp;
+    p = head->next;
+    p_prev = head; // p的前驱节点
+
+    while (p != NULL) {
+        min = p;
+        min_prev = p_prev; // min的前驱节点
+        q = p->next;
+        Stu *q_prev = p; // q的前驱节点
+
+        // 遍历找到剩余链表中score最小的节点及其前驱
+        while (q != NULL) {
+            if (q->score < min->score) {
+                min = q;
+                min_prev = q_prev;
+            }
+            q_prev = q;
+            q = q->next;
+        }
+
+        // 若min不是当前p节点，交换p和min的位置（指针操作）
+        if (min != p) {
+            // 断开min节点
+            min_prev->next = min->next;
+            // 插入min到p之前
+            p_prev->next = min;
+            min->next = p;
+
+            // 更新p和p_prev，避免断链
+            temp = p;
+            p = min;
+            min = temp;
+        }
+
+        // 指针后移
+        p_prev = p;
+        p = p->next;
+    }
+}
+```
+
+
+# F n!
+
+实现一个函数，计算正整数 `n` 的阶乘 `n!`（规定 `0! = 1`），以下代码存在多处错误，请找出并改正。
+
+**错误代码（待修改）**：
+```c
+#include <stdio.h>
+
+// 计算n的阶乘
+long long factorial(int n) {
+    long long result = 1;
+    for (int i = 1; i <= n; i++) {
+        result = result * i++; // 错误1：循环变量i自增两次
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    printf("请输入一个正整数：");
+    scanf("%d", &n);
+    
+    if (n < 0) {
+        printf("输入错误！n不能为负数。\n");
+        return 0;
+    }
+    
+    long long res = factorial(n);
+    printf("%d! = %lld\n", n, res);
+    return 0;
+}
+```
+
+1. 循环变量自增错误
+- **错误位置**：`result = result * i++;`
+- **原因**：`for` 循环中已经对 `i` 执行 `i++`，循环体内又执行 `i++`，导致 `i` 每次循环自增2次，跳过部分乘数，计算结果错误。
+- **示例**：计算 `3!` 时，循环实际只执行 `i=1` 和 `i=3`，得到 `1*1*3=3`，而正确结果应为 `6`。
+
+2. 边界值 `n=0` 未正确处理
+- **错误表现**：原代码中 `factorial` 函数在 `n=0` 时，`for` 循环不执行，`result` 保持为 `1`，这一点结果正确，但代码逻辑未显式体现 `0! = 1` 的规定，且 `main` 函数未对 `n=0` 做友好提示，易让使用者误解。
+- **补充问题**：未对 `n` 过大导致的**数据溢出**做提示（如 `n>20` 时 `long long` 类型会溢出），存在潜在错误。
+
+```c
+#include <stdio.h>
+
+// 计算n的阶乘，n为非负整数
+long long factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1; // 0! = 1, 1! = 1
+    }
+    long long result = 1;
+    for (int i = 2; i <= n; i++) { // 从2开始乘，优化计算
+        result = result * i; // 修正：移除i++，避免重复自增
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    printf("请输入一个非负整数（推荐n≤20，避免溢出）：");
+    scanf("%d", &n);
+    
+    if (n < 0) {
+        printf("输入错误！n不能为负数。\n");
+        return 0;
+    }
+    
+    // 溢出提示
+    if (n > 20) {
+        printf("警告：n>20时，结果会超出long long类型范围，可能导致数据错误。\n");
+    }
+    
+    long long res = factorial(n);
+    printf("%d! = %lld\n", n, res);
+    return 0;
+}
+```
+
 
