@@ -1021,6 +1021,125 @@ int main()
 ```
 
 
+# 20. 结构体按字典序排序
+
+主要是strcmp函数的使用，strcmp函数是比较两个字符串的函数，返回值为int类型，当第一个字符串大于第二个字符串时返回一个大于0的数，当第一个字符串小于第二个字符串时返回一个小于0的数，当两个字符串相等时返回0。
+
+请使用如下定义的 `Worker` 结构体存储员工信息：
+```c
+typedef struct{
+    char name[20];   // 员工姓名
+    int score[3];    // 三门课程成绩
+    float sum;       // 三门课总分
+    float aver;      // 三门课平均分
+    int num;         // 缺席次数
+}Worker;
+```
+
+编写一个 C 语言程序，完成以下功能：
+1.  从键盘输入 **n 个员工**的完整信息（需提供输入示例）。
+2.  筛选出同时满足以下两个条件的员工：
+    -   三门课的平均成绩 **≥ 85 分**
+    -   缺席次数 **≤ 2 次**
+3.  将筛选出的员工，按照**姓名的字典序逆序**排列后输出。
+
+
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+// 定义员工结构体
+typedef struct {
+    char name[20];
+    int score[3];
+    float sum;
+    float aver;
+    int num;  // 缺席次数
+} Worker;
+
+int main() {
+    int n, i, j;
+    printf("请输入员工人数 n：");
+    scanf("%d", &n);
+    getchar();  // 吸收换行符
+
+    Worker workers[n];  // 定义员工数组
+
+    // 1. 输入员工信息
+    for (i = 0; i < n; i++) {
+        printf("\n请输入第 %d 个员工的信息：\n", i + 1);
+        printf("姓名：");
+        gets(workers[i].name); //gets函数可以读取姓名里的空格，回车（换行） 就停止，会把回车丢掉，不会存进字符串里
+        printf("三门课成绩（用空格分隔）：");
+        scanf("%d %d %d", &workers[i].score[0], &workers[i].score[1], &workers[i].score[2]);
+        printf("缺席次数：");
+        scanf("%d", &workers[i].num);
+        getchar();  // 吸收换行符
+
+        // 计算总分和平均分
+        workers[i].sum = workers[i].score[0] + workers[i].score[1] + workers[i].score[2];
+        workers[i].aver = workers[i].sum / 3.0;
+    }
+
+    // 2. 筛选满足条件的员工（平均分≥85 且 缺席次数≤2）
+    Worker qualified[n];
+    int count = 0;
+    for (i = 0; i < n; i++) {
+        if (workers[i].aver >= 85 && workers[i].num <= 2) {
+            qualified[count++] = workers[i];
+        }
+    }
+
+    // 3. 按姓名字典序逆序排序（冒泡排序）
+    for (i = 0; i < count - 1; i++) {
+        for (j = 0; j < count - 1 - i; j++) {
+            // strcmp(a,b) > 0 表示 a 字典序在 b 之后，逆序则交换
+            if (strcmp(qualified[j].name, qualified[j+1].name) < 0) {
+                Worker temp = qualified[j];
+                qualified[j] = qualified[j+1];
+                qualified[j+1] = temp;
+            }
+        }
+    }
+
+    // 4. 输出结果
+    printf("\n满足条件的员工信息（按姓名逆序）：\n");
+    printf("----------------------------------------\n");
+    printf("%-20s %-10s %-10s %-10s\n", "姓名", "总分", "平均分", "缺席次数");
+    printf("----------------------------------------\n");
+    for (i = 0; i < count; i++) {
+        printf("%-20s %-10.0f %-10.2f %-10d\n",
+               qualified[i].name,
+               qualified[i].sum,
+               qualified[i].aver,
+               qualified[i].num);
+    }
+
+    return 0;
+}
+```
+
+不知道有strcmp也没关系：
+
+
+```c
+// 自己写字典序比较！
+int mystrcmp(char s1[], char s2[]) {
+    int i = 0;
+    while (s1[i] != '\0' && s2[i] != '\0') {
+        if (s1[i] != s2[i]) {
+            return s1[i] - s2[i];
+        }
+        i++;
+    }
+    return s1[i] - s2[i];
+}
+
+```
+
+# 21. 采购三种肥料
+
 
 
 # A 两数相加
