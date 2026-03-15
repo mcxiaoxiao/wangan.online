@@ -98,5 +98,5 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 ---
 
 <div align=center>
-<img width="60%" alt="image" style="margin: 20px;" src="img/slogan.png" />
+<img width="80%" alt="image" style="margin: 20px;" src="img/slogan.png" />
 </div>

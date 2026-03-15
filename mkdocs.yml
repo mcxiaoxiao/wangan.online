@@ -4,25 +4,46 @@ nav:
   - 首页: 
     - Getting Started: index.md
     - 哈尔滨工业大学: hit837.md
-  - 哈工大837:
-    - 信息安全: 
-      - 信息安全前言: 信安基础/0.md
-      - 信息安全的基本概念:
-        - OSI: 信安基础/1.md
-      - 密码学基础:
-        - OSI: 信安基础/1.md
-      - 身份认证与访问控制:
-        - OSI: 信安基础/1.md
-      - 计算机病毒与网络入侵:
-        - OSI: 信安基础/1.md
-      - 防火墙入侵检测安全传输协议:
-        - OSI: 信安基础/1.md
-      - 安全风险管理与法律法规:
-        - OSI: 信安基础/1.md
-    - 网络安全:
-      - 网络安全前言: 网安基础/0.md
-    - 计算机网络: 
-      - 计算机网前言: 计算机网络/0.md
+  - 真题索引: 真题.md
+  - 初试资料:
+    - 哈工大837:
+      - 前言: hit837bookofanswer.md
+      - 信息安全基础: 
+        - 前言: 信安基础/0.md
+        - 信息安全的基本概念:
+          - OSI TCP/IP 信息安全体系架构 ISO 7498-2 CIA PDRR PD2R: 信安基础/1.md
+          - 容错与容灾的概念及主要技术方法: 信安基础/2.md
+          - 古典替换密码 移位密码 凯撒密码 乘数密码 仿射密码 多表代替 维吉尼亚密码: 信安基础/3.md
+          - 现代密码系统：对称密钥、公钥密码思想、密码体制、密码系统: 信安基础/4.md
+          - 密码分析与攻击模型: 信安基础/5.md
+          - DES对称数据加密标准：算法结构、特点与加密模式: 信安基础/6.md
+        - 密码学基础:
+          - OSI: 信安基础/1.md
+        - 身份认证与访问控制:
+          - OSI: 信安基础/1.md
+        - 计算机病毒与网络入侵:
+          - OSI: 信安基础/1.md
+        - 防火墙入侵检测安全传输协议:
+          - OSI: 信安基础/1.md
+        - 安全风险管理与法律法规:
+          - OSI: 信安基础/1.md
+      - 网络安全基础:
+        - 前言: 网安基础/0.md
+        - 网络攻击: 网安基础/1.md
+        - 网络数据获取: 网安基础/2.md
+        - 网络扫描技术: 网安基础/3.md
+        - 入侵检测: 网安基础/4.md
+        - 典型模式匹配算法: 网安基础/5.md
+        - 典型分类聚类算法: 网安基础/6.md
+        - 身份认证技术: 网安基础/7.md
+      - 计算机网络: 
+        - 前言: 计算机网络/0.md
+        - 计算机网络体系结构的概念: 计算机网络/1.md
+        - 应用层: 计算机网络/2.md
+        - 传输层: 计算机网络/3.md
+        - socket编程: 计算机网络/4.md
+        - 网络层: 计算机网络/5.md
+        - 链路层: 计算机网络/6.md
   - 复试资料: 
     - 哈工大计算学部: 复试/0.md
   - 开放论坛: https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions
@@ -94,6 +115,8 @@ plugins:
       trim: true          # Auto-trim if exceeded
 
 markdown_extensions: 
+  - pymdownx.arithmatex:
+      generic: true
   - attr_list
   - md_in_html
   - footnotes
@@ -106,5 +129,10 @@ markdown_extensions:
   - admonition
   - pymdownx.details
 
+
 extra:
   generator: false
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
