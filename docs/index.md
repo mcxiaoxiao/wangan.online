@@ -66,7 +66,7 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 
 - 建议结合官方教材进行系统复习
 
-**我们不是考研机构或盈利机构的推广平台**
+**我们不是考研机构也不是其推广平台**
 
 本知识库继承自 [guoJohnny/-837-](https://github.com/guoJohnny/-837- )项目，秉持开放共享精神，致力于为广大网络安全考生搭建资料互通、经验互鉴的互助社区。因此，我们明确拒绝违背项目定位的行为，例如：
 
@@ -74,13 +74,15 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 
 - 任何形式的制造考试焦虑的营销话术
 
-**我们理解并支持有偿分享资料，但开源部分不得低于总量的二分之一，以延续互助共享之精神。**
+- **我们理解并支持有偿分享资料，但开源部分不得低于总量的二分之一，以延续开放共享之精神**
 
 
 
 ## 项目架构
 
-[wangan.online](https://mcxiaoxiao.github.io/wangan.online/) 是一个基于 GitHub Pages 的静态网站，所有内容均存储在 [GitHub 仓库](https://github.com/mcxiaoxiao/wangan.online)中，使用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 构建，CDN 由 [Cloudflare](https://www.cloudflare.com/) 提供，暂无中国大陆镜像。但有美国及中国大陆周边（香港、台湾、日本、新加坡、韩国等）加速节点。
+[wangan.online](https://mcxiaoxiao.github.io/wangan.online/) 是一个基于 GitHub Pages 的静态网站，所有内容均存储在 [GitHub 仓库](https://github.com/mcxiaoxiao/wangan.online)中，page分支是主分支，用于存放网站的页面内容。网站使用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 构建。CDN 由 [Cloudflare](https://www.cloudflare.com/) 提供，暂无中国大陆镜像，有美国及中国大陆周边（香港、台湾、日本、新加坡、韩国等）加速节点。
+
+
 
 
 ## 参与贡献  <img width="75" height="25" alt="Written-By-Human-Not-By-AI-Badge-black" src="/HIT837-Book-of-Answer/img/Written-By-Human-Not-By-AI-Badge-black.png" />
@@ -122,6 +124,9 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
     - 不能容忍可被视为骚扰的行为。
 
 ---
+
+## 消灭一切网安考研信息差
+
 
 <div align=center>
 <img width="80%" alt="image" style="margin: 20px;" src="img/slogan.png" />
