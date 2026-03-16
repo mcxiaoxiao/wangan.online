@@ -14,9 +14,24 @@ nav:
           - OSI TCP/IP 信息安全体系架构 ISO 7498-2 CIA PDRR PD2R: 信安基础/1.md
           - 容错与容灾的概念及主要技术方法: 信安基础/2.md
           - 古典替换密码 移位密码 凯撒密码 乘数密码 仿射密码 多表代替 维吉尼亚密码: 信安基础/3.md
-          - 现代密码系统：对称密钥、公钥密码思想、密码体制、密码系统: 信安基础/4.md
+          - 现代密码系统 对称密钥、公钥密码思想、密码体制、密码系统: 信安基础/4.md
           - 密码分析与攻击模型: 信安基础/5.md
-          - DES对称数据加密标准：算法结构、特点与加密模式: 信安基础/6.md
+          - DES 对称数据加密标准：算法结构、特点与加密模式: 信安基础/6.md
+          - DH Diffie-Hellman 对称密钥交换协议: 信安基础/7.md
+          - RSA 公钥密码 单向性 陷门性 单向陷门函数: 信安基础/8.md
+          - HASH 消息摘要 散列函数 单向性 无碰撞性: 信安基础/9.md
+          - 身份认证 2FA OTP: 信安基础/10.md
+          - 三种消息认证函数 MAC 消息认证码 消息编码 禁用/许用序列 MD5 SHA-1 SHA-256: 信安基础/11.md
+          - 数字签名 定义 原理 应用过程: 信安基础/12.md
+          - Windows 网络认证 域登录 winlogon netlogon: 信安基础/13.md
+          - Windows 安全子系统 域访问控制 网络管理 活动目录 AD 组策略 GP 安全架构 访问控制模块 LSA SRM DACL ACE SACL: 信安基础/14.md
+          - 公开密钥 挑战-应答 认证协议 Needham–Schroeder 单向、双向认证的公钥协议: 信安基础/15.md
+          - 对称密钥 挑战-应答 认证协议: 信安基础/16.md
+          - 对称密钥 Needham-Schroeder 第三方认证协议 重放攻击漏洞: 信安基础/17.md
+          - 对称密钥 Kerberos 认证协议 单点失效问题: 信安基础/18.md
+          - PKI 公开密钥基础设施 CA 数字证书 原理和使用证书链 X.509: 信安基础/19.md
+          - 访问控制策略 访问策略原则 DAC 自主访问控制 MAC 强制访问控制 RBAC 基于角色的访问控制: 信安基础/20.md
+          - 传统病毒、蠕虫、木马的结构原理 隐藏技术 API劫持 CIH 尼姆达 Nimda Redcode 端口复用 反弹端口: 信安基础/21.md
         - 密码学基础:
           - OSI: 信安基础/1.md
         - 身份认证与访问控制:
@@ -69,7 +84,7 @@ theme:
       warning: material/plus-circle-multiple-outline
 
   palette:
-    - primary: white
+
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
@@ -78,6 +93,7 @@ theme:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
+      primary: white
       scheme: default 
       toggle:
         icon: material/brightness-7
@@ -85,6 +101,7 @@ theme:
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
+      primary: black
       scheme: slate
       toggle:
         icon: material/brightness-4

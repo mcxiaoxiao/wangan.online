@@ -66,10 +66,19 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 
 - 建议结合官方教材进行系统复习
 
+**我们不是考研机构或盈利机构的推广平台**
+
+本知识库承继自 [guoJohnny/-837-](https://github.com/guoJohnny/-837- )项目，秉持开放共享精神，致力于为广大网络安全考生搭建资料互通、经验互鉴的互助社区。因此，我们明确拒绝违背项目定位的行为，例如：
+
+- 任何机构以引流为目的的课程推销
+
+- 任何形式的制造考试焦虑的营销话术
+
+
 
 ## 项目架构
 
-[wangan.online](https://mcxiaoxiao.github.io/wangan.online/) 是一个基于 GitHub Pages 的静态网站，所有内容均存储在 GitHub 仓库中，使用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 构建，CDN 由 Cloudflare 提供，暂无中国大陆镜像。但有美国及中国大陆周边（香港、台湾、日本、新加坡、韩国等）加速节点。
+[wangan.online](https://mcxiaoxiao.github.io/wangan.online/) 是一个基于 GitHub Pages 的静态网站，所有内容均存储在 [GitHub 仓库](https://github.com/mcxiaoxiao/wangan.online)中，使用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 构建，CDN 由 [Cloudflare](https://www.cloudflare.com/) 提供，暂无中国大陆镜像。但有美国及中国大陆周边（香港、台湾、日本、新加坡、韩国等）加速节点。
 
 
 
