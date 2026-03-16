@@ -80,8 +80,9 @@
 
 
 
-## 历年报考热度（观察一年内Star增量）
+## 历年报考热度
 
+观察一年内Star增量
 
 <a href="https://www.star-history.com/#mcxiaoxiao/HIT837-Book-of-Answer&guoJohnny/-837-&type=date&legend=top-left">
  <picture>
