@@ -68,11 +68,13 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 
 **我们不是考研机构或盈利机构的推广平台**
 
-本知识库承继自 [guoJohnny/-837-](https://github.com/guoJohnny/-837- )项目，秉持开放共享精神，致力于为广大网络安全考生搭建资料互通、经验互鉴的互助社区。因此，我们明确拒绝违背项目定位的行为，例如：
+本知识库继承自 [guoJohnny/-837-](https://github.com/guoJohnny/-837- )项目，秉持开放共享精神，致力于为广大网络安全考生搭建资料互通、经验互鉴的互助社区。因此，我们明确拒绝违背项目定位的行为，例如：
 
 - 任何机构以引流为目的的课程推销
 
 - 任何形式的制造考试焦虑的营销话术
+
+**我们理解并支持有偿分享资料，但开源部分不得低于总量的二分之一，以延续互助共享之精神。**
 
 
 
@@ -81,10 +83,33 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 [wangan.online](https://mcxiaoxiao.github.io/wangan.online/) 是一个基于 GitHub Pages 的静态网站，所有内容均存储在 [GitHub 仓库](https://github.com/mcxiaoxiao/wangan.online)中，使用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 构建，CDN 由 [Cloudflare](https://www.cloudflare.com/) 提供，暂无中国大陆镜像。但有美国及中国大陆周边（香港、台湾、日本、新加坡、韩国等）加速节点。
 
 
+## 参与贡献  <img width="75" height="25" alt="Written-By-Human-Not-By-AI-Badge-black" src="/HIT837-Book-of-Answer/img/Written-By-Human-Not-By-AI-Badge-black.png" />
 
-## 参与贡献
+欢迎您为本知识库贡献内容！无论是参与讨论、修正错误、补充知识点还是分享备考经验，您的参与都将帮助更多考生。在408一统计算机考研的当下维护一个网安自命题主题的小众考研知识库还需诸君支持 ~ 如果您喜欢本项目或愿意拯救世界的话，欢迎 [提交 Pull Request](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2) 或 [成为collaborator](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)。您的PR可以 创建/删除/修改 仓库内的任何 文件/文件夹/代码。网站可以提交哈工大837考纲外内容（比如别的学校的），但是请以和现有手册相同的文档结构组织页面。
 
-欢迎您为本知识库贡献内容！无论是参与讨论、修正错误、补充知识点还是分享备考经验，您的参与都将帮助更多考生。
+!!! Warning "Tips"
+    - 欢迎修改和再分发。
+    - 欢迎推广和传播。
+    - 所有来自guoJohnny资料库的内容 及 HIT837三科答题手册 不可用于任何商业用途。
+    - 不可改成闭源再分发。
+    - 若希望有偿分享资料，提交的公开部分应超过资料总内容量的一半。
+
+## 贡献者列表
+
+
+<a href="https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mcxiaoxiao/HIT837-Book-of-Answer" />
+</a>
+
+感谢以上同学的卓越贡献 :fontawesome-regular-hand-back-fist:
+
+
+
+本项目受guoJohnny/-837-、OI Wiki、CTF Wiki等开源知识库的启发，由一群网络安全考研同伴共同维护，在编写过程中参考了诸多资料，在此一并致谢。
+
+
+[欢迎加入Collaborators共同维护本项目](https://github.com/mcxiaoxiao/wangan.online/discussions/2)。
+
 
 !!! Warning "Tips"
 
@@ -95,14 +120,6 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
     - 在解释他人的言行时，参与者应始终假定他人是出于善意。
 
     - 不能容忍可被视为骚扰的行为。
-
-本项目受guoJohnny/-837-、OI Wiki、CTF Wiki等开源知识库的启发，由一群网络安全考研同伴共同维护，在编写过程中参考了诸多资料，在此一并致谢。
-
-在408一统计算机考研的当下维护一个网安自命题主题的小众考研知识库还需诸君支持 ~ 如果您喜欢本项目或愿意拯救世界的话，欢迎 [提交 Pull Request](https://github.com/mcxiaoxiao/wangan.online/pulls) 或 [成为collaborator](https://github.com/mcxiaoxiao/wangan.online/discussions/2)。您的PR可以 创建/删除/修改 仓库内的任何 文件/文件夹/代码。
-
-[欢迎加入Collaborators共同维护本项目](https://github.com/mcxiaoxiao/wangan.online/discussions/2)。
-
-
 
 ---
 
