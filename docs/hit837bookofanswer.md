@@ -47,11 +47,11 @@ transform: translateY(0);
 
 本仓库的目标是创建一个为实现以下目标的统一资源：
 
-- 在线知识库及仓库所有内容免费开源，由社区共同守护与更新，联合起来消灭837备考信息差，让考研机构无机可乘；
-- 提供恰到好处的知识深度，从而帮助读者，快速掌握各部分备考要点，有效应对考试挑战；
-- 包含可运行的代码，精选题目与知识点，覆盖信安、网安（共占90分）全部核心考察范围；
-- 通过社区力量快速迭代内容，从而紧跟仍不断变化发展的网安自命题考试；
-- 由包含有关应试备考细节问答的[开放论坛](https://github.com/mcxiaoxiao/wangan.online/discussions)作为补充，使大家可以相互答疑并交换经验。
+1. 在线知识库及仓库所有内容免费开源，由社区共同守护与更新，联合起来消灭837备考信息差，让考研机构无机可乘；
+2. 提供恰到好处的知识深度，从而帮助读者，快速掌握各部分备考要点，有效应对考试挑战；
+3. 包含可运行的代码，精选题目与知识点，覆盖信安、网安（共占90分）全部核心考察范围；
+4. 通过社区力量快速迭代内容，从而紧跟仍不断变化发展的网安自命题考试；
+5. 由包含有关应试备考细节问答的[开放论坛](https://github.com/mcxiaoxiao/wangan.online/discussions)作为补充，使大家可以相互答疑并交换经验。
 
 
 作者26年哈理工数据科学专业网安小白跨考工大本部网安专硕，虽然希望这份手册能帮大家减轻点缺资料和自己整理笔记的痛苦（比如我就一向反感做笔记这种“形式主义行径”，但837资料的稀缺程度和这玩意很看重背书的现实迫使记性不好的我开始哐哐一顿抄题背题），但受限于本人的应试和专业能力，目前的这一版内容很可能存在错误，如有发现或者想补充欢迎提Pull Request。
@@ -125,6 +125,29 @@ transform: translateY(0);
 </br>
 
 
+
+## 历年报考热度
+
+
+<a href="https://www.star-history.com/#mcxiaoxiao/HIT837-Book-of-Answer&guoJohnny/-837-&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=mcxiaoxiao/HIT837-Book-of-Answer,guoJohnny/-837-&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=mcxiaoxiao/HIT837-Book-of-Answer,guoJohnny/-837-&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=mcxiaoxiao/HIT837-Book-of-Answer,guoJohnny/-837-&type=date&legend=top-left" />
+ </picture>
+</a>
+
+## 引用
+
+如果本手册对你有帮助，请 Star🌟 本仓库或通过 BibTeX 引用：
+```BibTeX
+@book{guo2026hit,
+    title={HIT837 Book of Answer},
+    author={HIT837 Book of Answer Community},
+    note={\url{https://mcxiaoxiao.github.io/HIT837-Book-of-Answer}},
+    year={2026}
+}
+```
 
 
 <script>
