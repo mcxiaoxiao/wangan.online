@@ -31,7 +31,7 @@
 </a>
 
 
-[提交PR或帮助维护](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)
+[提交PR或帮助维护](https://github.com/mcxiaoxiao/wangan.online/discussions/2)
 
 
 </div>

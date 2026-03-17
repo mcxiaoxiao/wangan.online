@@ -3,7 +3,7 @@ site_url: https://mcxiaoxiao.github.io/HIT837-Book-of-Answer
 nav:
   - 首页: 
     - Getting Started: index.md
-    - 哈尔滨工业大学: hit837.md
+    - 哈尔滨工业大学资源索引: hit837.md
   - 真题索引: 真题.md
   - 初试资料:
     - 哈工大837:
@@ -33,8 +33,7 @@ nav:
           - 对称密钥 Kerberos 认证协议 单点失效问题: 信安基础/18.md
           - PKI 公开密钥基础设施 CA 数字证书 原理和使用证书链 X.509: 信安基础/19.md
           - 访问控制策略 访问策略原则 DAC 自主访问控制 MAC 强制访问控制 RBAC 基于角色的访问控制: 信安基础/20.md
-        - 计算机病毒与网络入侵:
-          - 传统病毒、蠕虫、木马的结构原理 隐藏技术 API劫持 CIH 尼姆达 Nimda Redcode 端口复用 反弹端口: 信安基础/21.md
+        - 计算机病毒与网络入侵: 信安基础/21.md
         - 防火墙入侵检测安全传输协议:
           - FW 防火墙主要技术 体系结构 ACL 动态/静态包过滤 NAT VPN DMZ: 信安基础/22.md 
           - Linux Netfilter / Iptables 的工作原理 hook 钩子函数指针链: 信安基础/23.md 
@@ -81,15 +80,33 @@ nav:
 
       - 计算机网络: 
         - 前言: 计算机网络/0.md
-        - 计算机网络体系结构的概念: 计算机网络/1.md
-        - 应用层: 计算机网络/2.md
-        - 传输层: 计算机网络/3.md
-        - socket编程: 计算机网络/4.md
-        - 网络层: 计算机网络/5.md
-        - 链路层: 计算机网络/6.md
+        - 计算机网络体系结构的概念: 
+          - 常见服务 中英文对照 端口 层: 计算机网络/18.md
+          - 端到端原则: 计算机网络/15.md
+        - 应用层: 
+          - Ping 分组网间探测 Traceroute 的作⽤及其原理: 计算机网络/1.md
+          - P2P（Peer-to-Peer）BitTorrent BT协议: 计算机网络/14.md
+          - DNS（域名系统） 递归查询/迭代查询: 计算机网络/17.md
+        - 传输层: 
+          - TCP（传输控制协议）结构: 计算机网络/3.md
+          - TCP 可靠传输 慢开始 网络超时 拥塞避免 冗余确认 重复确认 快重传 快恢复 的原理机制: 计算机网络/5.md
+          - TCP 流量控制 接收窗口的原理: 计算机网络/6.md
+          - TCP 三次握手 四次挥手: 计算机网络/7.md
+          - UDP（用户数据报协议）结构: 计算机网络/4.md
+        - Socket编程: 计算机网络/8.md
+        - 网络层: 
+          - IP（互联网协议）: 计算机网络/9.md
+          - 子网划分 CIDR 子网掩码: 计算机网络/16.md
+          - ARP（地址解析协议）地址含义 原理: 计算机网络/10.md
+          - RIP（路由信息协议）距离向量路由算法 DV算法 BF方程 Bellman-Ford: 计算机网络/11.md
+          - OSPF（开放式最短路径优先）链路状态路由算法 LS算法 洪泛法 Dijkstra: 计算机网络/12.md
+          - BGP （边界网关协议）路径向量路由算法: 计算机网络/13.md
+
+        - 链路层: 计算机网络/2.md
+
   - 复试资料: 
     - 哈工大计算学部: 复试/0.md
-  - 开放论坛: https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions
+  - 开放论坛: https://github.com/mcxiaoxiao/wangan.online/discussions
 
 
 
@@ -138,15 +155,15 @@ theme:
         name: Switch to system preference
 
 
-repo_url: https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/tree/page
+repo_url: https://github.com/mcxiaoxiao/wangan.online
 repo_name: 编辑
-copyright: Copyright &copy; <a href="https://github.com/mcxiaoxiao/HIT837-Book-of-Answer" target="_blank">HIT837-Book-of-Answer</a> 网安在线考研知识库 🎓 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 本页至今已助力 <span id="busuanzi_value_page_pv"></span> 次有意义的探索，距离实现“消灭一切网安考研信息差”的愿景更进一步！ <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE4WWSR48"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-PXE4WWSR48'); </script>   </br>  <img width="131" height="42" alt="image" src="https://github.com/user-attachments/assets/241fb14e-f968-4a31-a256-06037ba057ec" />
+copyright: Copyright &copy; <a href="https://github.com/mcxiaoxiao/wangan.online" target="_blank">HIT837-Book-of-Answer</a> 网安在线考研知识库 🎓 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 本页至今已助力 <span id="busuanzi_value_page_pv"></span> 次有意义的探索，距离实现“消灭一切网安考研信息差”的愿景更进一步！ <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE4WWSR48"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-PXE4WWSR48'); </script>   </br>  <img width="131" height="42" alt="image" src="https://github.com/user-attachments/assets/241fb14e-f968-4a31-a256-06037ba057ec" />
 
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/mcxiaoxiao/HIT837-Book-of-Answer
+      link: https://github.com/mcxiaoxiao/wangan.online
     - icon: fontawesome/brands/google-scholar
       link: https://scholar.google.com/citations?user=a4cUnzEAAAAJ
 

@@ -8,8 +8,9 @@ button {
   /* Variables */
   --button_radius: 0.75em;
   --button_color: #f8f8f8ff;
-  --button_outline_color: #000000ff;
-  font-size: 17px;
+  --button_outline_color: #00071fff;
+  font-size: 20px;
+  margin: 10px;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -38,12 +39,12 @@ transform: translateY(0);
 <img width="100%" alt="image" src="/HIT837-Book-of-Answer/img/hit837.png" />
 </div>
 
+---
 
 ## 手册介绍
 
 作为一个非本校的837跨考选手，我深知备考这样一个小众自命题的不易，我的备考历程完全是有赖于往届同学（感谢zyx学长）的帮助以及guoJohnny前辈的资料库[^1]才会如此顺利。我希望我也能一样以分享的形式给更多同学特别是跨考的同学一些帮助，这是我学生时代自愿整理的第一个笔记本也是我的一种尝试：仓库提供背题手册、课程PPT、相关题目、交流空间，其中手册部分集概念、个人见解、代码于一体，旨在帮所有网安自命题考生减少重复劳动，高效掌握哈工大网安837考研自命题全部核心内容和所需应试技能[^2]。
 
-<button id="randomButton"> <span class="button_top"> :material-book-open-variant: 随机翻页 </span></button>
 
 本仓库的目标是创建一个为实现以下目标的统一资源：
 
@@ -53,6 +54,7 @@ transform: translateY(0);
 4. 通过社区力量快速迭代内容，从而紧跟仍不断变化发展的网安自命题考试；
 5. 由包含有关应试备考细节问答的[开放论坛](https://github.com/mcxiaoxiao/wangan.online/discussions)作为补充，使大家可以相互答疑并交换经验。
 
+<button id="randomButton"> <span class="button_top"> :material-book-open-variant: 随机翻页 </span></button>
 
 作者26年哈理工数据科学专业网安小白跨考工大本部网安专硕，虽然希望这份手册能帮大家减轻点缺资料和自己整理笔记的痛苦（比如我就一向反感做笔记这种“形式主义行径”，但837资料的稀缺程度和这玩意很看重背书的现实迫使记性不好的我开始哐哐一顿抄题背题），但受限于本人的应试和专业能力，目前的这一版内容很可能存在错误，如有发现或者想补充欢迎提Pull Request。
 
@@ -68,7 +70,7 @@ transform: translateY(0);
 
 
 
-
+---
 
 ## 离线版下载
 
@@ -129,7 +131,7 @@ transform: translateY(0);
 
 </br>
 
-
+---
 
 ## 历年报考热度
 
@@ -141,6 +143,8 @@ transform: translateY(0);
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=mcxiaoxiao/HIT837-Book-of-Answer,guoJohnny/-837-&type=date&legend=top-left" />
  </picture>
 </a>
+
+---
 
 ## 引用
 

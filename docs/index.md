@@ -8,6 +8,40 @@ description: HIT837三科答题手册 · 网络与信息安全、网络空间安
 <img width="100%" alt="image" src="/HIT837-Book-of-Answer/img/WANGAN.png" />
 </div>
 
+
+---
+
+## 消灭一切网安考研信息差
+
+
+我们倡导考研资源打破壁垒，由众人共创，为众人共享，推动备考民主化。
+
+> **“各尽所能，按需分配。”**
+> 
+> ——马克思《哥达纲领批判》
+
+有贡献者上传资料，有需求者自由获取。拒绝中介，消解权威。知识流通不靠机构把守，而靠节点间的直接联结。一份笔记的共享，就是拆一道信息的高墙；一次经验的传递，就是破一重等级的壁垒。
+
+> **“星星之火，可以燎原。”**
+> 
+> ——毛泽东《时局估量和红军行动问题》
+
+一人之力有限，众人之举可成江海。此库不为营利，只为**考研资源回归考研人**——让信息自由流动，让备考者平等互助。
+
+<div align=center style="font-size: 20px; font-weight: bold;">
+
+<img width="90%" alt="image" style="margin: 20px;" src="img/slogan.png" />
+
+</br>
+开源共享，知识无界。
+</br>
+Fork it. Commit. Share it.
+
+
+</div>
+
+---
+
 ## wangan.online 是什么
 
 wangan.online 是一个由社区维护的，专注于网安/信安相关硕士研究生考试应试的，**自由、开放的知识库**，希望为考生提供：
@@ -26,6 +60,7 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 
 致力于为网安考生提供足够全面且精准的备考资料，消灭网安考研信息差。
 
+---
 
 ## wangan.online 不是什么
 
@@ -76,18 +111,18 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 
 - **我们理解并支持有偿分享资料，但开源部分不得低于总量的二分之一，以延续开放共享之精神**
 
-
+---
 
 ## 项目架构
 
 [wangan.online](https://mcxiaoxiao.github.io/wangan.online/) 是一个基于 GitHub Pages 的静态网站，所有内容均存储在 [GitHub 仓库](https://github.com/mcxiaoxiao/wangan.online)中，page分支是主分支，用于存放网站的页面内容。网站使用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 构建。CDN 由 [Cloudflare](https://www.cloudflare.com/) 提供，暂无中国大陆镜像，有美国及中国大陆周边（香港、台湾、日本、新加坡、韩国等）加速节点。
 
-
+---
 
 
 ## 参与贡献  <img width="75" height="25" alt="Written-By-Human-Not-By-AI-Badge-black" src="/HIT837-Book-of-Answer/img/Written-By-Human-Not-By-AI-Badge-black.png" />
 
-欢迎您为本知识库贡献内容！无论是参与讨论、修正错误、补充知识点还是分享备考经验，您的参与都将帮助更多考生。在408一统计算机考研的当下维护一个网安自命题主题的小众考研知识库还需诸君支持 ~ 如果您喜欢本项目或愿意拯救世界的话，欢迎 [提交 Pull Request](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2) 或 [成为collaborator](https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/discussions/2)。您的PR可以 创建/删除/修改 仓库内的任何 文件/文件夹/代码。网站可以提交哈工大837考纲外内容（比如别的学校的），但是请以和现有手册相同的文档结构组织页面。
+欢迎您为本知识库贡献内容！无论是参与讨论、修正错误、补充知识点还是分享备考经验，您的参与都将帮助更多考生。在408一统计算机考研的当下维护一个网安自命题主题的小众考研知识库还需诸君支持 ~ 如果您喜欢本项目或愿意拯救世界的话，欢迎 [提交 Pull Request](https://github.com/mcxiaoxiao/wangan.online/discussions/2) 或 [成为collaborator](https://github.com/mcxiaoxiao/wangan.online/discussions/2)。您的PR可以 创建/删除/修改 仓库内的任何 文件/文件夹/代码。网站可以提交哈工大837考纲外内容（比如别的学校的），但是请以和现有手册相同的文档结构组织页面。
 
 !!! Warning "Tips"
     - 欢迎修改和再分发。
@@ -96,10 +131,14 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
     - 不可改成闭源再分发。
     - 若希望有偿分享资料，提交的公开部分应超过资料总内容量的一半。
 
+
+
+---
+
 ## 贡献者列表
 
 
-<a href="https://github.com/mcxiaoxiao/HIT837-Book-of-Answer/graphs/contributors">
+<a href="https://github.com/mcxiaoxiao/wangan.online/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=mcxiaoxiao/HIT837-Book-of-Answer" />
 </a>
 
@@ -110,7 +149,6 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 本项目受guoJohnny/-837-、OI Wiki、CTF Wiki等开源知识库的启发，由一群网络安全考研同伴共同维护，在编写过程中参考了诸多资料，在此一并致谢。
 
 
-[欢迎加入Collaborators共同维护本项目](https://github.com/mcxiaoxiao/wangan.online/discussions/2)。
 
 
 !!! Warning "Tips"
@@ -123,26 +161,3 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 
     - 不能容忍可被视为骚扰的行为。
 
----
-
-## 消灭一切网安考研信息差
-
-
-<div align=center>
-<img width="80%" alt="image" style="margin: 20px;" src="img/slogan.png" />
-</div>
-
-
-考研资源不应被垄断，而当由众人共建，归众人所用，实现资源流通民主化。
-
-> **“各尽所能，按需分配。”**
-> ——马克思《哥达纲领批判》
-
-有贡献者上传资料，有需求者自由获取。拒绝中介，消解权威。知识流通不靠机构把守，而靠节点间的直接联结。一份笔记的共享，就是拆一道信息的高墙；一次经验的传递，就是破一重等级的壁垒。
-
-> **“星星之火，可以燎原。”**
-
-一人之力有限，众人之举可成江海。此库不为营利，只为**考研资源回归考研人**——让信息自由流动，让备考者平等互助。
-
-**开源共享，知识无界。**
-**Fork it. Commit. Share it.**
