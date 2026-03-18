@@ -152,8 +152,8 @@ transform: translateY(0);
 ```BibTeX
 @book{guo2026hit,
     title={HIT837 Book of Answer},
-    author={HIT837 Book of Answer Community},
-    note={\url{https://mcxiaoxiao.github.io/HIT837-Book-of-Answer}},
+    author={wangan.online Community},
+    note={\url{https://wangan.online}},
     year={2026}
 }
 ```
