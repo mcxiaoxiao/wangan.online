@@ -1254,7 +1254,141 @@ int main() {
 }
 ```
 
+# 23. 孪生素数
 
+编写一个 C 语言程序，实现以下功能：
+
+素数是只能被 1 和自身整除的大于 1 的正整数；孪生素数是指相差为 2 的两个素数（例如 3 与 5、41 与 43）。
+
+输入：
+
+从键盘输入区间的上下限（格式为 %d,%d），提示信息为 "Please input lower limit and upper bound:\n"，且输入区间上下限均大于 2，为合理区间，无需处理异常情况。
+处理：找出指定闭区间内的所有孪生素数对，并统计孪生素数对的总数。
+
+输出：
+
+按格式 (%d,%d)\n 逐行输出每一对孪生素数。
+最后按格式 "Total = %d" 输出孪生素数对的总数。
+
+限制：
+
+不能使用指针、结构体、共用体、文件、goto、枚举类型。
+必须用标准 C 语言编程，所有变量需在第一条可执行语句之前定义。
+严格遵循给定的输入输出格式。
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+// 判断是否为素数的函数
+int isPrime(int x) {
+    if (x <= 1) return 0;
+    int sqrt_x = (int)sqrt(x);
+    for (int i = 2; i <= sqrt_x; i++) {
+        if (x % i == 0) return 0;
+    }
+    return 1;
+}
+
+int main() {
+    int left, right, tmp = -100, count = 0;
+    
+    // 输入提示
+    printf("Please input lower limit and upper bound:\n");
+    // 按格式读取输入
+    scanf("%d,%d", &left, &right);
+    
+    int i;
+    for (i = left; i <= right; i++) {
+        if (isPrime(i)) {
+            // 检查是否与上一个素数构成孪生素数
+            if (tmp == i - 2) {
+                printf("(%d,%d)\n", tmp, i);
+                count++;
+            }
+            tmp = i;
+        }
+    }
+    
+    // 输出总数
+    printf("Total = %d", count);
+    return 0;
+}
+```
+
+# 24. 凯撒密码加密字符串
+
+编写一个 C 语言程序，实现凯撒密码加密功能：
+加密规则：将英文字母按字母表顺序向后移动固定位数m（示例中m=3），超出字母范围则循环（如x→a、y→b、z→c，大写同理）。
+
+函数要求：
+函数原型：int Caesar(char c[], int m)
+
+功能：若字符串包含非英文字母（包括空格、数字等），返回0；否则将所有字母后移m位加密，返回1。
+
+输入输出：
+
+输入提示："Input a string:"
+
+输入方式：用gets()读取字符串（长度 < 100，仅含英文字母或非法字符）
+
+输出方式：用puts()输出结果
+
+异常处理：若输入含非英文字母，输出"Input error!\n"
+
+限制条件：
+
+禁止使用指针、结构体、共用体、文件、goto、枚举类型
+必须用标准 C 语言，所有变量在第一条可执行语句前定义
+严格遵循输入输出格式
+
+
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+// 按题目要求实现Caesar函数
+int Caesar(char c[], int m) {
+    int i = 0;
+    // 先检查是否有非英文字母
+    while (c[i] != '\0') {
+        if (!((c[i] >= 'a' && c[i] <= 'z') || (c[i] >= 'A' && c[i] <= 'Z'))) {
+            return 0;
+        }
+        i++;
+    }
+    // 加密处理
+    i = 0;
+    while (c[i] != '\0') {
+        if (c[i] >= 'a' && c[i] <= 'z') {
+            c[i] = (c[i] - 'a' + m) % 26 + 'a';
+        } else if (c[i] >= 'A' && c[i] <= 'Z') {
+            c[i] = (c[i] - 'A' + m) % 26 + 'A';
+        }
+        i++;
+    }
+    return 1;
+}
+
+int main() {
+    char str[101];
+    int result;
+    int m = 3; // 题目示例中偏移量为3
+
+    printf("Input a string:");
+    gets(str); // 按题目要求使用gets
+
+    result = Caesar(str, m);
+    if (result == 0) {
+        printf("Input error!\n");
+    } else {
+        puts(str);
+    }
+
+    return 0;
+}
+```
 
 # A 两数相加
 哈工大计算学部复试机试2024改错题，来自[Leetcode 2](https://leetcode.cn/problems/add-two-numbers)，以下代码是正确的：
@@ -1853,4 +1987,176 @@ int main() {
 4. **数组维度理解错误**
    - 错误写法：将 `dp[i][j]` 理解为第 `i` 个同学传 `j` 次，导致状态转移逻辑完全颠倒。
    - 修正：明确 `i` 为传递次数，`j` 为当前持有花的同学编号。
+
+# I 超大数取模算末尾
+
+输入一个整数 \(n\)（\(0 < n \le 1000000\)），计算并输出 \(1! + 2! + \dots + n!\) 的**末6位**（记为 \(s\)）：
+- 若 \(s\) 不足6位，直接输出（不含前导0，如末6位为`001234`则输出`1234`）。
+- 若 \(n\) 不满足范围，输出 `"Input error!"`。
+- 已知：从25开始及以后的所有数的阶乘末6位均为0。
+
+下面的程序存在错误，请修改正确：
+
+```c
+#include <stdio.h>
+#define MOD = 1000000;
+long Func(int n);
+int main()
+{
+    int n;
+    long s;
+    scanf("%d", &n);
+    if (n > 0 || n <= 1000000){
+        s = Func(n);
+        printf("%ld\n", s);
+    }
+    else
+    {
+        printf("Input error!\n");
+    }
+    return 0;
+}
+//函数功能：计算1!2!+...+n!的末六位数
+long Factsum(int n)
+{
+    int i;
+    long s = 0, f = 1;
+    for (i = 1; i <= n; i++){
+        f = f * i;
+        s = s + f;
+    }
+    return s % MOD;
+}
+```
+
+
+
+---
+
+
+```c
+#include <stdio.h>
+#define MOD 1000000  // 修正宏定义语法
+
+long Factsum(int n);  // 修正函数声明名
+
+int main()
+{
+    int n;
+    long s;
+    scanf("%d", &n);
+    // 修正范围判断逻辑
+    if (n > 0 && n <= 1000000) {
+        s = Factsum(n);
+        printf("%ld\n", s);
+    } else {
+        printf("Input error!\n");
+    }
+    return 0;
+}
+
+// 函数功能：计算1!+2!+...+n!的末六位数
+long Factsum(int n)
+{
+    int i;
+    long s = 0, f = 1;
+    for (i = 1; i <= n; i++) {
+        f = (f * i) % MOD;  // 每步取模防止溢出
+        s = (s + f) % MOD;   // 累加和也取模
+        if (i >= 25) break;  // 25及以后阶乘末6位为0，提前终止
+    }
+    return s % MOD;
+}
+```
+
+| 错误类型               | 原代码                          | 修正后代码                          |
+|------------------------|---------------------------------|-------------------------------------|
+| 宏定义语法错误         | `#define MOD = 1000000;`        | `#define MOD 1000000`               |
+| 函数名不匹配           | `Func` vs `Factsum`             | 统一为 `Factsum`                    |
+| 范围判断逻辑错误       | `n > 0 || n <= 1e6`             | `n > 0 && n <= 1e6`                 |
+| 阶乘溢出与效率问题     | 直接计算阶乘累加                | 每步取模 + 25后提前终止循环         |
+
+# J 删除重复元素
+
+给定一个长度不超过100的一维整型数组，要求删除所有**在当前元素之后出现过重复值**的元素，直到数组中无重复元素，且保持剩余元素的相对顺序不变，最后输出处理后的数组。
+
+下面的程序存在错误，请修改正确：
+
+```c
+#include <stdio.h>
+#define N = 100;
+void SearchRepeatedNum(int a[], int n);
+int main(){
+    int a[N], n, i;
+    printf("请输入数组中元素个数\n");
+    scanf("%d", &n);
+    printf("请输入各个元素\n");
+    for (i = 0; i < n; i++);
+        scanf("%d", a[i]);
+    SearchRepeatedNum(a[], n);
+    for (i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
+void SearchRepeatedNum(int a[], int n){
+    int i, j, k;
+    for (i = 0; i < n; i++){
+        for (j = n - 1; j > i; j--){
+            if (a[i] = a[j]){
+                for (k = i; k < n; k++)
+                    a[k] = a[k + 1];
+                n--;
+            }
+        }
+    }
+}
+```
+
+
+
+```c
+#include <stdio.h>
+#define N 100
+
+void SearchRepeatedNum(int a[], int *n);
+
+int main() {
+    int a[N], n, i;
+    printf("请输入数组中元素个数\n");
+    scanf("%d", &n);
+    printf("请输入各个元素\n");
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+    SearchRepeatedNum(a, &n); // 数组传参不需要a[]，n需要取地址才能修改原数组长度n
+    for (i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
+
+void SearchRepeatedNum(int a[], int *n) {
+    int i, j, k;
+    for (i = 0; i < *n; i++) {
+        for (j = *n - 1; j > i; j--) {
+            if (a[i] == a[j]) {
+                // 从j位置开始覆盖删除
+                for (k = j; k < *n - 1; k++)
+                    a[k] = a[k + 1];
+                (*n)--; // 数组长度减1
+            }
+        }
+    }
+}
+```
+
+| 错误类型               | 原代码片段                          | 修正后代码                          |
+|------------------------|-------------------------------------|-------------------------------------|
+| 宏定义语法错误         | `#define N = 100;`                  | `#define N 100`                     |
+| `for` 循环**多余分号**      | `for (i=0; i<n; i++);`              | `for (i=0; i<n; i++)`               |
+| `scanf` 参数错误        | `scanf("%d", a[i]);`                | `scanf("%d", &a[i]);`               |
+| 函数调用语法错误        | `SearchRepeatedNum(a[], n);`        | `SearchRepeatedNum(a, &n);`         |
+| 比较运算符错误          | `if (a[i] = a[j])`                  | `if (a[i] == a[j])`                 |
+| 数组删除逻辑错误        | `for(k=i; k<n; k++) a[k]=a[k+1];`   | `for(k=j; k<*n-1; k++) a[k]=a[k+1];`|
+| 值传递无法修改数组长度  | `void SearchRepeatedNum(int a[], int n)` | `void SearchRepeatedNum(int a[], int *n)` |
 
