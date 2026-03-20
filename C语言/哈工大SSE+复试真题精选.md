@@ -9,12 +9,17 @@
 
 请原谅我在考研资料中有时融入一些主观表达，但在讨论算法学习与工程实践时，仅靠客观罗列知识，往往难以触及真正重要的问题。
 
-我在中学阶段便主动选择放弃算法竞赛，这不仅是因为我对和人竞争抱有抵触，更是出于对现实与未来的理性考量。在我看来，算法竞赛与小学奥数颇为相似：它擅长在封闭、理想化的题目里，用精巧的技巧追求理论上的最优解，却常常与真实工程场景严重脱节。长期沉浸其中，很容易让人沉迷于花哨的算法、极致的复杂度优化，反而忘掉了工程里最朴素的真理：现实场景中数据规模通常有限，简单、稳定、易维护、不易出错的方案，远比看上去高深的算法更有价值。过度崇拜竞赛思维，本质上是把工程能力窄化为解题技巧，也让编程远离了“解决真实问题”这一初心。
+
+
+我在中学阶段便主动选择放弃算法竞赛，这不仅是因为我对和人竞争抱有抵触，更是出于对现实与未来的理性考量。在我看来，算法竞赛与小学奥数颇为相似：它擅长在封闭、理想化的题目里，用精巧的技巧追求理论上的最优解，却常常与真实工程场景严重脱节。过于重视这些东西容易让人沉迷于花哨的算法、极致的复杂度优化，反而忘掉了工程里最朴素的真理：现实场景中数据规模通常有限，简单、稳定、易维护、不易出错的方案，远比看上去高深的算法更有价值。过度崇拜竞赛思维，本质上是把工程能力窄化为解题技巧，也让编程远离了“解决真实问题”这一初心。
+
+
 
 当然，参与竞赛本身无可厚非，只是我更希望表达这样一种观点：**比堆砌复杂度更重要的，是理解问题、权衡取舍、做出真正适合场景的设计**。令我欣慰的是，哈工大的复试并没有把C语言题目设置得过分不切实际、刻意追求复杂，而是更看重基础、逻辑与工程素养。在广阔的计算机世界里，比“更复杂、更巧妙”更有意义的事情，还有太多太多太多。
 
 
-> Tips：以下题目精选自哈工大SSE课后题、SSE其它中/难题、往年真题，基本可以反映哈工大计算学部复试编程题的实际难度，可以作为复试编程的练习材料，答案仅供参考。**复试编程题判分时若运行失败会基于语义给分，只写了hello world也会给分；代码不允许粘贴但是可以复制到codeblock运行&调试。** 扩展材料：[SSE-C](https://www.nowcoder.com/discuss/353150336095428608) [SSE-改错-1](https://www.nowcoder.com/discuss/353150338465210368) [SSE-改错-2](https://www.nowcoder.com/discuss/353150338620399616) [SSE-改错-3](https://www.nowcoder.com/discuss/353150338934972416)
+
+> Tips：以下题目精选自哈工大SSE课后题、SSE其它中/难题、往年真题，基本可以反映哈工大计算学部复试编程题的实际难度，可以作为复试编程的练习材料，答案仅供参考。**复试编程题只能用标准 C 语言编程，不可用 C++ 特殊语法，所有变量必须在第一条可执行语句之前定义。判分时若运行失败会基于语义给分，只写了hello world也会给分；代码不允许粘贴但是可以复制到codeblock运行&调试。** 扩展材料：[SSE-C](https://www.nowcoder.com/discuss/353150336095428608) [SSE-改错-1](https://www.nowcoder.com/discuss/353150338465210368) [SSE-改错-2](https://www.nowcoder.com/discuss/353150338620399616) [SSE-改错-3](https://www.nowcoder.com/discuss/353150338934972416)
 
 # 0. 经典的链表
 编程题一般不会让大家写，改错题也不会在这里太刁难大家，但是有必要先熟悉一下：
@@ -1390,6 +1395,130 @@ int main() {
 }
 ```
 
+# 25. 字典计数
+
+从键盘输入一个 int 型整数，编写程序判断该整数共有几位，并输出包含各个数字的个数。例如：输入整数 16644，该整数共有 5 位，其中有 1 个 1，2 个 6，2 个 4。
+
+注意事项
+
+不能使用指针、结构体、共用体、文件、goto、枚举类型进行编程
+
+
+
+输入输出格式要和给定格式完全一致
+
+输入输出要求
+
+输入提示信息：Please enter the number:\n
+
+输出格式：
+
+第一行：%d:%d bits\n（输入整数：位数 bits）
+后续行：按数字从小到大顺序，输出%d:%d\n（数字：出现次数），仅输出出现次数 > 0 的数字
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, n, len = 0;
+    int cnt[10] = {0};
+    int i;
+
+    printf("Please enter the number:\n");
+    scanf("%d", &num);
+
+    n = num;
+    if (n < 0) n = -n;
+
+    while (n > 0) {
+        cnt[n % 10]++;
+        len++;
+        n /= 10;
+    }
+
+    printf("%d:%d bits\n", num, len);
+
+    for (i = 0; i < 10; i++) {
+        if (cnt[i] > 0)
+            printf("%d:%d\n", i, cnt[i]);
+    }
+
+    return 0;
+}
+```
+
+
+# 26. 设置密码程序
+
+用户密码设置模拟程序：编写函数 int Setting(char password[]);，实现以下功能：
+让用户先输入一串长度为 8 的密码：
+若输入密码长度不是 8 → 密码设置失败，函数返回 0
+若长度为 8 → 让用户再输入一次密码进行确认
+
+
+两次输入对比：
+两次密码相同 → 设置成功，函数返回 1，密码存入password数组
+两次密码不同 → 设置失败，函数返回 0
+主程序调用该函数，根据返回值输出对应提示信息
+
+
+函数说明
+功能：设置密码
+参数：password，存放密码的数组，大小为 20 个字符
+返回值：成功返回 1，失败返回 0
+
+注意事项
+禁止使用指针、结构体、共用体、文件、goto、枚举类型
+标准 C 语言，无 C++ 语法，所有变量必须在第一条可执行语句前定义
+
+
+输入输出要求
+
+输入提示：
+Please input password with 8 characters:\n
+Please input again:\n
+输入格式：%s
+
+输出格式：
+成功：Successfully set password:%s\n
+失败：Failure!%s\n
+
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int Setting(char password[]);
+
+int main() {
+    char pwd[20];
+    int result;
+    result = Setting(pwd);
+    if (result == 1)
+        printf("Successfully set password:%s\n", pwd);
+    else
+        printf("Failure!%s\n", pwd);
+    return 0;
+}
+
+int Setting(char password[]) {
+    char confirm[20];
+    printf("Please input password with 8 characters:\n");
+    scanf("%s", password);
+    if (strlen(password) != 8)
+        return 0;
+    printf("Please input again:\n");
+    scanf("%s", confirm);
+    if (strlen(confirm) != 8)
+        return 0;
+    if (strcmp(password, confirm) == 0)
+        return 1;
+    else
+        return 0;
+}
+```
+
+
 # A 两数相加
 哈工大计算学部复试机试2024改错题，来自[Leetcode 2](https://leetcode.cn/problems/add-two-numbers)，以下代码是正确的：
 ```c
@@ -2160,3 +2289,313 @@ void SearchRepeatedNum(int a[], int *n) {
 | 数组删除逻辑错误        | `for(k=i; k<n; k++) a[k]=a[k+1];`   | `for(k=j; k<*n-1; k++) a[k]=a[k+1];`|
 | 值传递无法修改数组长度  | `void SearchRepeatedNum(int a[], int n)` | `void SearchRepeatedNum(int a[], int *n)` |
 
+# K 升序与降序
+
+
+程序功能：从键盘读入某门课程的成绩（以负数结束输入），根据用户输入的选项排序：输入 1 按升序，输入 2 按降序，最后输出排序结果。程序存在多处隐蔽错误，需在不改变程序原有意图、不修改输入输出格式的前提下，修正所有错误。
+注意事项
+仅修改错误语句，正确语句不改动
+必须全部改正、运行正确才得分，部分正确不得分
+不得改变程序原有逻辑和输入输出格式
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#define N 20
+
+int ReadScore(int score[]);
+void PrintScore(int score[], int n);
+// ==================== 错误  ====================
+// 原写法：int *compare(int a,int b)
+// 错误：这是声明返回int*的函数，不是函数指针
+// 正确：int (*compare)(int a,int b)
+void SelectionSort(int score[], int n, int *compare(int a, int b));
+// ===============================================
+void Swap(int *x, int *y);
+int Ascending(int a, int b);
+int Descending(int a, int b);
+
+int main(){
+    int score[N],n;
+    int order;
+    n = ReadScore(score);
+    printf("Total students are %d\n",n);
+    printf("Enter 1 to sort in ascending order\n");
+    printf("Enter 2 to sort in descending order\n");
+    scanf("%d",&order);
+    if(order == 1){
+        SelectionSort(score, n, Ascending);
+        printf("Data items in asending order\n");
+
+    }
+    // ==================== 错误  ====================
+    // else 没有大括号{}，下面printf不属于else，永远会输出
+    // 正确：else { ... }
+    else
+        SelectionSort(score, n, Descending);
+        printf("Data items in descending order\n");
+    // ===============================================
+    PrintScore(score, n);
+    return 0;
+}
+
+/*读入成绩以负数结束,返回实际输入的成绩个数*/
+int ReadScore(int score[]){
+    int i=-1;
+    printf("Input score:\n");
+    do{
+        i++;
+        // ==================== 错误  ====================
+        // scanf必须取地址！score[i] → &score[i]
+        scanf("%d",score[i]);
+        // ===============================================
+    }while(score[i]>=0);
+    return i;
+}
+
+void PrintScore(int score[], int n){
+    int i;
+    for(i=0; i<n; i++)
+        printf("%4d",score[i]);
+    printf("\n");
+}
+
+void SelectionSort(int score[], int n, int *compare(int a, int b)){
+    int i, j, k;
+    for(i=0; i<n-1;i++){
+        k = i;
+        for(j = i+1; j< n; j++){
+            // ==================== 错误 5 ====================
+            // 比较对象写错：应该是score[j] 和 score[k]
+            // 原代码写了score[i]，排序逻辑完全错误
+            if((*compare)(score[i],score[k]))
+            // 正确：if((*compare)(score[j],score[k]))
+            // ===============================================
+                k = j;
+        }
+        if(k!= i)
+            // ==================== 错误 6 ====================
+            // Swap需要传地址！应该是 &score[i], &score[k]
+            Swap(score[i],score[k]);
+            // ===============================================
+    }
+}
+
+int Ascending(int a, int b){
+    return a < b;
+}
+
+int Descending(int a, int b){
+    return a > b;
+}
+
+void Swap(int *x, int *y){
+    // ==================== 错误 7 ====================
+    // int *temp 是野指针，没有指向有效空间，程序崩溃
+    // 正确：int temp;
+    int *temp;
+    *temp = *x;
+    *x = *y;
+    *y = *temp;
+    // ===============================================
+}
+```
+
+
+修正：
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#define N 20
+
+int ReadScore(int score[]);
+void PrintScore(int score[], int n);
+void SelectionSort(int score[], int n, int (*compare)(int a, int b));
+void Swap(int *x, int *y);
+int Ascending(int a, int b);
+int Descending(int a, int b);
+
+int main(){
+    int score[N],n;
+    int order;
+    n = ReadScore(score);
+    printf("Total students are %d\n",n);
+    printf("Enter 1 to sort in ascending order\n");
+    printf("Enter 2 to sort in descending order\n");
+    scanf("%d",&order);
+    if(order == 1){
+        SelectionSort(score, n, Ascending);
+        printf("Data items in ascending order\n");
+    }
+    else{
+        SelectionSort(score, n, Descending);
+        printf("Data items in descending order\n");
+    }
+    PrintScore(score, n);
+    return 0;
+}
+
+/*读入成绩以负数结束,返回实际输入的成绩个数*/
+int ReadScore(int score[]){
+    int i=-1;
+    printf("Input score:\n");
+    do{
+        i++;
+        scanf("%d",&score[i]);
+    }while(score[i]>=0);
+    return i;
+}
+
+void PrintScore(int score[], int n){
+    int i;
+    for(i=0; i<n; i++)
+        printf("%4d",score[i]);
+    printf("\n");
+}
+
+void SelectionSort(int score[], int n, int (*compare)(int a, int b)){
+    int i, j, k;
+    for(i=0; i<n-1;i++){
+        k = i;
+        for(j = i+1; j< n; j++){
+            if((*compare)(score[j],score[k]))
+                k = j;
+        }
+        if(k!= i)
+            Swap(&score[i],&score[k]);
+    }
+}
+
+int Ascending(int a, int b){
+    return a < b;
+}
+
+int Descending(int a, int b){
+    return a > b;
+}
+
+void Swap(int *x, int *y){
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+```
+
+
+# L 链表录成绩
+
+创建动态链表并打印链表内容。
+从键盘读入学生的学号（long型）和分数（float型）
+当输入的学号为0时，表示链表创建结束
+最终将读入的学生学号和成绩打印输出
+程序存在多处隐蔽错误，需在不改变程序原有意图、不修改输入输出格式的前提下，修正所有错误。
+
+
+```c
+
+#include <stdio.h>
+// 错误1：缺少<stdlib.h>，malloc/free无法使用
+struct node{
+    long num;
+    float score;
+    struct node *next;
+};
+
+int main(){
+    struct node *head, *p, *q;
+
+    head = (struct node*)malloc(sizeof(struct node));
+    p = (struct node*)malloc(sizeof(struct node));
+    q = p;
+
+    head->next = p;
+    // 错误2：scanf必须传地址，p->num和p->score是变量，要加&
+    scanf("%ld%f", p->num, p->score);
+
+    while (p->num != 0){
+        q = (struct node*)malloc(sizeof(struct node));
+        p->next = q;
+        // 错误3：循环内应该给新节点q赋值，而不是给p赋值，导致数据覆盖
+        scanf("%ld%f", p->num, p->score);
+    }
+    // 错误4：尾节点p->next未置空，遍历会越界
+    p->next = NULL;  // 需补充
+
+    p = head->next;
+    do{
+        printf("%ld%.2f", p->num, p->score);
+        p = p->next;
+    }
+    // 错误5：条件写反，p->next==NULL只会执行一次循环
+    while (p->next == NULL);  // 应改为while(p != NULL)
+
+    // 错误6：仅释放最后一个节点，内存泄漏，需遍历释放所有节点
+    free(p);
+    return 0;
+}
+
+```
+
+修正：
+
+```c
+#include <stdio.h>
+#include <stdlib.h>  // 错误1：补充malloc/free所需头文件
+
+struct node{
+    long num;
+    float score;
+    struct node *next;
+};
+
+int main(){
+    struct node *head = NULL, *p = NULL, *q = NULL;
+    long num;
+    float score;
+
+    // 第一次输入
+    printf("请输入学号和分数（学号为0结束）：\n");
+    scanf("%ld%f", &num, &score);  // 先读取数据，再分配节点
+
+    while(num != 0){
+        // 分配新节点
+        q = (struct node*)malloc(sizeof(struct node));
+        q->num = num;
+        q->score = score;
+        q->next = NULL;  // 新节点尾指针置空
+
+        if(head == NULL){
+            head = q;  // 第一个节点作为头节点
+            p = q;
+        }else{
+            p->next = q;  // 链接到链表尾部
+            p = q;        // 移动尾指针
+        }
+
+        // 读取下一组数据
+        scanf("%ld%f", &num, &score);
+    }
+
+    // 遍历打印链表
+    p = head;
+    printf("\n链表内容：\n");
+    while(p != NULL){  // 错误5：修正遍历条件，直到空指针结束
+        printf("%ld%.2f ", p->num, p->score);
+        p = p->next;
+    }
+    printf("\n");
+
+    // 错误6：完整释放所有节点内存
+    p = head;
+    while(p != NULL){
+        q = p->next;
+        free(p);
+        p = q;
+    }
+
+    return 0;
+}
+```
+
+# M 
