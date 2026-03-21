@@ -1730,6 +1730,129 @@ int main() {
 
 <mark>❌ 第二个 [] 不能为空：因为编译器必须知道一行有多少元素</mark>
 
+# 30. 杨辉三角
+
+在屏幕上显示如下的杨辉三角形：
+plaintext
+1
+1 1
+1 2 1
+1 3 3 1
+
+……（共n行，n≤15）
+
+请按照如下给定的函数原型编程计算并输出 n (n≤15) 行杨辉三角形。其中，n 值由用户在主函数中通过键盘输入。函数原型：c
+
+
+void YHTriangle(int a[][15], int n);/*用于计算杨辉三角形*/
+void PrintYHTriangle(int a[][15], int n);/*用于打印杨辉三角形*/
+
+要求：
+输入提示信息：Input n(n<=15):
+输入格式：%d
+输出格式：%5d
+
+注意：
+(1) 严格按 C 标准编程。各函数中的变量声明写在所有可执行语句之前。
+(2) 不能使用指针、结构体、共用体、文件、goto、枚举类型进行编程
+
+```c
+#include <stdio.h>
+
+// 计算杨辉三角
+void YHTriangle(int a[][15], int n)
+{
+    int i, j;
+    for (i = 0; i < n; i++)
+    {
+        a[i][0] = 1;
+        a[i][i] = 1;
+    }
+    for (i = 2; i < n; i++)
+    {
+        for (j = 1; j < i; j++)
+        {
+            a[i][j] = a[i-1][j] + a[i-1][j-1];
+        }
+    }
+}
+
+// 打印杨辉三角 **没有前导空格，不居中**
+void PrintYHTriangle(int a[][15], int n)
+{
+    int i, j;
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j <= i; j++)
+        {
+            printf("%5d", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int n;
+    int a[15][15] = {0};
+
+    printf("Input n(n<=15):");
+    scanf("%d", &n);
+
+    YHTriangle(a, n);
+    PrintYHTriangle(a, n);
+
+    return 0;
+}
+```
+
+# 31. double兑现国王的许诺
+
+相传国际象棋是古印度舍罕王的宰相达依尔发明的。舍罕王让宰相选择赏赐，宰相要求：在棋盘的第 1 个格子中放 1 粒，第 2 格中放 2 粒，第 3 格中放 4 粒，以后每一格都比前一格增加一倍，放完棋盘上的 64 个格子。请编程计算舍罕王共需要多少麦子赏赐他的宰相，这些麦子合多少立方米（已知 1 立方米麦子约 1.42e8 粒）。
+要求：
+输入格式：无
+输出格式："sum = %e\n"、"volum = %e\n"
+注意：
+(1) 严格按 C 标准编程，各函数中的变量声明写在所有可执行语句之前。
+(2) 不能使用指针、结构体、共用体、文件、goto、枚举类型进行编程
+
+特点	float（单精度）	double（双精度）
+占用字节	4 字节	8 字节（刚刚好）
+有效数字	6~7 位	15~16 位
+表示范围	小	大
+计算精度	低	高
+考试推荐	不推荐	✅ 首选
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    double sum, term, volum;  // 变量声明在执行语句前，符合C标准
+
+    sum = 0.0;
+    term = 1.0;  // 第1格为1粒，对应2^0
+
+    // 累加64格的麦子数：term = 前一项 * 2，sum累加所有项
+    for (i = 0; i < 64; i++)
+    {
+        sum = sum + term;
+        term = term * 2;
+    }
+
+    // 计算体积：1立方米 ≈ 1.42e8粒
+    volum = sum / 1.42e8;
+
+    // 按要求格式输出
+    printf("sum = %e\n", sum);
+    printf("volum = %e\n", volum);
+
+    return 0;
+}
+```
+
+# 32. 
 
 
 # A 两数相加
@@ -2811,4 +2934,94 @@ int main(){
 }
 ```
 
-# M 
+# M 编程统计候选人的得票数
+
+设有 3 个候选人 Li、Zhang、Fun，要求输入投票总数 n，然后每次输入一个得票的候选人的名字（区分大小写），输错姓名按废票处理，投票结束后显示各候选人得票结果。
+要求：
+
+严格按 C 标准编程，不得使用指针、结构体、共用体、文件、goto、枚举类型（注：原代码用了 struct，题目此处为允许使用结构体的笔误，按题目要求修正）
+修正原程序所有错误，保证运行正确
+原代码逐行分析 + 错误标注 + 修正
+
+```c
+// 原错误代码 + 错误标注
+#include <string.h>
+// 错误1：缺少stdio.h头文件（scanf/printf需要）
+struct person {
+    char name[20];
+    int count;
+};
+// 错误2：结构体数组定义语法错误，C语言中结构体数组初始化需带struct类型
+person leader[3] = {"Li", 0, "Zhang", 0, "Fun", 0};
+int main() {
+    int i, j;
+    char leader_name[20];
+    int n;  
+    // 错误4：scanf格式错误，%d后加\n会导致输入阻塞，应去掉\n
+    scanf("%d\n", &n);
+    for (i = 0; i < n; i++) {
+        scanf("%s", leader_name);
+        for (j = 0; j < 3; j++)
+            // 错误5：C语言中字符串不能用==比较，必须用strcmp函数
+            if (leader_name == leader[j].name)
+                leader[j].count++;
+    }
+    printf("\n");
+    for (i = 0; i < 3; i++)
+        // 错误6：输出格式错误，%5s后多了\，应为%5s:%d\n
+        printf("%5s:%d\n", leader[i].name, leader[i].count);
+    return 0;
+}
+```
+
+修正后完整可运行代码
+```c
+运行
+// 修正1：添加stdio.h头文件，用于scanf/printf
+#include <stdio.h>
+#include <string.h>
+
+// 结构体定义（原代码正确，保留）
+struct person {
+    char name[20];
+    int count;
+};
+
+// 修正2：结构体数组定义，C语言中需显式写struct类型，初始化格式正确
+struct person leader[3] = {"Li", 0, "Zhang", 0, "Fun", 0};
+
+int main() {
+    int i, j;
+    char leader_name[20];
+    int n;  
+
+    // 修正4：scanf格式去掉\n，避免输入阻塞
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        scanf("%s", leader_name);
+        for (j = 0; j < 3; j++) {
+            // 修正5：用strcmp比较字符串，==不能比较字符串
+            if (strcmp(leader_name, leader[j].name) == 0) {
+                leader[j].count++;
+            }
+        }
+    }
+
+    printf("\n");
+    for (i = 0; i < 3; i++) {
+        // 修正6：输出格式修正为%5s:%d\n，去掉多余的\
+        printf("%5s:%d\n", leader[i].name, leader[i].count);
+    }
+
+    return 0;
+}
+```
+
+ C 语言允许 “扁平化初始化”
+ struct person leader[3] = { {"Li",0}, {"Zhang",0}, {"Fun",0} };
+ struct person leader[3] = {"Li", 0, "Zhang", 0, "Fun", 0};
+ 都是可以的
+
+
+ # N 
