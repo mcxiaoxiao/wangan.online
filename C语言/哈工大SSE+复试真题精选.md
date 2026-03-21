@@ -1518,6 +1518,219 @@ int Setting(char password[]) {
 }
 ```
 
+# 27. 倒数之和
+
+计算n以内（包括n）含数字 6 的所有自然数（例如：16，26，60，606 等）的倒数之和。其中n的值由键盘输入，0 < n < 1000。
+
+注意事项：
+不能使用指针、结构体、共用体、文件、goto、枚举类型进行编程
+用标准 C 语言编程，所有变量必须在第一条可执行语句之前定义
+输入输出格式要和给定格式完全一致
+
+输入提示信息：Input n(0<n<1000)\n
+输入数据格式："%d"
+输出格式："%.2f\n"
+程序运行示例：
+
+
+Input n(0<n<1000)
+600
+0.85
+
+```c
+
+#include <stdio.h>
+
+int main()
+{
+    // 所有变量在第一条可执行语句前定义，符合要求
+    int n, i, temp;
+    double sum = 0.0;  // 存储倒数之和，初始化为0
+
+    // 1. 按要求输出输入提示
+    printf("Input n(0<n<1000)\n");
+    // 2. 按要求格式读取输入
+    scanf("%d", &n);
+
+    // 3. 遍历1到n的所有自然数
+    for(i = 1; i <= n; i++)
+    {
+        temp = i;  // 用临时变量保存当前数，避免修改原循环变量
+        // 4. 判断当前数是否包含数字6
+        while(temp > 0)
+        {
+            if(temp % 10 == 6)  // 取个位数字，判断是否为6
+            {
+                sum += 1.0 / i;  // 符合条件，累加倒数
+                break;  // 找到6后直接跳出，避免重复累加
+            }
+            temp = temp / 10;  // 去掉个位，检查下一位
+        }
+    }
+
+    // 5. 按要求格式输出结果，保留2位小数
+    printf("%.2f\n", sum);
+
+    return 0;
+}
+
+```
+
+# 28. string 插入空格
+
+用字符数组作函数参数，编程实现在字符串每个字符间插入一个空格的功能。字符数组大小定义为 80 个字符。
+要求：
+
+如下函数原型进行编程：
+
+void Insert(char s[]);
+
+在主函数中：输入字符串，调用函数Insert，将字符串插入空格；然后打印插入空格后的字符串。
+
+注意：(1) 不能使用指针、结构体、共用体、文件、goto、枚举类型进行编程(2) 用标准 C 语言编程，所有变量必须在第一条可执行语句之前定义(3) 输入输出格式要和给定格式完全一致
+
+输入提示信息："Input a string:\n"
+输出字符串前提示："Insert result:\n"
+输出格式："%s\n"
+程序运行示例：
+
+
+Input a string:
+abcdefg hijklmn
+Insert result:
+a b c d e f g h i j k l m n
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+// 按要求实现的插入空格函数，参数为字符数组
+void Insert(char s[])
+{
+    // 所有变量在第一条可执行语句前定义（函数内符合要求）
+    int len, i, j;
+    // 获取原字符串长度（不含'\0'）
+    len = strlen(s);
+    
+    // 从后往前移动字符，避免覆盖未处理的字符
+    // 原长度为len，插入后长度为 2*len - 1，从原末尾开始处理
+    for (i = len, j = 2 * len - 1; i > 0; i--, j--)
+    {
+        s[j] = s[i - 1];  // 把原字符移到新位置
+        if (i > 1)        // 第一个字符前不插空格，其余字符前插空格
+        {
+            j--;
+            s[j] = ' ';
+        }
+    }
+    // 补充新字符串的结束符
+    s[2 * len] = '\0';
+}
+
+int main()
+{
+    // 所有变量在第一条可执行语句前定义，符合要求
+    // 定义足够大的数组（原80字符，插入后最多159字符+结束符，定义为200保证安全）
+    char str[200];
+    
+    // 按要求输出输入提示
+    printf("Input a string:\n");
+    // 读取带空格的完整字符串（使用gets_s更安全，兼容标准C；若编译器不支持，可改用gets）
+    gets(str);
+    
+    // 调用插入函数
+    Insert(str);
+    
+    // 按要求输出结果提示
+    printf("Insert result:\n");
+    // 按要求格式输出结果
+    printf("%s\n", str);
+    
+    return 0;
+}
+```
+
+# 29. 评委打分录入
+
+已知某大奖赛有n个选手参赛 (n ≤ 20)，m个评委 (m ≤ 5) 为参赛选手评分（最高 10 分，最低 0 分）。统分规则为：在每个选手的m个得分中，去掉一个最高分和一个最低分后，取平均分作为该选手的最后得分。要求编程实现：从键盘读入各个评委给各个选手的打分，按指定函数原型实现三个函数，完成读分、统分、输出。
+
+指定函数原型：
+c
+
+
+#define M 5  // M表示最大评委人数（题目给定m≤5）
+void ReadScore(float score[][M], int n, int m);
+void CountScore(float averagescore[], float score[][M], int n, int m);
+void PrintScore(float averagescore[], int n);
+
+注意事项：
+不能使用指针、结构体、共用体、文件、goto、枚举类型进行编程
+用标准 C 语言编程，所有变量必须在第一条可执行语句之前定义
+输入输出格式要和给定格式完全一致
+
+输入提示信息：
+"Input the number of athletes\n"
+"Input the number of judges\n"
+"Input %d judges' scores for %d athletes\n"
+
+输出提示信息："The final scores for each athlete\n"
+输出格式："%.2f\n"
+
+
+
+```c
+#include <stdio.h>
+#define M 5
+
+void ReadScore(float s[][M], int n, int m) {
+    int i, j;
+    printf("Input %d judges' scores for %d athletes\n", m, n);
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            scanf("%f", &s[i][j]);
+}
+
+void CountScore(float a[], float s[][M], int n, int m) {
+    int i, j;
+    float sum, max, min;
+    for (i = 0; i < n; i++) {
+        sum = 0, max = s[i][0], min = s[i][0];
+        for (j = 0; j < m; j++) {
+            sum += s[i][j];
+            if (s[i][j] > max) max = s[i][j];
+            if (s[i][j] < min) min = s[i][j];
+        }
+        a[i] = (sum - max - min) / (m - 2);
+    }
+}
+
+void PrintScore(float a[], int n) {
+    int i;
+    printf("The final scores for each athlete\n");
+    for (i = 0; i < n; i++)
+        printf("%.2f\n", a[i]);
+}
+
+int main() {
+    int n, m;
+    float s[20][M], a[20];
+    printf("Input the number of athletes\n");
+    scanf("%d", &n);
+    printf("Input the number of judges\n");
+    scanf("%d", &m);
+    ReadScore(s, n, m);
+    CountScore(a, s, n, m);
+    PrintScore(a, n);
+    return 0;
+}
+```
+
+
+<mark>✅ 第一个 [] 能空：因为行数可以动态传</mark>
+
+<mark>❌ 第二个 [] 不能为空：因为编译器必须知道一行有多少元素</mark>
+
+
 
 # A 两数相加
 哈工大计算学部复试机试2024改错题，来自[Leetcode 2](https://leetcode.cn/problems/add-two-numbers)，以下代码是正确的：
