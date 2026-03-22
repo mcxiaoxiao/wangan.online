@@ -1852,7 +1852,238 @@ int main()
 }
 ```
 
-# 32. 
+# 32. 猴子吃桃问题
+猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了一个。第二天早上又将剩下的桃子吃掉一半，又多吃了一个。以后每天早上都吃了前一天剩下的一半零一个。到第 10 天早上再想吃时，见只剩一个桃子。求第一天共摘了多少桃子。
+
+要求：(1) 输出格式要求："%d\n"(2) 不允许使用递归、链表、指针、结构体、goto、共用体、文件、枚举类型(3) 纯 C 语言编程，所有变量必须在第一条可执行语句前定义（如果只改正了部分错误，则不加分）注：要求 (2)(3) 也适用于所有编程题。
+
+解题思路
+这是经典的逆推问题：
+已知第 10 天早上剩余桃子数 x₁₀ = 1
+递推关系：第n天的桃子数 xₙ 与第n+1天的桃子数 xₙ₊₁ 满足：
+xₙ₊₁ = xₙ / 2 - 1 → 逆推公式：xₙ = 2 * (xₙ₊₁ + 1)
+从第 10 天逆推 9 次（第 10 天到第 1 天共 9 次递推），即可得到第一天的桃子数。
+符合要求的 C 语言代码
+
+```c
+
+#include <stdio.h>
+
+int main()
+{
+    // 所有变量在第一条可执行语句前定义
+    int day;   // 循环天数
+    int peach; // 桃子数
+
+    // 第10天早上剩余1个桃子
+    peach = 1;
+
+    // 从第10天逆推到第1天，共循环9次
+    for (day = 1; day <= 9; day++)
+    {
+        peach = 2 * (peach + 1);
+    }
+
+    // 按要求格式输出
+    printf("%d\n", peach);
+
+    return 0;
+}
+```
+
+# 33. 选择排序+计算中位数
+
+用一个整型数组feedback保存不超过 20 个调查的反馈意见，其中每个反馈意见是 1-10 范围中的一个整数。用函数编程计算这些反馈意见的中位数。中位数指的是将数据排序后，数值大小排列在数组中间的数。如果原始数据的个数是偶数，那么中位数等于中间那两个元素的算术平均值。
+
+要求：
+(1) 首先从键盘输入反馈意见个数，输入提示信息为："Input total number of feedbacks\n"
+(2) 然后任意从键盘输入 n 个（假设输入的反馈意见个数为 n）值在 1-10 范围中的整数，输入提示信息为："Input feedbacks\n"，只提示一次
+(3) 编写函数Median，计算 n 个数的中位数，函数原型为：int Median(int answer[], int n);
+(4) 在主函数调用函数Median，并输出中位数，输出提示信息为："Median value=%d\n"
+(5) 如果使用排序算法，请使用选择排序算法按从大到小的顺序排序，其函数原型为：void DataSort(int a[], int n);
+
+注：程序运行示例如下：
+
+
+Input total number of feedbacks
+9
+Input feedbacks
+9 8 7 1 2 6 7 8 5
+Median value=7
+
+
+解题思路
+输入处理：按要求先输入反馈数量，再输入 n 个 1-10 的整数，存入数组。
+排序：用选择排序将数组按从大到小排序。
+中位数计算：
+若 n 为奇数：中位数为排序后数组的中间元素（下标n/2）
+若 n 为偶数：中位数为中间两个元素的算术平均值（题目要求返回int，因此取整数结果）
+函数实现：按要求实现DataSort（选择排序）和Median（中位数计算）函数，主函数完成输入、调用、输出。
+语法合规：纯 C 语言，无禁用语法，变量在可执行语句前定义。
+
+```c
+#include <stdio.h>
+
+// 选择排序：按从大到小排序
+void DataSort(int a[], int n)
+{
+    int i, j, max_idx, temp;
+    for (i = 0; i < n - 1; i++)
+    {
+        max_idx = i;
+        // 找未排序部分的最大值下标
+        for (j = i + 1; j < n; j++)
+        {
+            if (a[j] > a[max_idx])
+            {
+                max_idx = j;
+            }
+        }
+        // 交换当前位置与最大值位置
+        temp = a[i];
+        a[i] = a[max_idx];
+        a[max_idx] = temp;
+    }
+}
+
+// 计算中位数
+int Median(int answer[], int n)
+{
+    int mid;
+    // 先排序
+    DataSort(answer, n);
+    
+    if (n % 2 == 1)
+    {
+        // 奇数个：取中间元素
+        mid = answer[n / 2];
+    }
+    else
+    {
+        // 偶数个：取中间两个元素的平均值，取整数结果
+        mid = (answer[n / 2 - 1] + answer[n / 2]) / 2;
+    }
+    return mid;
+}
+
+int main()
+{
+    // 所有变量在第一条可执行语句前定义
+    int n;
+    int feedback[20];
+    int i;
+    int median_val;
+
+    // 输入反馈数量
+    printf("Input total number of feedbacks\n");
+    scanf("%d", &n);
+
+    // 输入反馈意见
+    printf("Input feedbacks\n");
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &feedback[i]);
+    }
+
+    // 计算中位数
+    median_val = Median(feedback, n);
+
+    // 输出结果
+    printf("Median value=%d\n", median_val);
+
+    return 0;
+}
+```
+
+# 34. 字符串字典序排序
+
+请用二维字符数组方法编程实现按奥运会参赛国国名在字典中的顺序对其入场次序进行排序后打印输出。假设参赛国个数为 10 个，每个国名最大长度 20 个字符。
+要求：
+(1) 从键盘输入 10 个国名
+(2) 要求读入的国名可以包含有空格
+(3) 使用交换排序算法实现国名按字典序排序，函数原型为：void SortString(char str[][MAX_LEN], int n);
+(4) 输出提示信息为 “Sorted results\n”
+(5) 输出数据格式要求：一行输出一个字符串
+程序运行示例如下：
+输入：
+South Korea
+Finland
+United States
+England
+Australia
+Brazil
+Egypt
+China
+Mexico
+Spain
+输出：
+Sorted results
+Australia
+Brazil
+China
+Egypt
+England
+Finland
+Mexico
+South Korea
+Spain
+United States
+
+`fgets(str, sizeof(str), stdin); `// 从标准输入字符串，包含空格，包含换行符
+`gets(str); `// 从标准输入输入字符串，包含空格，不包含换行符
+`strcmp(str, str2);` // 比较字符串str和str2，返回值为0表示相等，其他值表示不相等
+`strcpy(str, tmp);` // 复制字符串str2到tmp
+`void SortString(char str[][MAX_LEN], int n)` 第一个[]可以置空，但是第二个[]不能置空。
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LEN 20
+#define COUNTRY_NUM 10
+
+void SortString(char str[][MAX_LEN], int n)
+{
+    int i, j;
+    char temp[MAX_LEN];
+
+    for(i=0; i<n-1; i++)
+    {
+        for(j=0; j<n-1-i; j++)
+        {
+            if(strcmp(str[j], str[j+1]) > 0)
+            {
+                strcpy(temp, str[j]);
+                strcpy(str[j], str[j+1]);
+                strcpy(str[j+1], temp);
+            }
+        }
+    }
+}
+
+int main()
+{
+    char country[COUNTRY_NUM][MAX_LEN];
+    int i;
+
+    // 用 gets 输入！不处理 \n！
+    for(i=0; i<10; i++)
+    {
+        gets(country[i]);
+    }
+
+    SortString(country, 10);
+
+    printf("Sorted results\n");
+    for(i=0; i<10; i++)
+    {
+        printf("%s\n", country[i]);
+    }
+
+    return 0;
+}
+```
+
 
 
 # A 两数相加
@@ -3024,4 +3255,167 @@ int main() {
  都是可以的
 
 
- # N 
+ # N 日期改错，什么是闰年
+
+输入某年某月某日，计算并输出它是这一年的第几天（要求考虑闰年的问题）。
+下面程序中存在比较隐蔽的错误，请通过分析和调试程序，发现并改正程序中的错误。
+注意：
+(1) 将修改后的完整的源程序写在答题区内
+(2) 对于没有错误的语句，请不要修改，修改原本正确的语句也要扣分
+(3) 当且仅当错误全部改正，且程序运行结果调试正确，才给 10 分，如果只改正了部分错误，则不加分。
+
+<mark>闰年判断：能被4整除且不能被100整除，或能被400整除，例如2096年是闰年，2100年不是闰年，2400年是闰年</mark>
+
+```c
+#include <stdio.h>
+
+int DayofYear(int year, int month, int day);
+int dayTab[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+
+int main()
+{
+    int year, month, day, yearDay;
+    printf("Please enter year, month, day:\n");
+    scanf("%d,%d,%d", &year, &month, &day);
+    yearDay = DayofYear(year, month, day);
+    printf("yearDay = %d\n", yearDay);
+    return 0;
+}
+
+int DayofYear(int year, int month, int day)
+{
+    int i;
+    for(i=1; i<month; i++)
+    {
+        day += dayTab[i];
+    }
+    return day;
+}
+```
+修正：
+```c
+ #include <stdio.h>
+
+int DayofYear(int year, int month, int day);
+int dayTab[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+int main()
+{
+    int year, month, day, yearDay;
+    printf("Please enter year, month, day:\n");
+    scanf("%d,%d,%d", &year, &month, &day);
+    yearDay = DayofYear(year, month, day);
+    printf("yearDay = %d\n", yearDay);
+    return 0;
+}
+
+int DayofYear(int year, int month, int day)
+{
+    int i;
+    // 闰年判断：能被4整除且不能被100整除，或能被400整除
+    int isLeap = ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
+    
+    for (i = 1; i < month; i++)
+    {
+        day += dayTab[i];
+        // 若为闰年且月份超过2月，额外加1天（补偿2月多的1天）
+        if (i == 2 && isLeap)
+        {
+            day += 1;
+        }
+    }
+    return day;
+}
+```
+
+# O 数字魔术游戏
+
+在一种室内互动游戏中，魔术师要每位观众心里想一个三位数 abc（a、b、c 分别是百位、十位和个位数字），然后魔术师让观众心中记下 acb、bac、bca、cab、cba 五个数以及这 5 个数的和值。只要观众说出这个和是多少，则魔术师一定能猜出观众心里想的原数 abc 是多少。例如，观众甲说他计算的和值是 1999，则魔术师立即说出他想的数是 443，而观众乙说他计算的和值是 1998，则魔术师说：“你算错了！”。请编程模拟这个数字魔术游戏。
+
+下面程序中存在比较隐蔽的错误，请通过分析和调试程序，发现并改正程序中的错误。注意：(1) 将修改后的完整的源程序写在答题区内(2) 对于没有错误的语句，请不要修改，修改原本正确的语句也要扣分(3) 当且仅当错误全部改正，且程序运行结果调试正确，才给 10 分，如果只改正了部分错误，则不加分。
+
+<mark>要点：0XX是无效的三位数，不能作为输入。</mark>
+
+```c
+#include <stdio.h>
+
+int Magic(int m);
+
+int main(){
+    int m, ret;
+    printf("Input a sum:\n");
+    scanf("%d", &m);
+    ret = Magic(m);
+    if (ret != 1){
+        printf("The sum you calculated is wrong!\n");
+    }
+    return 0;
+}
+
+int Magic(int m){
+    int a, b, c, n;
+    // 错误1：循环边界错误！a、b、c是三位数的百位、十位、个位，a∈[1,9]，b、c∈[0,9]
+    // 原代码a从0开始，会把0开头的两位数/一位数也当成三位数，且a<9会漏掉a=9的情况
+    for (a = 0; a < 9; a++){
+        for (b = 0; b < 9; b++){ // 错误2：b<9会漏掉b=9的情况
+            for (c = 0; c < 9; c++){ // 错误3：c<9会漏掉c=9的情况
+                // 错误4：公式错误！5个数acb、bac、bca、cab、cba的和推导错误
+                // 正确推导：
+                // acb = 100a + 10c + b
+                // bac = 100b + 10a + c
+                // bca = 100b + 10c + a
+                // cab = 100c + 10a + b
+                // cba = 100c + 10b + a
+                // 总和 = 122a + 212b + 221c
+                // 原代码公式错误
+                n = 221 * a + 212 * b + 122 * c;
+                // 错误5：赋值运算符=误用为比较==，if (m = n)永远为真，逻辑错误
+                if (m = n){
+                    printf("The number is %d\n", 100 * a + 10 * b + c);
+                    return 1;
+                }
+            }
+        }
+    }
+    // 错误6：函数无返回值，若遍历完所有数都不匹配，会导致未定义行为
+    // 原代码缺少return 0;
+}
+```
+
+修正后：
+```c
+#include <stdio.h>
+
+int Magic(int m);
+
+int main(){
+    int m, ret;
+    printf("Input a sum:\n");
+    scanf("%d", &m);
+    ret = Magic(m);
+    if (ret != 1){
+        printf("The sum you calculated is wrong!\n");
+    }
+    return 0;
+}
+
+int Magic(int m){
+    int a, b, c, n;
+    // 修正循环边界：a∈[1,9]，b、c∈[0,9]，a<=9、b<=9、c<=9
+    for (a = 1; a <= 9; a++){
+        for (b = 0; b <= 9; b++){
+            for (c = 0; c <= 9; c++){
+                // 修正公式为正确的122a + 212b + 221c
+                n = 122 * a + 212 * b + 221 * c;
+                // 修正赋值=为比较==
+                if (m == n){
+                    printf("The number is %d\n", 100 * a + 10 * b + c);
+                    return 1;
+                }
+            }
+        }
+    }
+    // 补充函数返回值，无匹配时返回0
+    return 0;
+}
+```
