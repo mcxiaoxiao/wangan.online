@@ -156,3 +156,9 @@ KMP 最经典的结论：
 <mark> BMH 最坏是 **O(n⋅m)**（n 是文本长度，m 是模式串长度），和暴力匹配一样慢，非线性；</mark>
 
 <mark> Rabin-Karp 基于哈希的字符串匹配算法，核心是滚动哈希、预计算、重复利用哈希值。期望是 O (n+m)，但最坏退化成 **O (n*m)**（哈希冲突导致逐个位置重新比较），非线性。</mark>
+
+---
+
+![alt text](image/image.png)
+<mark> **下界、紧确界、严格o/宽松O上界**</mark>
+![alt text](image/Oo.png)
