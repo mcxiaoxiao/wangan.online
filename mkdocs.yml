@@ -157,7 +157,7 @@ theme:
 
 repo_url: https://github.com/mcxiaoxiao/wangan.online
 repo_name: 编辑
-copyright: Copyright &copy; <a href="https://github.com/mcxiaoxiao/wangan.online" target="_blank">HIT837-Book-of-Answer</a> 网安在线考研知识库 🎓 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 本页至今已助力 <span id="busuanzi_value_page_pv"></span> 次有意义的探索，距离实现“消灭一切网安考研信息差”的愿景更进一步！ <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE4WWSR48"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-PXE4WWSR48'); </script>   </br>  <img width="131" height="42" alt="image" src="https://github.com/user-attachments/assets/241fb14e-f968-4a31-a256-06037ba057ec" />
+copyright: Copyright &copy; <a href="https://github.com/mcxiaoxiao/wangan.online" target="_blank">wangan.online</a> 网安在线考研知识库 🎓 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 本页至今已助力 <span id="busuanzi_value_page_pv"></span> 次有意义的探索，距离实现“消灭一切网安考研信息差”的愿景更进一步！ <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE4WWSR48"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-PXE4WWSR48'); </script>   </br>  <img width="131" height="42" alt="image" src="https://github.com/user-attachments/assets/241fb14e-f968-4a31-a256-06037ba057ec" />
 
 
 extra:
@@ -172,11 +172,6 @@ plugins:
       lang: zh
       jieba_dict: dict.txt.big
   - tags
-  - meta-descriptions:
-      enable_checks: true
-      min_length: 20      # Minimum character count
-      max_length: 500     # Maximum (SEO recommended)
-      trim: true          # Auto-trim if exceeded
 
 markdown_extensions: 
   - pymdownx.arithmatex:
