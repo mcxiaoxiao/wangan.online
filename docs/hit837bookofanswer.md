@@ -83,7 +83,7 @@ transform: translateY(0);
 4.  ![Image title](img/hit4.png){ loading=lazy }
 
 
-此处提供三种获取方式[^4]：**付费（132￥） / 参与修订（免费） / 以物易物（免费）** 
+此处提供三种获取方式[^4]：**付费（132￥） / 参与修订（免费） / 以物易物（免费）** ，三种方式均会附赠复试补充资料，全程助力上岸！
 
 <div class="grid cards" markdown>
 
@@ -97,7 +97,7 @@ transform: translateY(0);
     
     发送邮件到orlosziming@163.com 标题为：`付费999999999999`（支付编号）1分钟内自动核验并发送文件，留意收件箱。
 
-    [:octicons-arrow-right-24: 发送邮件](#)
+    [:octicons-arrow-right-24: 发送邮件](mailto:orlosziming@163.com)
 
 -   :material-file-document-edit:{ .lg .middle } __参与修订__
 
@@ -105,11 +105,11 @@ transform: translateY(0);
 
     在 :octicons-git-branch-16:page分支 提交PR，帮助优化或扩充这个公益且开源的在线知识库的内容。
     
-    [:octicons-arrow-right-24: 提交 Pull Request](#)
+    [:octicons-arrow-right-24: 提交 Pull Request](https://github.com/mcxiaoxiao/wangan.online/pulls)
 
     发送邮件到orlosziming@163.com 标题为：`参与修订#123`（您的PR编号）核验后发送文件。
 
-    [:octicons-arrow-right-24: 发送邮件](#)
+    [:octicons-arrow-right-24: 发送邮件](mailto:orlosziming@163.com)
 
 
 -   :material-file-document-plus:{ .lg .middle } __以物易物__
@@ -117,11 +117,11 @@ transform: translateY(0);
     ---
     在 :octicons-git-branch-16:HIT837-Book-of-Answer分支 提交PR，上传您认为质量不错的备考资料。
 
-    [:octicons-arrow-right-24: 提交 Pull Request](#)
+    [:octicons-arrow-right-24: 提交 Pull Request](https://github.com/mcxiaoxiao/wangan.online/pulls)
 
     发送邮件到orlosziming@163.com 标题为：`以物易物#123`（您的PR编号）核验后发送文件。
 
-    [:octicons-arrow-right-24: 发送邮件](#)
+    [:octicons-arrow-right-24: 发送邮件](mailto:orlosziming@163.com)
 
 
 
@@ -160,26 +160,27 @@ transform: translateY(0);
 
 
 <script>
-
-  const links = [
-    "https://www.google.com",
-    "https://www.yahoo.com",
-    "https://www.bing.com",
-    "https://www.duckduckduckgo.com"
-  ];
-
-
+  // 随机跳转到：信安基础/1-38、网安基础/1-19、计算机网络/1-18
   const button0 = document.getElementById("randomButton");
 
   button0.addEventListener("click", function() {
+    // 定义三个目录 + 对应最大页码
+    const categories = [
+      { name: "信安基础", max: 38 },
+      { name: "网安基础", max: 19 },
+      { name: "计算机网络", max: 18 }
+    ];
 
-    const randomIndex = Math.floor(Math.random() * links.length);
+    // 随机选一个目录
+    const randCat = categories[Math.floor(Math.random() * categories.length)];
+    // 随机生成页码（从1开始）
+    const randPage = Math.floor(Math.random() * randCat.max) + 1;
+    // 拼接最终路径
+    const randomUrl = `/HIT837-Book-of-Answer/${randCat.name}/${randPage}`;
 
-    const randomLink = links[randomIndex];
-
-    window.open(randomLink, '_blank');
+    // 打开新标签跳转
+    window.open(randomUrl, '_blank');
   });
-  
 </script>
 
 [^1]: 感谢guoJohnny学长惠泽无数后辈的对HIT网络空间安全考研专业课资料的整理与分享: [guoJohnny/-837-](https://github.com/guoJohnny/-837- "哈尔滨工业大学考研 网络与空间安全 837 初试资料库") 
