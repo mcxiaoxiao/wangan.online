@@ -11,13 +11,13 @@ title: 哈尔滨工业大学计算学部研究生复试资料+全流程备考指
 
 ## **📚 补充资料下载**
 
-仓库已经包含复试备考所需的核心资料，覆盖复试最重点内容，适合一个月速通。如果需要通过复试填补初试低分或追求更高分，希望获得更多相关资源（如哈工大计算学部复试往年面试机试题目、实验室面试经验、复试经验贴、更细致的各科试卷习题等）可以选择购买并下载付费包（仅作补充，**非必需**，请按需自取）。
+在线知识库及仓库 [:octicons-git-branch-16:`HIT-CS-Reexam`](https://github.com/mcxiaoxiao/wangan.online/tree/HIT-CS-Reexam) 分支已包含复试备考所需的核心资料，覆盖复试最重点内容，适合一个月速通。如果需要通过复试填补初试低分或追求更高分，希望获得更多相关资源（如哈工大计算学部复试往年面试机试题目、实验室面试经验、复试经验贴、更细致的各科试卷习题等）可以选择购买并下载付费包（仅作补充，**非必需**，请按需自取）。
 
-此处提供两种获取方式：**付费（60￥） / 君子协定（免费）** 
+此处提供两种获取方式：**投喂支持（60￥） / 君子协定（免费）** 
 
 <div class="grid cards" markdown>
 
--   :material-cash-check:{ .lg .middle } __付费__
+-   :material-cash-check:{ .lg .middle } __投喂支持__
 
     ---
 
@@ -34,11 +34,11 @@ title: 哈尔滨工业大学计算学部研究生复试资料+全流程备考指
 -   :material-file-document-plus:{ .lg .middle } __君子协定__
 
     ---
-    在复试前后上传自己的备考资料到HIT-CS-Reexam分支，或在复试工作结束后（参阅哈工大诚信复试承诺书和具体复试工作安排）补充当年机试真题回忆
+    在 [:octicons-git-branch-16:`HIT-CS-Reexam`分支](https://github.com/mcxiaoxiao/wangan.online/tree/HIT-CS-Reexam) 上传自己的备考资料，或在复试工作结束后（参阅哈工大诚信复试承诺书和具体复试工作安排）补充当年机试真题回忆
 
     [:octicons-arrow-right-24: 提交 Pull Request](https://github.com/mcxiaoxiao/wangan.online/pulls)
 
-    发送邮件到orlosziming@163.com 标题为：`君子协定` 核验后发送文件。
+    发送邮件到orlosziming@163.com 标题为：`君子协定#123` （您的PR编号）核验后发送文件。
 
     [:octicons-arrow-right-24: 发送邮件](mailto:orlosziming@163.com)
 

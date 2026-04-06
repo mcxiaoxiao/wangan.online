@@ -4,8 +4,8 @@ nav:
   - 首页: 
     - Getting Started: index.md
     - 哈尔滨工业大学资源索引: hit837.md
-  - 网安真题: 真题.md
-  - 初试资料:
+  - 自命题索引: 真题.md
+  - 初试知识库:
     - 哈工大837:
       - 前言: hit837bookofanswer.md
       - 信息安全基础: 
@@ -104,9 +104,10 @@ nav:
 
         - 链路层: 计算机网络/2.md
 
-  - 复试资料: 
-    - 哈工大计算学部: 复试/intro.md
-    - 测试: 复试/test.md
+  - 复试知识库: 
+    - 哈工大计算学部: 
+      - 前言: 复试/intro.md
+      - 历年机试真题: 复试/test.md
   - 开放论坛: https://github.com/mcxiaoxiao/wangan.online/discussions
 
 

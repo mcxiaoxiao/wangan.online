@@ -9,8 +9,8 @@ button {
   --button_radius: 0.75em;
   --button_color: #f8f8f8ff;
   --button_outline_color: #00071fff;
-  font-size: 20px;
-  margin: 10px;
+  font-size: 16px;
+  margin: 5px;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -83,11 +83,11 @@ transform: translateY(0);
 4.  ![Image title](img/hit4.png){ loading=lazy }
 
 
-此处提供三种获取方式[^4]：**付费（132￥） / 参与修订（免费） / 以物易物（免费）** ，三种方式均会附赠复试补充资料，全程助力上岸！
+此处提供三种获取方式[^4]：**投喂支持（132￥） / 参与修订（免费） / 以物易物（免费）** ，三种方式均会附赠复试补充资料，全程助力上岸！
 
 <div class="grid cards" markdown>
 
--   :material-cash-check:{ .lg .middle } __付费__
+-   :material-cash-check:{ .lg .middle } __投喂支持__
 
     ---
 
@@ -103,7 +103,7 @@ transform: translateY(0);
 
     ---
 
-    在 :octicons-git-branch-16:page分支 提交PR，帮助优化或扩充这个公益且开源的在线知识库的内容。
+    在 [:octicons-git-branch-16:`page`分支](https://github.com/mcxiaoxiao/wangan.online/tree/page) 提交PR，帮助优化或扩充在线知识库的内容。
     
     [:octicons-arrow-right-24: 提交 Pull Request](https://github.com/mcxiaoxiao/wangan.online/pulls)
 
@@ -115,7 +115,7 @@ transform: translateY(0);
 -   :material-file-document-plus:{ .lg .middle } __以物易物__
 
     ---
-    在 :octicons-git-branch-16:HIT837-Book-of-Answer分支 提交PR，上传您认为质量不错的备考资料。
+    在 [:octicons-git-branch-16:`HIT837-Book-of-Answer`分支](https://github.com/mcxiaoxiao/wangan.online/tree/HIT837-Book-of-Answer) 提交PR，上传您认为质量不错的备考资料。
 
     [:octicons-arrow-right-24: 提交 Pull Request](https://github.com/mcxiaoxiao/wangan.online/pulls)
 
