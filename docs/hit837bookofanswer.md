@@ -91,7 +91,7 @@ transform: translateY(0);
 
     ---
 
-    扫描收款二维码支付 CNY 132 元，复制微信支付编号。
+    扫描收款二维码支付 132 元，复制微信支付编号。
     
     [:material-qrcode-scan: 微信扫码支付](/HIT837-Book-of-Answer/img/132.jpg "点击后会打开二维码图片，扫码付款后微信搜索微信支付可以找到订单信息")
     
