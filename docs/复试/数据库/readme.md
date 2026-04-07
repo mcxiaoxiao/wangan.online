@@ -5,7 +5,7 @@
 知识结构：
 
 
-<img src="./image/dbs.png" width="700">
+![alt text](image/dbs.png)
 
 
 课程习题地址：
