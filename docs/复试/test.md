@@ -1,5 +1,5 @@
 ---
-title: 哈尔滨工业大学计算学部研究生复试资料+全流程备考指南
+title: 外部md文件测试
 ---
 
 <div id="external-md-content">加载中...</div>
