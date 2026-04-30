@@ -6,12 +6,14 @@ hide:
   - toc
 ---
 
+#  
+
 <div class="home-page">
   <section class="home-hero home-hero--split" aria-labelledby="home-title">
     <div class="home-hero__copy">
-      <h1 id="home-title" class="home-title">wangan.online</h1>
+      <div id="home-title" class="home-title" role="heading" aria-level="1">wangan</br>.online</div>
       <p class="home-subtitle">
-        由社区维护的，专注于网安/信安相关硕士研究生考试应试的，自由、开放的 <strong>网安在线考研知识库</strong>，致力于消灭一切网安考研信息差。🎯
+        由社区维护的，专注于网安/信安相关硕士研究生考试应试的，自由、开放的 <strong>网安在线考研知识库</strong>。
       </p>
 
       <div class="home-actions" aria-label="首页主入口">
@@ -57,7 +59,7 @@ hide:
 
   <section class="home-section home-section--compact" aria-labelledby="home-path-title">
     <div class="home-section__head">
-      <span class="home-section__eyebrow">Start here</span>
+      <span class="home-section__eyebrow">Site Map</span>
       <h2 id="home-path-title">资料入口</h2>
       <p>按你当前阶段直接进入，不绕目录。</p>
     </div>
@@ -88,12 +90,12 @@ hide:
 
   <section class="home-section" aria-labelledby="home-resource-title">
     <div class="home-section__head">
-      <span class="home-section__eyebrow">Current</span>
+      <span class="home-section__eyebrow">Archive</span>
       <h2 id="home-resource-title">当前收录</h2>
     </div>
     <div class="home-resource">
       <ul class="home-link-list">
-        <li><a href="hit837/">哈工大 837</a></li>
+        <li><a href="hit837/">哈工大网安837自命题 </a></li>
         <li><a href="复试/intro/">哈工大计算学部复试</a></li>
       </ul>
     </div>
@@ -106,14 +108,13 @@ hide:
     </div>
     <div class="home-card home-card--soft">
       <p>
-        wangan.online 是一个由社区维护的网安/信安考研知识库，内容会持续整理和补充。
-        首页只保留关键入口，具体知识点、真题、经验和资料都放进对应院校专题。
+        这里是由备考同伴共同维护的网安 / 信安考研知识库，内容随时间持续沉淀。首页只留核心入口，知识点、真题和经验都归在各院校专题里，不绕路。
       </p>
       <p>
-        资料原则是经过整理、有人用过、可回溯、可纠错。AI 可以辅助，但内容仍然要靠人把关。
+        收录的资料经过整理、有人用过，可以溯源、可以纠错。AI 可以辅助，但每一条内容最终还是要靠人来把关。
       </p>
       <p>
-        如果你想补充院校专题、修正文档、整理题型，可以去讨论区或提交 PR。贡献时尽量保持同样的结构和排版，方便别人继续维护。
+        如果你想补充专题、修正错误，或者只是整理一份笔记，都欢迎来讨论区聊聊，或直接提 PR。结构和排版尽量保持一致，方便后来的人继续维护。
       </p>
       <div class="home-actions home-actions--inline">
         <a class="home-action home-action--primary" href="https://github.com/mcxiaoxiao/wangan.online/discussions/2">提交 PR / 参与讨论</a>
