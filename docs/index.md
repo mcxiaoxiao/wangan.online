@@ -6,12 +6,12 @@ hide:
   - toc
 ---
 
-#  
+#   
 
 <div class="home-page">
   <section class="home-hero home-hero--split" aria-labelledby="home-title">
     <div class="home-hero__copy">
-      <div id="home-title" class="home-title" role="heading" aria-level="1">wangan</br>.online</div>
+      <div id="home-title" class="home-title" role="heading" aria-level="1">wangan.online</div>
       <p class="home-subtitle">
         由社区维护的，专注于网安/信安相关硕士研究生考试应试的，自由、开放的 <strong>网安在线考研知识库</strong>。
       </p>
@@ -20,14 +20,11 @@ hide:
         <a class="home-action home-action--primary" href="#home-path-title">
           Getting Started
         </a>
-        <a class="home-action home-action--text" href="https://github.com/mcxiaoxiao/wangan.online" target="_blank" rel="noopener">
-          GitHub Repo
-        </a>
       </div>
     </div>
 
     <div class="home-hero__panel" aria-label="首页视觉标识">
-      <div class="home-terminal" aria-label="fork it，commit it，share it，消灭一切考研信息差。">
+      <div class="home-terminal" aria-label="fork it，commit it，share it，消灭一切，网安考研信息差。">
         <div class="home-code-stage">
           <div class="home-code-bar" aria-hidden="true">
             <span></span>
@@ -37,18 +34,21 @@ hide:
           </div>
           <div class="home-cycle" aria-hidden="true">
             <p class="home-cycle-item" style="--slot-start: 0s;">
-              <span style="--d: .04s;">f</span><span style="--d: .10s;">o</span><span style="--d: .18s;">r</span><span style="--d: .26s;">k</span><span class="home-cycle__space" style="--d: .34s; --w: .44em;">&nbsp;</span><span style="--d: .46s;">i</span><span style="--d: .55s;">t</span>
+              <span style="--d: .03s;">f</span><span style="--d: .09s;">o</span><span style="--d: .16s;">r</span><span style="--d: .24s;">k</span><span class="home-cycle__space" style="--d: .31s; --w: .42em;">&nbsp;</span><span style="--d: .40s;">i</span><span style="--d: .48s;">t</span>
             </p>
-            <p class="home-cycle-item" style="--slot-start: 2s;">
-              <span style="--d: .05s;">c</span><span style="--d: .13s;">o</span><span style="--d: .19s;">m</span><span style="--d: .30s;">m</span><span style="--d: .38s;">i</span><span style="--d: .47s;">t</span><span class="home-cycle__space" style="--d: .56s; --w: .44em;">&nbsp;</span><span style="--d: .68s;">i</span><span style="--d: .76s;">t</span>
+            <p class="home-cycle-item" style="--slot-start: 1.7s;">
+              <span style="--d: .04s;">c</span><span style="--d: .11s;">o</span><span style="--d: .17s;">m</span><span style="--d: .26s;">m</span><span style="--d: .34s;">i</span><span style="--d: .42s;">t</span><span class="home-cycle__space" style="--d: .50s; --w: .42em;">&nbsp;</span><span style="--d: .62s;">i</span><span style="--d: .70s;">t</span>
             </p>
-            <p class="home-cycle-item" style="--slot-start: 4s;">
-              <span style="--d: .04s;">s</span><span style="--d: .12s;">h</span><span style="--d: .22s;">a</span><span style="--d: .30s;">r</span><span style="--d: .41s;">e</span><span class="home-cycle__space" style="--d: .50s; --w: .44em;">&nbsp;</span><span style="--d: .65s;">i</span><span style="--d: .73s;">t</span>
+            <p class="home-cycle-item" style="--slot-start: 3.4s;">
+              <span style="--d: .03s;">s</span><span style="--d: .10s;">h</span><span style="--d: .18s;">a</span><span style="--d: .26s;">r</span><span style="--d: .36s;">e</span><span class="home-cycle__space" style="--d: .45s; --w: .42em;">&nbsp;</span><span style="--d: .58s;">i</span><span style="--d: .66s;">t</span>
             </p>
-            <p class="home-cycle-item home-cycle-item--zh home-cycle-item--two-line" style="--slot-start: 6s;">
-              <span class="home-cycle-line"><span style="--d: .04s;">知</span><span style="--d: .14s;">识</span><span style="--d: .24s;">共</span><span style="--d: .34s;">享</span><span style="--d: .44s;">，</span></span><span class="home-cycle-line"><span style="--d: .58s;">开</span><span style="--d: .68s;">源</span><span style="--d: .78s;">无</span><span style="--d: .88s;">界</span><span style="--d: .98s;">。</span></span>
+            <p class="home-cycle-item home-cycle-item--zh" style="--slot-start: 5.1s;">
+              <span style="--d: .04s;">消</span><span style="--d: .13s;">灭</span><span style="--d: .24s;">一</span><span style="--d: .35s;">切</span>
             </p>
-            <span class="home-logo-build" style="--slot-start: 8s;">
+            <p class="home-cycle-item home-cycle-item--zh" style="--slot-start: 6.8s;">
+              <span style="--d: .04s;">网</span><span style="--d: .12s;">安</span><span style="--d: .21s;">考</span><span style="--d: .31s;">研</span><span style="--d: .41s;">信</span><span style="--d: .52s;">息</span><span style="--d: .63s;">差</span>
+            </p>
+            <span class="home-logo-build" style="--slot-start: 8.5s;">
               <img src="logo.png" alt="">
             </span>
           </div>
@@ -59,26 +59,26 @@ hide:
 
   <section class="home-section home-section--compact" aria-labelledby="home-path-title">
     <div class="home-section__head">
-      <span class="home-section__eyebrow">Site Map</span>
+      <span class="home-section__eyebrow">Start here</span>
       <h2 id="home-path-title">资料入口</h2>
       <p>按你当前阶段直接进入，不绕目录。</p>
     </div>
 
     <div class="home-path-grid">
-      <a class="home-path-card home-path-card--primary" href="初试/">
+      <a class="home-path-card home-path-card--primary" href="https://github.com/mcxiaoxiao/wangan.online/discussions">
         <span class="home-path-card__index">01</span>
-        <strong>初试自命题</strong>
-        <p>按院校专题进入专业课资料、考点整理和自命题内容。</p>
+        <strong>开放论坛</strong>
+        <p>考研经验、资料共享、问题讨论、经验贴汇总。</p>
+      </a>
+      <a class="home-path-card" href="初试/">
+        <span class="home-path-card__index">02</span>
+        <strong>初试</strong>
+        <p>按院校进入专业课资料、考点整理和自命题内容。</p>
       </a>
       <a class="home-path-card" href="复试/">
-        <span class="home-path-card__index">02</span>
-        <strong>复试资料/真题</strong>
-        <p>看复试大类页，先找流程、机试、资料和历年真题入口。</p>
-      </a>
-      <a class="home-path-card" href="复试/综合问题/哈工大计算学部面试常备知识库/">
         <span class="home-path-card__index">03</span>
-        <strong>复试面试</strong>
-        <p>整理综合问题、面试常备知识和口述表达材料。</p>
+        <strong>复试</strong>
+        <p>复试流程、机试、面试、历年真题和综合问题。</p>
       </a>
       <a class="home-path-card" href="https://github.com/mcxiaoxiao/wangan.online/discussions/2">
         <span class="home-path-card__index">04</span>
