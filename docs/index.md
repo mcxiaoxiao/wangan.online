@@ -6,12 +6,10 @@ hide:
   - toc
 ---
 
-#   
-
 <div class="home-page">
   <section class="home-hero home-hero--split" aria-labelledby="home-title">
     <div class="home-hero__copy">
-      <div id="home-title" class="home-title" role="heading" aria-level="1">wangan.online</div>
+      <div id="home-title" class="home-title" role="heading" aria-level="1">wangan</br>.online</div>
       <p class="home-subtitle">
         由社区维护的，专注于网安/信安相关硕士研究生考试应试的，自由、开放的 <strong>网安在线考研知识库</strong>。
       </p>
