@@ -6,27 +6,76 @@ hide:
   - toc
 ---
 
-<div class="home-hero">
-  <div class="home-kicker">wangan.online · 网安在线考研知识库</div>
-  <h1 class="home-title">哈工大网安考研资料，直接看重点。</h1>
-  <p class="home-subtitle">
-    这是一个给网安/信安考研用的资料站，重点放在哈工大 837、复试、真题和常考知识点。
-    首页尽量不做成文档目录，而是把最常用的入口直接放前面。
-  </p>
+<div class="home-hero home-hero--split">
+  <div class="home-hero__copy">
+    <div class="home-kicker">wangan.online · 网安在线考研知识库</div>
+    <h1 class="home-title">哈工大网安考研资料，直接看重点。</h1>
+    <p class="home-subtitle">
+      这是一个给网安/信安考研用的资料站，重点放在哈工大 837、复试、真题和常考知识点。
+      首页不做成纯目录，而是把最常用的入口、状态和索引直接放在前面。
+    </p>
 
-  <div class="home-actions">
-    <a class="home-action home-action--primary" href="hit837/">
-      哈工大资源索引
-    </a>
-    <a class="home-action" href="真题/">
-      自命题索引
-    </a>
-    <a class="home-action" href="复试/历年机试真题/">
-      历年机试真题
-    </a>
-    <a class="home-action" href="https://github.com/mcxiaoxiao/wangan.online/discussions/2">
-      参与贡献
-    </a>
+    <div class="home-actions">
+      <a class="home-action home-action--primary" href="hit837/">
+        哈工大资源索引
+      </a>
+      <a class="home-action" href="真题/">
+        自命题索引
+      </a>
+      <a class="home-action" href="复试/历年机试真题/">
+        历年机试真题
+      </a>
+      <a class="home-action" href="https://github.com/mcxiaoxiao/wangan.online/discussions/2">
+        参与贡献
+      </a>
+    </div>
+
+    <div class="home-metrics" aria-label="站点概览">
+      <div class="home-metric">
+        <span class="home-metric__value">837</span>
+        <span class="home-metric__label">核心资料</span>
+      </div>
+      <div class="home-metric">
+        <span class="home-metric__value">复试</span>
+        <span class="home-metric__label">题型整理</span>
+      </div>
+      <div class="home-metric">
+        <span class="home-metric__value">真题</span>
+        <span class="home-metric__label">按年归档</span>
+      </div>
+      <div class="home-metric">
+        <span class="home-metric__value">共建</span>
+        <span class="home-metric__label">持续更新</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-hero__panel">
+    <div class="home-orbit" aria-hidden="true">
+      <span class="home-orbit__ring"></span>
+      <span class="home-orbit__ring home-orbit__ring--inner"></span>
+      <span class="home-orbit__dot home-orbit__dot--a"></span>
+      <span class="home-orbit__dot home-orbit__dot--b"></span>
+      <span class="home-orbit__dot home-orbit__dot--c"></span>
+    </div>
+
+    <div class="home-status-card home-status-card--accent">
+      <span class="home-status-card__tag">首页入口</span>
+      <strong>资源索引</strong>
+      <p>从哈工大 837 到复试机试，先找入口，再看细节。</p>
+    </div>
+
+    <div class="home-status-card">
+      <span class="home-status-card__tag">优先级</span>
+      <strong>真题 / 重点 / 题型</strong>
+      <p>把高频内容放前面，减少翻目录的时间。</p>
+    </div>
+
+    <div class="home-status-card">
+      <span class="home-status-card__tag">参与方式</span>
+      <strong>讨论区 / PR / 修订</strong>
+      <p>有资料就补资料，有错误就修错误。</p>
+    </div>
   </div>
 </div>
 
@@ -48,9 +97,14 @@ hide:
 <div class="home-section">
   <h2>哈工大资源索引</h2>
   <div class="home-resource">
-    <h3>最常用入口</h3>
-    <p class="home-small">如果你只想快速进入资料，这几个入口优先看。</p>
-    <ul>
+    <div class="home-resource__head">
+      <div>
+        <h3>最常用入口</h3>
+        <p class="home-small">如果你只想快速进入资料，这几个入口优先看。</p>
+      </div>
+      <span class="home-pill">Material-style landing</span>
+    </div>
+    <ul class="home-link-list">
       <li><a href="hit837/">哈尔滨工业大学资源索引</a></li>
       <li><a href="hit837bookofanswer/">HIT837 三科答题手册</a></li>
       <li><a href="复试/历年机试真题/">历年机试真题总览</a></li>
@@ -85,7 +139,7 @@ hide:
 
 <div class="home-section">
   <h2>项目说明</h2>
-  <div class="home-card">
+  <div class="home-card home-card--soft">
     <p>
       wangan.online 是一个由社区维护的网安/信安考研知识库，内容会持续整理和补充。
       这里强调的是“资料索引”和“题型整理”，不是长篇文档说明。
