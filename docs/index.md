@@ -5,7 +5,7 @@ description: HIT837三科答题手册 · 网络与信息安全、网络空间安
 
 <div align="center">
 <h1><b> 欢迎来到 wangan.online！</b></h1>
-<img width="100%" alt="image" src="/HIT837-Book-of-Answer/img/WANGAN.png" />
+<img width="100%" alt="image" src="/img/WANGAN.png" />
 </div>
 
 
@@ -90,7 +90,7 @@ wangan.online 是一个由社区维护的，专注于网安/信安相关硕士�
 ---
 
 
-## 参与贡献  <img width="75" height="25" alt="Written-By-Human-Not-By-AI-Badge-black" src="/HIT837-Book-of-Answer/img/Written-By-Human-Not-By-AI-Badge-black.png" />
+## 参与贡献  <img width="75" height="25" alt="Written-By-Human-Not-By-AI-Badge-black" src="/Written-By-Human-Not-By-AI-Badge-black.png" />
 
 欢迎您为本知识库贡献内容！无论是参与讨论、修正错误、补充知识点还是分享备考经验，您的参与都将帮助更多考生。在408一统计算机考研的当下维护一个网安自命题主题的小众考研知识库还需诸君支持 ~ 如果您喜欢本项目或愿意拯救世界的话，欢迎 [提交 Pull Request](https://github.com/mcxiaoxiao/wangan.online/discussions/2) 或 [成为collaborator](https://github.com/mcxiaoxiao/wangan.online/discussions/2)。您的PR可以 创建/删除/修改 仓库内的任何 文件/文件夹/代码。网站可以提交哈工大837考纲外内容（比如别的学校的），但是请以和现有手册相同的文档结构组织页面。
 
@@ -161,5 +161,4 @@ Fork it. Commit. Share it.
 
 
 </div>
-
 

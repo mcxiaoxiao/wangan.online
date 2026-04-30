@@ -1,0 +1,10 @@
+[project]
+name = "wangan-online"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mkdocs-material>=9.7.6",
+    "jieba>=0.42.1",
+]

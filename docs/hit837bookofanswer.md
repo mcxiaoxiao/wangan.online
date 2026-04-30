@@ -36,7 +36,7 @@ transform: translateY(0);
 }
 </style>
 <h1><b> HIT837 三科答题手册（在线版）</b></h1>
-<img width="100%" alt="image" src="/HIT837-Book-of-Answer/img/hit837.png" />
+<img width="100%" alt="image" src="/img/hit837.png" />
 </div>
 
 ---
@@ -93,7 +93,7 @@ transform: translateY(0);
 
     扫描收款二维码支付 132 元，复制微信支付编号。
     
-    [:material-qrcode-scan: 微信扫码支付](/HIT837-Book-of-Answer/img/132.jpg "点击后会打开二维码图片，扫码付款后微信搜索微信支付可以找到订单信息")
+    [:material-qrcode-scan: 微信扫码支付](/img/132.jpg "点击后会打开二维码图片，扫码付款后微信搜索微信支付可以找到订单信息")
     
     发送邮件到orlosziming@163.com 标题为：`付费999999999999`（支付编号）1分钟内自动核验并发送文件，留意收件箱。
 
@@ -176,7 +176,7 @@ transform: translateY(0);
     // 随机生成页码（从1开始）
     const randPage = Math.floor(Math.random() * randCat.max) + 1;
     // 拼接最终路径
-    const randomUrl = `/HIT837-Book-of-Answer/${randCat.name}/${randPage}`;
+    const randomUrl = `/${randCat.name}/${randPage}`;
 
     // 打开新标签跳转
     window.open(randomUrl, '_blank');
