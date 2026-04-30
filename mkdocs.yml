@@ -3,10 +3,12 @@ site_url: https://wangan.online
 nav:
   - 首页: 
     - Getting Started: index.md
-    - 哈尔滨工业大学资源索引: hit837.md
-  - 自命题索引: 真题.md
+    - 初试知识库总览: 初试/index.md
+    - 复试知识库总览: 复试/index.md
   - 初试知识库:
+    - 总览: 初试/index.md
     - 哈工大837:
+      - 资源索引: hit837.md
       - 前言: hit837bookofanswer.md
       - 信息安全基础: 
         - 前言: 信安基础/0.md
@@ -105,6 +107,7 @@ nav:
         - 链路层: 计算机网络/2.md
 
   - 复试知识库: 
+    - 总览: 复试/index.md
     - 哈工大计算学部: 
       - 前言: 复试/intro.md
       - C语言:
