@@ -211,6 +211,7 @@ copyright: Copyright &copy; <a href="https://github.com/mcxiaoxiao/wangan.online
 
 
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/mcxiaoxiao/wangan.online
