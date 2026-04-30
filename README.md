@@ -23,9 +23,9 @@
 
 <div align="center">
   <h2>✨ Contributors</h2>
-  <div style="margin: 20px 0;">
-    <img src="https://contrib.rocks/image?repo=mcxiaoxiao/wangan.online" style="max-width: 100%; border-radius: 10px;" />
-  </div>
+  <a href="https://github.com/mcxiaoxiao/wangan.online/graphs/contributors">
+    <img src="https://github.com/mcxiaoxiao/wangan.online/graphs/contributors" width="800">
+  </a>
 </div>
 
 [提交PR或帮助维护](https://github.com/mcxiaoxiao/wangan.online/discussions/2)
