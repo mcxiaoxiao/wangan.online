@@ -6,6 +6,8 @@ hide:
   - toc
 ---
 
+#    
+
 <div class="home-page">
   <section class="home-hero home-hero--split" aria-labelledby="home-title">
     <div class="home-hero__copy">
@@ -17,6 +19,9 @@ hide:
       <div class="home-actions" aria-label="首页主入口">
         <a class="home-action home-action--primary" href="#home-path-title">
           Getting Started
+        </a>
+        <a class="home-action" href="https://github.com/mcxiaoxiao/wangan.online">
+          GitHub Repo
         </a>
       </div>
     </div>
@@ -34,19 +39,19 @@ hide:
             <p class="home-cycle-item" style="--slot-start: 0s;">
               <span style="--d: .03s;">f</span><span style="--d: .09s;">o</span><span style="--d: .16s;">r</span><span style="--d: .24s;">k</span><span class="home-cycle__space" style="--d: .31s; --w: .42em;">&nbsp;</span><span style="--d: .40s;">i</span><span style="--d: .48s;">t</span>
             </p>
-            <p class="home-cycle-item" style="--slot-start: 1.7s;">
+            <p class="home-cycle-item" style="--slot-start: 3s;">
               <span style="--d: .04s;">c</span><span style="--d: .11s;">o</span><span style="--d: .17s;">m</span><span style="--d: .26s;">m</span><span style="--d: .34s;">i</span><span style="--d: .42s;">t</span><span class="home-cycle__space" style="--d: .50s; --w: .42em;">&nbsp;</span><span style="--d: .62s;">i</span><span style="--d: .70s;">t</span>
             </p>
-            <p class="home-cycle-item" style="--slot-start: 3.4s;">
+            <p class="home-cycle-item" style="--slot-start: 6s;">
               <span style="--d: .03s;">s</span><span style="--d: .10s;">h</span><span style="--d: .18s;">a</span><span style="--d: .26s;">r</span><span style="--d: .36s;">e</span><span class="home-cycle__space" style="--d: .45s; --w: .42em;">&nbsp;</span><span style="--d: .58s;">i</span><span style="--d: .66s;">t</span>
             </p>
-            <p class="home-cycle-item home-cycle-item--zh" style="--slot-start: 5.1s;">
+            <p class="home-cycle-item home-cycle-item--zh" style="--slot-start: 9s;">
               <span style="--d: .04s;">消</span><span style="--d: .13s;">灭</span><span style="--d: .24s;">一</span><span style="--d: .35s;">切</span>
             </p>
-            <p class="home-cycle-item home-cycle-item--zh" style="--slot-start: 6.8s;">
+            <p class="home-cycle-item home-cycle-item--zh" style="--slot-start: 12s;">
               <span style="--d: .04s;">网</span><span style="--d: .12s;">安</span><span style="--d: .21s;">考</span><span style="--d: .31s;">研</span><span style="--d: .41s;">信</span><span style="--d: .52s;">息</span><span style="--d: .63s;">差</span>
             </p>
-            <span class="home-logo-build" style="--slot-start: 8.5s;">
+            <span class="home-logo-build" style="--slot-start: 15s;">
               <img src="logo.png" alt="">
             </span>
           </div>
