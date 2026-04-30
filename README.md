@@ -23,9 +23,9 @@
 
 <div align="center">
   <h2>✨ Contributors</h2>
-  <a href="https://github.com/mcxiaoxiao/wangan.online/graphs/contributors">
-    <img src="https://github.com/mcxiaoxiao/wangan.online/graphs/contributors" width="800">
-  </a>
+<a href="https://github.com/mcxiaoxiao/wangan.online/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mcxiaoxiao/HIT837-Book-of-Answer" />
+</a>
 </div>
 
 [提交PR或帮助维护](https://github.com/mcxiaoxiao/wangan.online/discussions/2)
