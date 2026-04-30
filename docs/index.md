@@ -9,10 +9,9 @@ hide:
 <div class="home-page">
   <section class="home-hero home-hero--split" aria-labelledby="home-title">
     <div class="home-hero__copy">
-      <div class="home-kicker">wangan.online</div>
-      <h1 id="home-title" class="home-title">消灭信息差。</h1>
+      <h1 id="home-title" class="home-title">wangan.online</h1>
       <p class="home-subtitle">
-        网安考研资料索引与共建知识库。
+        由社区维护的，专注于网安/信安相关硕士研究生考试应试的，自由、开放的<strong>网安在线考研知识库</strong>。
       </p>
 
       <div class="home-actions" aria-label="首页主入口">
@@ -23,13 +22,34 @@ hide:
     </div>
 
     <div class="home-hero__panel" aria-label="首页视觉标识">
-      <div class="home-terminal" aria-label="开源共享，知识无界。消灭一切信息差。">
-        <div class="home-slogan-cycle">
-          <span class="home-slogan home-slogan--one">开源共享，知识无界。</span>
-          <span class="home-slogan home-slogan--two">消灭一切信息差</span>
-          <span class="home-logo-build">
-            <img src="logo.png" alt="wangan.online">
-          </span>
+      <div class="home-terminal" aria-label="fork it，commit it，share it，消灭一切，网安考研信息差。">
+        <div class="home-code-stage">
+          <div class="home-code-bar" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>~/wangan.online</strong>
+          </div>
+          <div class="home-cycle" aria-hidden="true">
+            <p class="home-cycle-item" style="--slot-start: 0s;">
+              <span style="--d: .06s;">f</span><span style="--d: .15s;">o</span><span style="--d: .28s;">r</span><span style="--d: .38s;">k</span><span class="home-cycle__space" style="--d: .50s; --w: .44em;">&nbsp;</span><span style="--d: .69s;">i</span><span style="--d: .82s;">t</span>
+            </p>
+            <p class="home-cycle-item" style="--slot-start: 2.5s;">
+              <span style="--d: .08s;">c</span><span style="--d: .20s;">o</span><span style="--d: .29s;">m</span><span style="--d: .45s;">m</span><span style="--d: .57s;">i</span><span style="--d: .71s;">t</span><span class="home-cycle__space" style="--d: .84s; --w: .44em;">&nbsp;</span><span style="--d: 1.02s;">i</span><span style="--d: 1.14s;">t</span>
+            </p>
+            <p class="home-cycle-item" style="--slot-start: 5s;">
+              <span style="--d: .07s;">s</span><span style="--d: .18s;">h</span><span style="--d: .34s;">a</span><span style="--d: .46s;">r</span><span style="--d: .62s;">e</span><span class="home-cycle__space" style="--d: .76s; --w: .44em;">&nbsp;</span><span style="--d: .98s;">i</span><span style="--d: 1.10s;">t</span>
+            </p>
+            <p class="home-cycle-item home-cycle-item--zh" style="--slot-start: 7.5s;">
+              <span style="--d: .06s;">消</span><span style="--d: .21s;">灭</span><span style="--d: .36s;">一</span><span style="--d: .53s;">切</span>
+            </p>
+            <p class="home-cycle-item home-cycle-item--zh" style="--slot-start: 10s;">
+              <span style="--d: .08s;">网</span><span style="--d: .19s;">安</span><span style="--d: .34s;">考</span><span style="--d: .48s;">研</span><span style="--d: .63s;">信</span><span style="--d: .80s;">息</span><span style="--d: .96s;">差</span>
+            </p>
+            <span class="home-logo-build" style="--slot-start: 12.5s;">
+              <img src="logo.png" alt="">
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -38,30 +58,30 @@ hide:
   <section class="home-section home-section--compact" aria-labelledby="home-path-title">
     <div class="home-section__head">
       <span class="home-section__eyebrow">Start here</span>
-      <h2 id="home-path-title">按目标选择路径</h2>
-      <p>不同阶段的用户不需要同一张大目录，先按任务进入，效率更高。</p>
+      <h2 id="home-path-title">资料入口</h2>
+      <p>按你当前阶段直接进入，不绕目录。</p>
     </div>
 
     <div class="home-path-grid">
       <a class="home-path-card home-path-card--primary" href="初试/">
         <span class="home-path-card__index">01</span>
-        <strong>进入初试知识库</strong>
-        <p>先按院校专题定位内容，再进入具体考试科目、资料和考点整理。</p>
-      </a>
-      <a class="home-path-card" href="真题/">
-        <span class="home-path-card__index">02</span>
-        <strong>查自命题真题</strong>
-        <p>真题按学校、科目和年份扩展，方便后续补充更多院校资料。</p>
+        <strong>初试自命题</strong>
+        <p>按院校专题进入专业课资料、考点整理和自命题内容。</p>
       </a>
       <a class="home-path-card" href="复试/">
+        <span class="home-path-card__index">02</span>
+        <strong>复试资料/真题</strong>
+        <p>看复试大类页，先找流程、机试、资料和历年真题入口。</p>
+      </a>
+      <a class="home-path-card" href="复试/综合问题/哈工大计算学部面试常备知识库/">
         <span class="home-path-card__index">03</span>
-        <strong>准备复试</strong>
-        <p>先进入复试大类页，再按机试、面试、院校专题查找资料。</p>
+        <strong>复试面试</strong>
+        <p>整理综合问题、面试常备知识和口述表达材料。</p>
       </a>
       <a class="home-path-card" href="https://github.com/mcxiaoxiao/wangan.online/discussions/2">
         <span class="home-path-card__index">04</span>
-        <strong>补充资料或修正文档</strong>
-        <p>通过讨论区、PR、修订把资料持续维护下去。</p>
+        <strong>考完</strong>
+        <p>补资料、纠错、写经验，把信息差继续抹平。</p>
       </a>
     </div>
   </section>

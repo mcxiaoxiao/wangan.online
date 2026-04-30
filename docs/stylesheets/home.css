@@ -1,13 +1,11 @@
 :root {
   --home-font-display: "LXGW WenKai Screen", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
   --home-font-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --home-bg: radial-gradient(circle at 10% 8%, rgba(0, 166, 160, 0.2), transparent 28%),
-             radial-gradient(circle at 88% 18%, rgba(27, 94, 170, 0.18), transparent 30%),
-             linear-gradient(135deg, #eef7f5 0%, #f8fbff 44%, #fff7e8 100%);
   --home-page-bg: radial-gradient(circle at 8% 6%, rgba(0, 166, 160, 0.2), transparent 24%),
                   radial-gradient(circle at 92% 16%, rgba(27, 94, 170, 0.18), transparent 28%),
                   radial-gradient(circle at 10% 82%, rgba(199, 120, 0, 0.1), transparent 28%),
                   linear-gradient(145deg, #eef7f5 0%, #f8fbff 45%, #fff7e8 100%);
+  --home-bg: var(--home-page-bg);
   --home-panel: rgba(255, 255, 255, 0.76);
   --home-panel-strong: rgba(255, 255, 255, 0.92);
   --home-ink: #07111f;
@@ -29,13 +27,11 @@
 }
 
 [data-md-color-scheme="slate"] {
-  --home-bg: radial-gradient(circle at 10% 8%, rgba(0, 166, 160, 0.18), transparent 28%),
-             radial-gradient(circle at 88% 18%, rgba(54, 134, 206, 0.2), transparent 30%),
-             linear-gradient(135deg, #07111f 0%, #0a1724 50%, #1b160b 100%);
   --home-page-bg: radial-gradient(circle at 8% 6%, rgba(0, 166, 160, 0.2), transparent 24%),
                   radial-gradient(circle at 92% 16%, rgba(54, 134, 206, 0.18), transparent 30%),
                   radial-gradient(circle at 12% 84%, rgba(242, 184, 75, 0.1), transparent 30%),
                   linear-gradient(145deg, #07111f 0%, #0a1724 50%, #1b160b 100%);
+  --home-bg: var(--home-page-bg);
   --home-panel: rgba(12, 24, 36, 0.72);
   --home-panel-strong: rgba(12, 24, 36, 0.9);
   --home-ink: #eef7f5;
@@ -120,14 +116,21 @@
   text-decoration: none;
 }
 
+.md-typeset .home-page a,
+.md-typeset .home-page a:hover,
+.md-typeset .home-page a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
 .home-hero {
   position: relative;
   isolation: isolate;
   width: 100vw;
   min-height: max(42rem, 100svh);
   margin: calc(var(--home-nav-offset) * -1) calc(50% - 50vw) 0;
-  padding-block: calc(var(--home-nav-offset) + clamp(2.1rem, 5vw, 4rem)) clamp(4rem, 9vw, 7rem);
-  padding-inline: max(2rem, calc((100vw - 78rem) / 2 + 3.5rem));
+  padding-block: calc(var(--home-nav-offset) + clamp(0.65rem, 2vw, 1.5rem)) clamp(4.8rem, 8vw, 7.2rem);
+  padding-inline: max(2.1rem, calc((100vw - 74rem) / 2 + 3.75rem));
   border: 0;
   border-radius: 0;
   background: var(--home-bg);
@@ -167,13 +170,14 @@
 .home-hero--split {
   display: grid;
   gap: clamp(1.15rem, 3vw, 2rem);
-  align-items: start;
+  align-content: center;
+  align-items: center;
 }
 
 @media (min-width: 960px) {
   .home-hero--split {
     grid-template-columns: minmax(0, 0.88fr) minmax(24rem, 1.12fr);
-    align-items: start;
+    align-items: center;
     gap: clamp(3rem, 8vw, 7rem);
   }
 }
@@ -192,7 +196,8 @@
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  padding-top: clamp(2.2rem, 10vh, 6rem);
+  padding-top: 0;
+  transform: translateY(clamp(-1.5rem, -2.8vh, -0.75rem));
 }
 
 .home-kicker,
@@ -221,25 +226,53 @@
 }
 
 .home-title {
-  max-width: 8ch;
-  margin: 0.9rem 0 0.75rem;
+  position: relative;
+  width: fit-content;
+  max-width: 13ch;
+  margin: 0 0 1rem;
   color: var(--home-ink);
-  font-family: var(--home-font-display);
-  font-size: clamp(2.45rem, 7vw, 5.8rem);
-  font-weight: 900;
-  letter-spacing: -0.075em;
-  line-height: 0.95;
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: clamp(3.15rem, 7.9vw, 7rem);
+  font-weight: 950;
+  letter-spacing: -0.12em;
+  line-height: 0.86;
   text-wrap: balance;
   animation: home-rise 720ms 80ms ease both;
 }
 
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .home-title {
+    background: linear-gradient(108deg, var(--home-ink) 0 32%, var(--home-accent) 52%, var(--home-accent-2) 76%, var(--home-ink) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.home-title::after {
+  content: "";
+  position: absolute;
+  right: 0.05em;
+  bottom: -0.16em;
+  width: 58%;
+  height: 0.08em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--home-accent), var(--home-accent-2));
+  box-shadow: 0 0 24px rgba(0, 109, 119, 0.24);
+}
+
 .home-subtitle {
-  max-width: 25rem;
+  max-width: 30rem;
   margin: 0;
   color: var(--home-muted);
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   line-height: 1.9;
   animation: home-rise 760ms 140ms ease both;
+}
+
+.home-subtitle strong {
+  color: var(--home-ink);
+  font-weight: 900;
 }
 
 .home-actions {
@@ -273,6 +306,11 @@
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
+.md-typeset .home-page .home-action,
+.md-typeset .home-page .home-action:visited {
+  color: var(--home-ink);
+}
+
 .home-action:visited {
   color: var(--home-ink);
 }
@@ -303,12 +341,17 @@
 .home-action--primary {
   border-color: rgba(0, 109, 119, 0.2);
   background:
-    linear-gradient(110deg, transparent 0 34%, rgba(255, 255, 255, 0.26) 44%, transparent 54% 100%),
-    linear-gradient(135deg, #00a896, #0f4c81 58%, #f2b84b);
+    linear-gradient(110deg, transparent 0 34%, rgba(255, 255, 255, 0.22) 44%, transparent 54% 100%),
+    linear-gradient(135deg, #00a896, #0f4c81);
   background-size: 240% 100%, 100% 100%;
   color: #ffffff;
   box-shadow: 0 18px 44px rgba(0, 109, 119, 0.22);
   animation: home-button-shine 4.8s ease-in-out infinite;
+}
+
+.md-typeset .home-page .home-action--primary,
+.md-typeset .home-page .home-action--primary:visited {
+  color: #ffffff;
 }
 
 .home-action--primary:visited {
@@ -325,7 +368,8 @@
   align-content: center;
   justify-items: stretch;
   min-width: 0;
-  padding-top: clamp(2.5rem, 11vh, 6.8rem);
+  padding-top: 0;
+  transform: translateY(clamp(-1.25rem, -2.4vh, -0.5rem));
 }
 
 .home-terminal {
@@ -365,48 +409,143 @@
   pointer-events: none;
 }
 
-.home-slogan-cycle {
+.home-code-stage {
   position: relative;
   z-index: 1;
-  min-height: clamp(7rem, 18vw, 12rem);
+  display: grid;
+  align-content: center;
+  min-height: clamp(9rem, 22vw, 15rem);
+  padding: clamp(0.15rem, 1vw, 0.7rem);
 }
 
-.home-slogan,
+.home-code-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  margin-bottom: clamp(1.1rem, 3vw, 1.7rem);
+  color: rgba(201, 255, 248, 0.58);
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+.home-code-bar span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: rgba(125, 255, 218, 0.42);
+  box-shadow: 0 0 14px rgba(125, 255, 218, 0.18);
+}
+
+.home-code-bar span:nth-child(2) {
+  opacity: 0.66;
+}
+
+.home-code-bar span:nth-child(3) {
+  opacity: 0.38;
+}
+
+.home-code-bar strong {
+  margin-left: 0.32rem;
+  color: rgba(201, 255, 248, 0.62);
+  font-weight: 700;
+}
+
+.home-cycle {
+  --cycle-duration: 15s;
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(5.8rem, 14vw, 10rem);
+  overflow: hidden;
+}
+
+.home-cycle-item,
 .home-logo-build {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: center;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
   opacity: 0;
 }
 
-.home-slogan {
+.home-cycle-item {
   color: #7dffda;
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: clamp(2.1rem, 5.2vw, 4.1rem);
+  font-weight: 850;
+  letter-spacing: -0.075em;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(125, 255, 218, 0.28);
+  white-space: nowrap;
+  animation: home-cycle-frame var(--cycle-duration) linear infinite;
+  animation-delay: var(--slot-start);
+}
+
+.home-cycle-item--zh {
   font-family: var(--home-font-display);
-  font-size: clamp(1.55rem, 4.4vw, 3.7rem);
-  font-weight: 900;
-  letter-spacing: -0.045em;
-  line-height: 1.12;
-  text-shadow: 0 0 18px rgba(125, 255, 218, 0.32);
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: -0.08em;
 }
 
-.home-slogan--one {
-  animation: home-slogan-one 12s ease-in-out infinite;
+.home-cycle-item span {
+  --w: 0.63em;
+  display: inline-block;
+  width: var(--w);
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  vertical-align: bottom;
+  transform: translateY(0.38em) scale(0.82);
+  transform-origin: 50% 80%;
+  filter: blur(6px);
+  animation: home-cycle-char var(--cycle-duration) cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation-delay: calc(var(--slot-start) + var(--d));
 }
 
-.home-slogan--two {
-  animation: home-slogan-two 12s ease-in-out infinite;
+.home-cycle__space {
+  --w: 0.42em;
+}
+
+.home-cycle-item--zh span {
+  --w: 1.02em;
+}
+
+.home-cycle-item::after {
+  content: "";
+  width: 0.48ch;
+  height: 0.9em;
+  margin-left: 0.12em;
+  border-radius: 2px;
+  background: #7dffda;
+  box-shadow: 0 0 18px rgba(125, 255, 218, 0.52);
+  opacity: 0;
+  animation: home-cycle-cursor var(--cycle-duration) steps(1) infinite;
+  animation-delay: calc(var(--slot-start) + 0.36s);
 }
 
 .home-logo-build {
-  animation: home-logo-build 12s ease-in-out infinite;
+  animation: home-logo-brush var(--cycle-duration) cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation-delay: var(--slot-start);
+}
+
+.home-logo-build::before {
+  content: "";
+  width: clamp(5.2rem, 15vw, 9rem);
+  aspect-ratio: 1;
+  background: #20c7bd;
+  filter: drop-shadow(0 0 20px rgba(125, 255, 218, 0.34));
+  mask: url("../logo.png") center / contain no-repeat;
+  -webkit-mask: url("../logo.png") center / contain no-repeat;
 }
 
 .home-logo-build img {
-  width: clamp(5rem, 14vw, 9rem);
+  position: absolute;
+  width: clamp(5.2rem, 15vw, 9rem);
   height: auto;
-  filter: drop-shadow(0 0 22px rgba(125, 255, 218, 0.3));
+  opacity: 0;
 }
 
 .home-card,
@@ -634,6 +773,13 @@
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
+.md-typeset .home-page .home-link-list a,
+.md-typeset .home-page .home-link-list a:visited,
+.md-typeset .home-page .home-chip,
+.md-typeset .home-page .home-chip:visited {
+  color: var(--home-ink);
+}
+
 .home-link-list a:visited,
 .home-chip:visited {
   color: var(--home-ink);
@@ -728,48 +874,69 @@
   }
 }
 
-@keyframes home-slogan-one {
-  0%, 6% {
+@keyframes home-cycle-frame {
+  0% {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(10px) scale(0.98);
   }
-  10%, 28% {
+  5%, 13.5% {
     opacity: 1;
     transform: translateY(0);
   }
-  34%, 100% {
+  16.5%, 100% {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.01);
   }
 }
 
-@keyframes home-slogan-two {
-  0%, 34% {
+@keyframes home-cycle-char {
+  0% {
     opacity: 0;
-    transform: translateY(8px);
+    max-width: 0;
+    transform: translateY(0.38em) scale(0.82);
+    filter: blur(6px);
   }
-  40%, 60% {
+  2.4% {
     opacity: 1;
-    transform: translateY(0);
+    max-width: var(--w);
+    transform: translateY(-0.08em) scale(1.06);
+    filter: blur(0);
   }
-  66%, 100% {
+  4.2%, 12.5% {
+    opacity: 1;
+    max-width: var(--w);
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  16.5%, 100% {
     opacity: 0;
-    transform: translateY(-8px);
+    max-width: var(--w);
+    transform: translateY(-0.26em) scale(0.98);
+    filter: blur(4px);
   }
 }
 
-@keyframes home-logo-build {
-  0%, 66% {
+@keyframes home-cycle-cursor {
+  0%, 4%, 8%, 12% {
+    opacity: 1;
+  }
+  2%, 6%, 10%, 16.5%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes home-logo-brush {
+  0%, 2% {
     opacity: 0;
     clip-path: inset(0 100% 0 0);
     transform: scale(0.96);
   }
-  72%, 88% {
-    opacity: 1;
+  6%, 13.5% {
+    opacity: 0.95;
     clip-path: inset(0 0 0 0);
     transform: scale(1);
   }
-  96%, 100% {
+  16.5%, 100% {
     opacity: 0;
     clip-path: inset(0 0 0 100%);
     transform: scale(1.02);
@@ -783,11 +950,18 @@
 
   .home-hero {
     min-height: 100svh;
+    padding-inline: 1.35rem;
     border-radius: 0;
+  }
+
+  .home-hero__copy,
+  .home-hero__panel {
+    transform: none;
   }
 
   .home-title {
     max-width: 9.5ch;
+    font-size: clamp(2.7rem, 13.5vw, 3.15rem);
   }
 
   .home-actions {
@@ -801,6 +975,18 @@
 
   .home-terminal {
     min-height: 12rem;
+  }
+
+  .home-cycle {
+    min-height: 7rem;
+  }
+
+  .home-cycle-item {
+    font-size: clamp(2rem, 12vw, 3.2rem);
+  }
+
+  .home-cycle-item--zh {
+    font-size: clamp(1.95rem, 10vw, 3rem);
   }
 }
 
