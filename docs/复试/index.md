@@ -17,11 +17,8 @@ description: 网安考研复试院校专题总览
 
     当前已收录的复试专题之一，包含流程、机试、面试、资料下载和备考经验。
 
-    [:octicons-arrow-right-24: 查看复试专题](intro.md)
+    [:octicons-arrow-right-24: 复试资料+全流程备考指南](intro.md)
 
-    [:octicons-arrow-right-24: 查看机试真题](历年机试真题.md)
-
-    [:octicons-arrow-right-24: 查看面试常备知识库](综合问题/哈工大计算学部面试常备知识库.md)
 
 -   :material-plus-box-outline:{ .lg .middle } __补充新的复试专题__
 

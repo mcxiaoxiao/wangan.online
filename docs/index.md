@@ -98,8 +98,8 @@ hide:
     </div>
     <div class="home-resource">
       <ul class="home-link-list">
-        <li><a href="hit837/">哈工大网安837自命题 </a></li>
-        <li><a href="复试/intro/">哈工大计算学部复试</a></li>
+        <li><a href="hit837/">哈尔滨工业大学网安837自命题 </a></li>
+        <li><a href="复试/intro/">哈尔滨工业大学计算学部复试</a></li>
       </ul>
     </div>
   </section>
