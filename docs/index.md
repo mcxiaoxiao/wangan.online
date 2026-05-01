@@ -1,5 +1,5 @@
 ---
-title: wangan.online</title><meta name="baidu-site-verification" content="codeva-6eaInwsQK5" />
+title: wangan.online
 description: 网络与信息安全、网络空间安全硕士研究生在线考研知识库
 hide:
   - navigation
