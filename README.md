@@ -19,6 +19,11 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://gitee.com/orlos/wangan.online">
+    下载太慢？可以尝试国内副本（Gitee）
+  </a>
+</p>
 
 
 <div align="center">
